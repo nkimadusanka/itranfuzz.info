@@ -1,0 +1,19 @@
+/*
+media queries
+*/
+@media screen and (max-width:1200px){
+	#searchbar
+	{
+		width: 100%;
+	}
+	#sitename{
+		display: none;
+	}
+}
+
+@media screen and (min-width:1200px){
+	#searchbar
+	{
+		width: 400px;
+	}
+}
