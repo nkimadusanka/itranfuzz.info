@@ -3,7 +3,8 @@
 <!-- Creating full screen blocks for welcome screen-->
 	<section class="container-fluid" id="section1">
 	  	<h1 class="text-center v-center">Sectionalize</h1>
-	  	<button type="button" class="btn btn-defualt center-block" style="color:black;" data-toggle="modal" data-target="#myModal">Login</button>
+	  	<!--Login form initializing button-->
+	  	<button type="button" class="btn btn-defualt center-block" style="color:black;" data-toggle="modal" data-target="#loginModel">Login</button>
 	  	<div class="row">
 	    	<div class="col-sm-4">
 	          <div class="row">

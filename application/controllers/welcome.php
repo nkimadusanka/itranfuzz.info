@@ -17,10 +17,19 @@ class Welcome extends MY_GenController {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct(){
+		parent::__construct();
+	}
+
 	public function index()
 	{
-		$this->load->view('welcome');
-		$this->load->view('/form/loginmodel');
+		if($this->check_isvalidated()){
+			$this->load->view('welcome');
+			$this->load->view('/form/loginmodel');
+		}else{
+			$data['leftnav'] = $this->load->view('/include/leftnav',null,TRUE);
+			$this->load->view('main',$data);
+		}
 		$this->loadFooter();
 	}
 }

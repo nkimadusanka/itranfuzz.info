@@ -43,6 +43,10 @@ body{
 	height: 40px;
 }
 
+#example-navbar-collapse .nav li{
+	margin-right: 10px;
+}
+
 /*--------------------------------------------------------------------------------------*/
 /*This section for header welcome page segments*/
 
@@ -94,3 +98,26 @@ footer .nav>li>a:hover {
     background-color:transparent;
 	color:#fff;
 }
+/*--------------------------------------------------------------------------------------*/
+/*Left nav of dash board*/
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+

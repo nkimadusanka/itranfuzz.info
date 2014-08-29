@@ -12,4 +12,17 @@ class MY_GenController extends CI_Controller {
 	{
 		$this->load->view('include/footer');
 	}
+	/*Check login is have session or not*/
+	public function check_isvalidated(){
+        if(!$this->session->userdata('validated')){
+        	return(true);
+        }else{
+        	return(false);
+        }
+    }
+    /*Login out function */
+    public function do_logout(){
+        $this->session->sess_destroy();
+        redirect('welcome');
+    }
 }
