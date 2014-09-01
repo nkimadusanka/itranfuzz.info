@@ -84,7 +84,7 @@ section {
 footer {
 	background-color:#494949;
     color:#ddd;
-    min-height:100px;
+    min-height:20px;
     padding-top:20px;
     padding-bottom:40px;
 }
@@ -95,7 +95,7 @@ footer .nav>li>a {
 }
 
 footer .nav>li>a:hover {
-    background-color:transparent;
+  background-color:transparent;
 	color:#fff;
 }
 /*--------------------------------------------------------------------------------------*/
@@ -121,3 +121,24 @@ footer .nav>li>a:hover {
   }
 }
 
+/*------------------Edit main Wrapper----------------------------------------------*/
+
+#wrapper{
+  min-height: calc(100% - 60px);
+  background-color: red;
+}
+
+#left_menu{
+  height: 100%;
+  background-color: green;
+}
+#cont{
+  height: 100%;
+  background-color: blue;
+}
+#right_menu{
+  height: 100%;
+  background-color: yellow;
+}
+
+/*---------------------------------------------------------------------------------*/

@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<!--Programm title stuff-->
-		<title><?=$title?></title>
+		<title></title>
 		<link rel="icon" href="<?php echo base_url(); ?>favicon.ico" type="image/gif">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
@@ -39,18 +39,18 @@
 			<!--This is nav main menu-->
 			<div class="collapse navbar-collapse" id="example-navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<?php
-						if($this->session->userdata('validated') == false){
-					?>
+<?php
+	if($this->session->userdata('validated') == false){
+?>
 					<!-- add navigations here-->
 					<li><a href="#section1">Home</a></li>
 					<li><a href="#section2">How to contribute</a></li>
 					<li><a href="#section3">Download</a></li>
 					<li><a href="#section4">Mission</a></li>
 					<li><a href="#section5">About</a></li>
-					<?php }
-						else{
-					?>
+<?php }
+	else{
+?>
 					<li><a href="#">Profile</a></li>
 					<li><a href="#">Settings</a></li>
 					<li id="profilemgr" class="dropdown">
@@ -67,13 +67,11 @@
 							<li><a href="<?php echo base_url()?>welcome/do_logout">Logout</a></li>
 						</ul>
 					</li>
-					<?}?>
-				</ul>
-				
-				<!--searching menu bar if session avialabile-->
-				<?php
-					if($this->session->userdata('validated') == true){
-				?>
+				<?}?></ul>
+<!--searching menu bar if session avialabile-->
+<?php
+	if($this->session->userdata('validated') == true){
+?>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="input-group">
 						<input id="searchbar" type="text" class="form-control" placeholder="Search here">
@@ -83,7 +81,6 @@
 						</span>
 					</div><!-- /input-group -->
 				</form>
-				<?php }?>
-			</div>
+				<?php }?></div>
 		</nav>
 		<!-- End of naviagtion bar-->
