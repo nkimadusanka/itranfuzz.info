@@ -42,12 +42,12 @@
 <?php
 	if($this->session->userdata('validated') == false){
 ?>
-					<!-- add navigations here-->
-					<li><a href="#section1">Home</a></li>
-					<li><a href="#section2">How to contribute</a></li>
-					<li><a href="#section3">Download</a></li>
-					<li><a href="#section4">Mission</a></li>
-					<li><a href="#section5">About</a></li>
+				<!-- add navigations here-->
+				<li><a href="#section1">Home</a></li>
+				<li><a href="#section2">How to contribute</a></li>
+				<li><a href="#section3">Download</a></li>
+				<li><a href="#section4">Mission</a></li>
+				<li><a href="#section5">About</a></li>
 <?php }
 	else{
 ?>

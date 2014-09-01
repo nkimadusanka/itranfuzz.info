@@ -6,6 +6,9 @@ main_app.config(['$routeProvider',
       when('/', {
         templateUrl: 'anjscontroller',
       }).
+      when('/donor_tile', {
+        templateUrl: 'anjscontroller/donor_tile',
+      }).
       otherwise({
         redirectTo: 'anjscontroller'
       });

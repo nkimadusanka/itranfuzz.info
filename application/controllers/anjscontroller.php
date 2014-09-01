@@ -6,7 +6,10 @@ class Anjscontroller extends CI_Controller{
 		parent::__construct();
 	}
 	public function index(){
-		$this->load->view('anjs/home');
+		$this->load->view('anjs/home_tile');
+	}
+	public function donor_tile(){
+		$this->load->view('anjs/donor_tile');
 	}
 }
 

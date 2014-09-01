@@ -5,7 +5,7 @@ class MY_GenController extends CI_Controller {
 	function __construct()
     {
         parent::__construct();
-        $this->load->view('include/header');
+        $this->load->view('include/header_new');
     }
 
 	public function loadFooter()

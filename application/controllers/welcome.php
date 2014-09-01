@@ -27,8 +27,7 @@ class Welcome extends MY_GenController {
 			$this->load->view('welcome');
 			$this->load->view('/form/loginmodel');
 		}else{
-			$data['leftnav'] = $this->load->view('/include/leftnav',null,TRUE);
-			$this->load->view('main',$data);
+			$this->load->view('main');
 		}
 		$this->loadFooter();
 	}
