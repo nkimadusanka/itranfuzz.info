@@ -114,14 +114,14 @@ footer .nav>li>a:hover {
   padding: 0px;
   min-height: 100%;
   width: inherit;
-  background-color: red;
+  background-color: white;
 }
 #cont{
   height: 100%;
-  background-color: blue;
+  /*background-color: blue;*/
 }
 #right_menu{
-  height: 100%;
+  min-height: 500px;
   background-color: yellow;
 }
 
@@ -219,11 +219,17 @@ ul.alert-dropdown {
         background-color: #000 !important;
     }
     #searchHead{
-      margin-left: 40px;
+      margin-left: 48px;
     }
     #wrapper{
       margin-left: 225px;
     }
+}
+
+@media(max-width:768px){
+  #searchHead{
+    display: none;
+  }
 }
 
 .side-nav>li>ul {
