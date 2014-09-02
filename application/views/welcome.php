@@ -1,10 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
+
 <!-- Creating full screen blocks for welcome screen-->
 	<section class="container-fluid" id="section1">
-	  	<h1 class="text-center v-center">Sectionalize</h1>
+	  	<h1 class="text-center v-center"><i>iTransfussion.lk</i></h1>
 	  	<!--Login form initializing button-->
-	  	<button type="button" class="btn btn-defualt center-block" style="color:black;" data-toggle="modal" data-target="#loginModel">Login</button>
+	  	<p class = "text-center v-center">
+	  		<button type="button" class="btn btn-lg" style="color:white;" data-toggle="modal" data-target="#loginModel">Login</button>
+	  		<a type="button" class="btn btn-lg" style="color:white;" href="#section4">Get Start Now</a>
+	  	</p>
 	  	<div class="row">
 	    	<div class="col-sm-4">
 	          <div class="row">
@@ -57,11 +61,10 @@
 	</section>
 
 	<section class="container-fluid" id="section4">
-		<h2 class="text-center">Change this Content. Change the world.</h2>
+		<h2 class="text-center">Register Now</h2>
 	    <div class="row">
 	      <div class="col-sm-8 col-sm-offset-2">
-	      <img src="assets/bg_smartphones.jpg" class="img-responsive center-block ">
-	      <p class="text-center">Images will scale down proportionately as browser width narrows.</p>
+	      	
 	      </div>
 	    </div>
 	</section>

@@ -5,14 +5,13 @@ html{
 body{
 	height: 100%;
 	padding-top: 50px;
+  background-color: #222;
 	/*background: url("../icons/background/bg02.png");*/
 }
 
 /*
 	Header development part
 */
-
-
 
 #navheader #profilemgr{
 	padding: 0;
@@ -40,6 +39,12 @@ section {
 #section1 {
 	background-color: #dc4640;
     color:#dedeff;
+}
+
+#section1 .btn {
+background: transparent;
+border: 1px solid #eee;
+margin: 20px 5px 20px 5px;
 }
 
 #section2 {
@@ -105,13 +110,11 @@ footer .nav>li>a:hover {
 /*------------------Edit main Wrapper----------------------------------------------*/
 
 #wrapper{
-  min-height: calc(100% - 60px);
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
+  width: inherit;
   background-color: red;
-}
-
-#left_menu{
-  height: 100%;
-  background-color: green;
 }
 #cont{
   height: 100%;
@@ -216,7 +219,10 @@ ul.alert-dropdown {
         background-color: #000 !important;
     }
     #searchHead{
-      margin-left: 60px;
+      margin-left: 40px;
+    }
+    #wrapper{
+      margin-left: 225px;
     }
 }
 
