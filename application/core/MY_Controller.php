@@ -5,12 +5,13 @@ class MY_GenController extends CI_Controller {
 	function __construct()
     {
         parent::__construct();
+        $this->load->model('donor','employee');
         $this->load->view('include/header');
     }
 
 	public function loadFooter()
 	{
-		$this->load->view('include/footer');
+        $this->load->view('include/footer');
 	}
 	/*Check login is have session or not*/
 	public function check_isvalidated(){

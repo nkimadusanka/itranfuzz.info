@@ -101,8 +101,29 @@ else
                 <!-- / end of alert message drop down-->
                 <!-- profile management drop down-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img id="profileimg" class="img" src="<?php echo base_url()?>icons/defualt/defualt_profile_20.jpg?>"/> <?echo $this->session->userdata('lName')?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img id="profileimg" class="img" src="<?php echo base_url()?>icons/defualt/defualt_profile_20.jpg?>"/> 
+                        <?php
+                            echo $this->session->userdata('lname');
+                        ?>
+                        <b class="caret"></b>
+                    </a>
                     <ul class="dropdown-menu">
+                        <li>
+                            <p class="text-center">Login as
+                            <?php
+                                if($this->session->userdata('user_Mode') == 'a')
+                                    echo "Administrator";
+                                else if($this->session->userdata('user_Mode') == 'as')
+                                    echo "staff Administrator";
+                                else if($this->session->userdata('user_Mode') == 's')
+                                    echo "staff";
+                                else if($this->session->userdata('user_Mode') == 'd')
+                                    echo "Donor";
+                            ?>
+                            </p>
+                        </li>
+                        <li class="divider"></li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
