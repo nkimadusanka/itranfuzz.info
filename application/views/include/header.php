@@ -125,26 +125,63 @@ else
                         <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-h-square"></i> Manage Cluster</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mgclus"><i class="fa fa-fw fa-h-square"></i> Manage Cluster<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mgclus" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-stethoscope"></i> Manage Cluster Staff</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mgclusst"><i class="fa fa-fw fa-stethoscope"></i> Manage Cluster Staff<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mgclusst" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-calendar"></i> Manage Event</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mgevent"><i class="fa fa-fw fa-calendar"></i> Manage Event<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mgevent" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-wheelchair"></i> Manage Donor</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mgdonor"><i class="fa fa-fw fa-wheelchair"></i> Manage Donor<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mgdonor" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-cogs"></i> Notification Settings</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mgns"><i class="fa fa-fw fa-fw fa-cogs"></i> Notification Settings<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mgns" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-bar-chart-o"></i> Statics</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mgstat"><i class="fa fa-fw fa-bar-chart-o"></i> Statics<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mgstat" class="collapse">
                             <li>
                                 <a href="#">Dropdown Item</a>
                             </li>
