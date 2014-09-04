@@ -143,13 +143,13 @@ else
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                        <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgclus"><i class="fa fa-fw fa-h-square"></i> Manage Cluster<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgclus" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#/donor_tile">Dropdown Item</a>
                             </li>
                             <li>
                                 <a href="#">Dropdown Item</a>

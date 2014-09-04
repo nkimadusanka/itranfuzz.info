@@ -50,6 +50,8 @@
 //End of user welcome footer
 }
 ?>
+		<!-- load api scripts here-->
+		<script type="text/javascript" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcRW4qdkVn49iIVJsjuATIdY4z05WJn1k"></script>
 		<!--Add all javascript lib in here-->
 		<script type="text/javascript" src="<?php echo base_url() ?>js/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/bootstrap/bootstrap.min.js"></script>

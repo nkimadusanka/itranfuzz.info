@@ -149,11 +149,16 @@
             </div>
         </div>
     </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <label class="control-label">Re Enter Password</label>
+                <div id="map-canvas" style="height: 200px;width: 500px;"/>
+            </div>
+        </div>
+    </div>
     <button type="submit" class="btn btn-default">Validate</button>
 </form>
-
-
-
 
 
 
