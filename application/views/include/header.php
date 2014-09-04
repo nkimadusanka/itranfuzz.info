@@ -11,6 +11,8 @@
 		<!-- Bootstrap -->
 		<link href="<?php echo base_url()?>css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url()?>css/bootstrapValidator.min.css"/>
+		<!-- Custom Fonts -->
+    	<link href="<?php echo base_url()?>fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- my styles -->
 		<link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 		<link href="<?php echo base_url()?>css/qmedia/mediaq.css" rel="stylesheet">
@@ -21,66 +23,139 @@
     	<![endif]-->
 	</head>
 	<body>
-		<!-- navigational header-->
-		<nav id = "navheader" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<!--This is responsive mobile menu-->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="<?php echo base_url() ?>">
-					<img src="<?php echo base_url() ?>icons/log50.png" style="float:left">
-					<h2 id="sitename">iTranfussion.lk</h2>
-				</a>
-			</div>
-			<!--This is nav main menu-->
-			<div class="collapse navbar-collapse" id="example-navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">iTranfussion.lk</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-left top-nav">
+<?php
+    if($this->session->userdata('validated') == true){
+?>
+                <!--searching menu bar if session avialabile-->
+                <form id="searchHead" class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input id="searchbar" type="text" class="form-control" placeholder="Search here">
+                        <span class="input-group-btn">
+                            <button id="searchbutton" class="btn glyphicon glyphicon-search" type="button">
+                            </button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+                <!--alert menu drop down-->
+<?php }?>
+            </ul>
+            <ul class="nav navbar-right top-nav">
+
 <?php
 	if($this->session->userdata('validated') == false){
 ?>
-				<!-- add navigations here-->
-				<li><a href="#section1">Home</a></li>
-				<li><a href="#section2">How to contribute</a></li>
-				<li><a href="#section3">Download</a></li>
-				<li><a href="#section4">Mission</a></li>
-				<li><a href="#section5">About</a></li>
-<?php }
-	else{
-?>
-					<li><a href="#">Profile</a></li>
-					<li><a href="#">Settings</a></li>
-					<li id="profilemgr" class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding:0px">
-							<img id="profileimg" class="img-rounded" src="<?php echo base_url()?>icons/defualt/defualt_profile.gif?>"/>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#">jmeter</a></li>
-							<li><a href="#">EJB</a></li>
-							<li><a href="#">Jasper Report</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							<li class="divider"></li>
-							<li><a href="<?php echo base_url()?>welcome/do_logout">Logout</a></li>
-						</ul>
-					</li>
-				<?}?></ul>
-<!--searching menu bar if session avialabile-->
+					<!-- add navigations here-->
+					<ul class="nav navbar-nav">
+						<li><a href="#section1">Home</a></li>
+						<li><a href="#section2">How to contribute</a></li>
+						<li><a href="#section3">Download</a></li>
+						<li><a href="#section4">Mission</a></li>
+						<li><a href="#section5">About</a></li>
+					</ul>
 <?php
-	if($this->session->userdata('validated') == true){
-?>
-				<form class="navbar-form navbar-left" role="search">
-					<div class="input-group">
-						<input id="searchbar" type="text" class="form-control" placeholder="Search here">
-						<span class="input-group-btn">
-							<button id="searchbutton" class="btn glyphicon glyphicon-search" type="button">
-							</button>
-						</span>
-					</div><!-- /input-group -->
-				</form>
-				<?php }?></div>
-		</nav>
-		<!-- End of naviagtion bar-->
+}
+else
+{
+	?>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- / end of alert message drop down-->
+                <!-- profile management drop down-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img id="profileimg" class="img" src="<?php echo base_url()?>icons/defualt/defualt_profile_20.jpg?>"/> <?echo $this->session->userdata('lName')?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="<?php echo base_url()?>welcome/do_logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--end of profile manage ment drop down-->
+            </ul>
+            <!--/////////////////// dorp down items are over -->
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-h-square"></i> Manage Cluster</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-stethoscope"></i> Manage Cluster Staff</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-calendar"></i> Manage Event</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-wheelchair"></i> Manage Donor</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-cogs"></i> Notification Settings</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-bar-chart-o"></i> Statics</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            <!-- /.navbar-collapse -->
+            </div>
+<?php }?>
+        </nav>
+<!-- End of naviagtion bar-->
