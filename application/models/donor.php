@@ -4,9 +4,11 @@ class Donor extends CI_model{
 
 	var $dId;
 	var $email;
+	var $nic;
 	var $password;
 	var $fname;
 	var $lname;
+	var $photo;
 	var $phone;
 	var $address1;
 	var $address2;
@@ -24,10 +26,12 @@ class Donor extends CI_model{
 		if(!is_null($row)){
 			$this->dId = $row->dId;
 			$this->email = $row->email;
+			$this->nic = $row->nic;
 			$this->password = $row->password;
 			$this->fname = $row->fname;
 			$this->lname = $row->lname;
 			$this->phone = $row->phone;
+			$this->photo = $row->photo;
 			$this->address1 = $row->address1;
 			$this->address2 = $row->address2;
 			$this->gender = $row->gender;
@@ -90,6 +94,12 @@ class Donor extends CI_model{
 	public function getCenter(){
 		return($this->center_cId);
 	}
+	public function getNic(){
+		return($this->nic);
+	}
+	public function getPhoto(){
+		return($this->photo);
+	}
 	#end of getter functions
 	#setter functions
 	public function setDId($dId){
@@ -139,6 +149,12 @@ class Donor extends CI_model{
 	}
 	public function setCenter($center_cId){
 		$this->center_cId = $center_cId;
+	}
+	public function setNic($nic){
+		$this->nic = $nic;
+	}
+	public function setPhoto($photo){
+		$this->photo = $photo;
 	}
 	#End of setter functions
 }

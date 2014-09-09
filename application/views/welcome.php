@@ -7,7 +7,7 @@
 	  	<!--Login form initializing button-->
 	  	<p class = "text-center v-center">
 	  		<button type="button" class="btn btn-lg" style="color:white;" data-toggle="modal" data-target="#loginModel">Login</button>
-	  		<a type="button" class="btn btn-lg" style="color:white;" href="#section4">Get Start Now</a>
+	  		<a type="button" class="btn btn-lg" style="color:white;" href="#section4">Register ToDay</a>
 	  	</p>
 	  	<div class="row">
 	    	<div class="col-sm-4">
@@ -66,7 +66,6 @@
 	      <div class="col-sm-8 col-sm-offset-2">
 
 
-
 <!--registration form to be submitted to the website-->
 <form id="regForm" method="post">
     <div class="form-group">
@@ -76,8 +75,8 @@
                 <input type="text" class="form-control" name="email" />
             </div>
             <div class="col-md-6">
-                <label class="control-label">User Avator</label>
-                <img src="<?php echo base_url()?>icons/defualt/defualt_profile_20.jpg?>" class="img-rounded">
+                <label class="control-label">Profile Picture</label>
+                <input type="file">
             </div>
         </div>
     </div>
@@ -152,12 +151,12 @@
     <div class="form-group">
         <div class="row">
             <div class="col-md-6 col-md-offset-6">
-                <label class="control-label">Re Enter Password</label>
-                <div id="map-canvas" style="height: 200px;width: 500px;"/>
+                <label class="control-label">Select your location</label>
+                <div id="map-canvas" style="height: 200px;width: 100%;"/>
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-default">Validate</button>
+    <button type="submit" class="btn btn-default">Register</button>
 </form>
 
 

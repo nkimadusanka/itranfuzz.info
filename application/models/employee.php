@@ -6,6 +6,7 @@ class Employee extends CI_model{
 	var $lname;
 	var $gender;
 	var $email;
+	var $nic;
 	var $password;
 	var $phone;
 	var $address1;
@@ -22,6 +23,7 @@ class Employee extends CI_model{
 			$this->lname = $row->lname;
 			$this->gender = $row->gender;
 			$this->email = $row->email;
+			$this->nic = $row->nic;
 			$this->password = $row->password;
 			$this->phone = $row->phone;
 			$this->address1 = $row->address1;
@@ -68,6 +70,9 @@ class Employee extends CI_model{
 	public function getCenter(){
 		return($this->center_cId);
 	}
+	public function getNic(){
+		return($this->nic);
+	}
 	#end of getter methods
 	#start of setter methods
 	public function setEId($eId){
@@ -105,6 +110,9 @@ class Employee extends CI_model{
 	}
 	public function setCenter($center_cId){
 		$this->center_cId = $center_cId;
+	}
+	public function setNic($nic){
+		$this->nic = $nic;
 	}
 	#end of setter methods
 }

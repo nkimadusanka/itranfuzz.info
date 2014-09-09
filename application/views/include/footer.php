@@ -59,6 +59,11 @@
 		<script type="text/javascript" src="<?php echo base_url() ?>js/anjular/angular.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/anjular/angular-route.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/anjular/app.js"></script>
+<? if($this->session->userdata('validated') == false){ ?>
+		<!--smooth  scolling methods-->
+		<script type="text/javascript" src="<?php echo base_url() ?>js/smooth_scrolling.js"></script>
+<? }?>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/script.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>js/map.js"></script>
 	</body>
 </html>

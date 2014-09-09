@@ -1,25 +1,5 @@
 $(document).ready(function(){
 
-/* activate scrollspy menu */
-$('body').scrollspy({
-  target: '#navbar-collapsible',
-  offset: 50
-});
-
-/* smooth scrolling sections */
-$('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 50
-        }, 1000);
-        return false;
-      }
-    }
-});
-
 /*Login form validator files*/
 $('#loginForm').bootstrapValidator({
     message: 'This value is not valid',
@@ -81,13 +61,8 @@ $('#loginForm').bootstrapValidator({
         }
       }, 'json');
     });
-/*--------------------------------*/
-function initialize() {
-            var mapOptions = {
-              center: new google.maps.LatLng(6.971445,79.922209),
-              zoom: 15
-            };
-            var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
+/*#########end of Login form validator files*/
+
+
+
 });

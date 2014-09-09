@@ -1,5 +1,5 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
-<!DOCTYPE html>
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -145,6 +145,7 @@ else
                     <li class="active">
                         <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
+<?php if($this->session->userdata('user_Mode') == 'a'){?>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgclus"><i class="fa fa-fw fa-h-square"></i> Manage Cluster<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgclus" class="collapse">
@@ -162,6 +163,8 @@ else
                             </li>
                         </ul>
                     </li>
+<?php }?>
+<?php if($this->session->userdata('user_Mode') == 'a' || $this->session->userdata('user_Mode') == 'as'){?>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgclusst"><i class="fa fa-fw fa-stethoscope"></i> Manage Cluster Staff<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgclusst" class="collapse">
@@ -173,6 +176,7 @@ else
                             </li>
                         </ul>
                     </li>
+<?php }?>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgevent"><i class="fa fa-fw fa-calendar"></i> Manage Event<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgevent" class="collapse">

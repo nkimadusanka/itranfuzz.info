@@ -17,9 +17,10 @@ class Login_model extends CI_Model{
         #set where methods
         $this->db->where('email', $email);
         $this->db->where('password', $password);
-        
-        #select method
         $query1 = $this->db->get('donor');
+
+        $this->db->where('email', $email);
+        $this->db->where('password', $password);
         $query2 = $this->db->get('employee');
         
         if($query1->num_rows == 1)
@@ -30,7 +31,7 @@ class Login_model extends CI_Model{
                     'user_Mode' => 'd',
                     'dId' => $donor->getDId(),
                     'lname' => $donor->getLname(),
-                    'photo' => 'defualt.gif',
+                    'photo' => $donor->getPhoto(),
                     'validated' => true
                     );
             $this->session->set_userdata($data);
@@ -43,7 +44,7 @@ class Login_model extends CI_Model{
                     'user_Mode' => $employee->getType(),
                     'eId' => $employee->getEId(),
                     'lname' => $employee->getLname(),
-                    'photo' => 'defualt.gif',
+                    'photo' => $employee->getPhoto(),
                     'validated' => true
                     );
             $this->session->set_userdata($data);
