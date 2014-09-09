@@ -75,8 +75,8 @@
                 <input type="text" class="form-control" name="email" />
             </div>
             <div class="col-md-6">
-                <label class="control-label">Profile Picture</label>
-                <input type="file">
+                <label class="control-label">NIC</label>
+                <input type="text" class="form-control" name="fname" />
             </div>
         </div>
     </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="col-md-4">
                 <label class="control-label">Date of Birth</label>
-                <input type="text" class="form-control" name="dob" />
+                <input type="date" class="form-control" name="dob" />
             </div>
             <div class="col-md-4 selectContainer">
                 <label class="control-label">Blood Type</label>
@@ -150,7 +150,11 @@
     </div>
     <div class="form-group">
         <div class="row">
-            <div class="col-md-6 col-md-offset-6">
+            <div class="col-md-6">
+                <label class="control-label">Profile Picture</label>
+                <input type="file">
+            </div>
+            <div class="col-md-6">
                 <label class="control-label">Select your location</label>
                 <div id="map-canvas" style="height: 200px;width: 100%;"/>
             </div>
