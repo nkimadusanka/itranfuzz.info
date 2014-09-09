@@ -24,7 +24,10 @@ class Welcome extends MY_GenController {
 	public function index()
 	{
 		if($this->check_isvalidated()){
-			$this->load->view('welcome');
+			//add register form to welcome page
+			$data = null;
+			$data['register_form'] = $this->load->view('/form/register_form',$data,TRUE);
+			$this->load->view('welcome',$data);
 			$this->load->view('/form/loginmodel');
 		}else{
 			$this->load->view('main');
