@@ -149,10 +149,16 @@ else
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgclus"><i class="fa fa-fw fa-h-square"></i> Manage Cluster<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgclus" class="collapse">
                             <li>
-                                <a href="#/donor_tile">Dropdown Item</a>
+                                <a href="#/add_cluster">Add Cluster</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">Update Cluster</a>
+                            </li>
+                            <li>
+                                <a href="#">Remove Cluster</a>
+                            </li>
+                            <li>
+                                <a href="#">View Cluster</a>
                             </li>
                         </ul>
                     </li>

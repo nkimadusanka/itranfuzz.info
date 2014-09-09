@@ -9,6 +9,9 @@ main_app.config(['$routeProvider',
       when('/donor_tile', {
         templateUrl: 'anjscontroller/donor_tile',
       }).
+      when('/add_cluster', {
+        templateUrl: 'anjscontroller/addcluster_tile',
+      }).
       otherwise({
         redirectTo: 'anjscontroller'
       });

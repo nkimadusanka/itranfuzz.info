@@ -11,5 +11,8 @@ class Anjscontroller extends CI_Controller{
 	public function donor_tile(){
 		$this->load->view('anjs/donor_tile');
 	}
+	public function addcluster_tile(){
+		$this->load->view('anjs/add_cluster');
+	}
 }
 
