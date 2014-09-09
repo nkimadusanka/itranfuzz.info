@@ -19,13 +19,14 @@ class Welcome extends MY_GenController {
 	 */
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('center');
 	}
 
 	public function index()
 	{
 		if($this->check_isvalidated()){
 			//add register form to welcome page
-			$data = null;
+			$data['centers'] = $this->center->getAllCenters();
 			$data['register_form'] = $this->load->view('/form/register_form',$data,TRUE);
 			$this->load->view('welcome',$data);
 			$this->load->view('/form/loginmodel');

@@ -26,7 +26,7 @@ $('#loginForm').bootstrapValidator({
             }
         }
       }
-    },
+    }
 }).on('success.form.bv',function(e){
       // Prevent form submission
       e.preventDefault();
@@ -63,6 +63,103 @@ $('#loginForm').bootstrapValidator({
     });
 /*#########end of Login form validator files*/
 
+/*Registration form validator files*/
+$('#regForm').bootstrapValidator({
+    message: 'This value is not valid',
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+      email: {
+        validators: {
+            emailAddress:{
+                message: 'Please enter valid email address'
+            },
+            notEmpty: {
+                message: 'The email is required'
+            }
+        }
+      },
+      nic:{
+        validators:{
+          notEmpty:{
+            message: 'Please enter your NIC number'
+          }
+        }
+      },
+      fname:{
+        validators:{
+          notEmpty:{
+            message: 'Please enter your First Name'
+          }
+        }
+      },
+      lname:{
+        validators:{
+          notEmpty:{
+            message: 'Please enter your Last Name'
+          }
+        }
+      },
+      address1:{
+        validators:{
+          notEmpty:{
+            message: 'Please enter address1'
+          }
+        }
+      },
+      address2:{
+        validators:{
+          notEmpty:{
+            message: 'Please enter address2'
+          }
+        }
+      },
+      password:{
+        validators:{
+          notEmpty:{
+            message: 'The password is required and cannot be empty'
+          },
+          identical: {
+              field: 'rpassword',
+              message: 'The password and its confirm must be the same'
+          }
+        }
+      },
+      rpassword:{
+        validators:{
+          notEmpty:{
+            message: 'Please re enter your password'
+          },
+          identical: {
+              field: 'password',
+              message: 'The password and its confirm must be the same'
+          }
+        }
+      },
+      dob:{
+        validators:{
+          date: {
+            format: 'YYYY/MM/DD',
+            message: 'The value is not a valid date'
+          },
+          notEmpty:{
+            message: 'Date of Birth cannot be empty'
+          }
+        }
+      },
+      cId:{
+        validators:{
+          notEmpty:{
+            message: 'Please select center'
+          }
+        }
+      }
+    }
+}).on('success.form.bv',function(e){
 
-
+});
+/*#########end of Register form validator files*/
 });

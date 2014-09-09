@@ -45,7 +45,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
-
 <!-- end of login modal form -->
 
 
