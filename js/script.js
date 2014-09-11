@@ -40,15 +40,10 @@ $('#loginForm').bootstrapValidator({
       // Use Ajax to submit form data
       $.post($form.attr('action'), $form.serialize(), function(result) {
         try{
-
           // Get plugin instance
           var bootstrapValidator = $('#loginForm').data('bootstrapValidator');
-
           //validate json states
           if(result['STATUS'] == "true"){
-            /*
-            Have big error in here
-            */
             window.location.reload();
           }else{
             bootstrapValidator.disableSubmitButtons(false);
@@ -160,6 +155,40 @@ $('#regForm').bootstrapValidator({
     }
 }).on('success.form.bv',function(e){
 
+  e.preventDefault();
+  // Get the form instance
+  var $form = $(e.target);
+  // Get the BootstrapValidator instance
+  var bv = $form.data('bootstrapValidator');
+  var lat;
+  var lng;
+
+  console.log(marker.getPosition().lat());
+
+  if(marker != null){
+    $('<input />').attr('type', 'hidden')
+          .attr('name', "lat")
+          .attr('value', marker.getPosition().lat())
+          .appendTo('#regForm');
+    $('<input />').attr('type', 'hidden')
+          .attr('name', "lng")
+          .attr('value', marker.getPosition().lng())
+          .appendTo('#regForm');
+  }
+  // Use Ajax to submit form data
+  $.post($form.attr('action'), $form.serialize(), function(result) {
+    try{
+      // Get plugin instance
+      var bootstrapValidator = $('#loginForm').data('bootstrapValidator');
+      //validate json states
+      if(result['STATUS'] == "true"){
+        window.alert("You are register success fully");
+        $('#loginModel').modal('toggle');
+      }
+    }catch(e){
+      alert('Exception while request..');
+    }
+  }, 'json');
 });
-/*#########end of Register form validator files*/
+/*End of register form validation*/
 });

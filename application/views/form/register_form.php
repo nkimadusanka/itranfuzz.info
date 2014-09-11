@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
 <!--registration form to be submitted to the website-->
-<form id="regForm" method="post">
+<form id="regForm" method="post" action="donor_controller/do_donregister">
     <div class="form-group">
         <div class="row">
             <div class="col-md-6">
@@ -74,10 +74,10 @@
                 <label class="control-label">Blood Type</label>
                 <select class="form-control" name="bType">
                     <option value="">Blood type</option>
-                    <option value="action">A+</option>
-                    <option value="comedy">B+</option>
-                    <option value="horror">A-</option>
-                    <option value="romance">B-</option>
+                    <option value="a+">A+</option>
+                    <option value="b+">B+</option>
+                    <option value="a-">A-</option>
+                    <option value="b-">B-</option>
                 </select>
             </div>
             <div class="col-md-3 selectContainer">
@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="control-label">Profile Picture</label>
-                <input type="file">
+                <input type="file" name="photo">
             </div>
             <div class="col-md-6">
                 <label class="control-label">Select your location</label>

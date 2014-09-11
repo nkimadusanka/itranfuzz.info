@@ -63,7 +63,7 @@
 		<!--smooth  scolling methods-->
 		<script type="text/javascript" src="<?php echo base_url() ?>js/smooth_scrolling.js"></script>
 <? }?>
-		<script type="text/javascript" src="<?php echo base_url() ?>js/script.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/map.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>js/script.js"></script>
 	</body>
 </html>
