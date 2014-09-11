@@ -33,6 +33,19 @@ class Employee extends CI_model{
 			$this->center_cId = $row->center_cId;
 		}
 	}
+	
+	public function getEmployeeByEmail($email){
+		
+		$this->db->where('email', $email);
+		$rows = $this->db->get('employee');
+		
+		if($rows->num_rows() > 0){
+			return new Employee($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+	
 	#add getter methods
 	public function getEId(){
 		return($this->eId);

@@ -106,6 +106,18 @@ class Donor extends CI_model {
 		return $this->db->affected_rows () ? true : false;
 	}
 	
+	public function getDonorByEmail($email){
+		
+		$this->db->where('email', $email);
+		$rows = $this->db->get('donor');
+		
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+	
 	// getter function here
 	public function getDId() {
 		return ($this->dId);

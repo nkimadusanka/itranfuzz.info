@@ -60,7 +60,6 @@ $('#loginForm').bootstrapValidator({
 
 /*Registration form validator files*/
 $('#regForm').bootstrapValidator({
-    message: 'This value is not valid',
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
       invalid: 'glyphicon glyphicon-remove',
@@ -68,7 +67,12 @@ $('#regForm').bootstrapValidator({
     },
     fields: {
       email: {
+    	group: '.col-md-6',
         validators: {
+            remote: {
+                message: 'The username is not available',
+                url: 'webapi/jemailcheck'
+            },
             emailAddress:{
                 message: 'Please enter valid email address'
             },
@@ -78,6 +82,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       nic:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'Please enter your NIC number'
@@ -85,6 +90,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       fname:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'Please enter your First Name'
@@ -92,6 +98,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       lname:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'Please enter your Last Name'
@@ -99,6 +106,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       address1:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'Please enter address1'
@@ -106,6 +114,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       address2:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'Please enter address2'
@@ -113,6 +122,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       password:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'The password is required and cannot be empty'
@@ -124,6 +134,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       rpassword:{
+    	group: '.col-md-6',
         validators:{
           notEmpty:{
             message: 'Please re enter your password'
@@ -135,6 +146,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       dob:{
+    	group: '.col-md-4',
         validators:{
           date: {
             format: 'YYYY/MM/DD',
@@ -146,6 +158,7 @@ $('#regForm').bootstrapValidator({
         }
       },
       cId:{
+    	group: '.col-md-4',
         validators:{
           notEmpty:{
             message: 'Please select center'
@@ -163,9 +176,7 @@ $('#regForm').bootstrapValidator({
   var lat;
   var lng;
 
-  console.log(marker.getPosition().lat());
-
-  if(marker != null){
+  if(clickedMarkerselect){
     $('<input />').attr('type', 'hidden')
           .attr('name', "lat")
           .attr('value', marker.getPosition().lat())

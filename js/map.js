@@ -1,6 +1,8 @@
 /*global variables of map*/
 var map;
 var marker = new google.maps.Marker(null);
+var clickedMarkerselect = false;
+
 
 $(document).ready(function(){
 /*initializing map div*/
@@ -15,6 +17,7 @@ function initialize() {
     });
     function placeMarker(position, map){
     	marker.setMap(null);
+    	clickedMarkerselect = true;
     	marker = new google.maps.Marker({
     		position: position,
     		map: map

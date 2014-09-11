@@ -2,20 +2,19 @@
 
 <!--registration form to be submitted to the website-->
 <form id="regForm" method="post" action="donor_controller/do_donregister">
-    <div class="form-group">
-        <div class="row">
-            <div class="col-md-6">
-                <label class="control-label">Email</label>
-                <input type="text" class="form-control" name="email" />
-            </div>
-            <div class="col-md-6">
-                <label class="control-label">NIC</label>
-                <input type="text" class="form-control" name="nic" />
-            </div>
+<div class="form-group">
+     <div class="row">
+        <div class="col-md-6">
+            <label class="control-label">Email</label>
+            <input type="text" class="form-control" name="email" />
+        </div>
+        <div class="col-md-6">
+            <label class="control-label">NIC</label>
+            <input type="text" class="form-control" name="nic" />
         </div>
     </div>
-
-    <div class="form-group">
+</div>
+<div class="form-group">
         <div class="row">
             <div class="col-md-6">
                 <label class="control-label">First Name</label>
@@ -27,9 +26,8 @@
                 <input type="text" class="form-control" name="lname" />
             </div>
         </div>
-    </div>
-
-    <div class="form-group">
+</div>
+<div class="form-group">
         <div class="row">
             <div class="col-md-6">
                 <label class="control-label">Address 1</label>
@@ -41,9 +39,8 @@
                 <input type="text" class="form-control" name="address2" />
             </div>
         </div>
-    </div>
-
-    <div class="form-group">
+</div>
+<div class="form-group">
         <div class="row">
             <div class="col-md-6">
                 <label class="control-label">Password</label>
@@ -55,9 +52,8 @@
                 <input type="password" class="form-control" name="rpassword" />
             </div>
         </div>
-    </div>
-
-    <div class="form-group">
+</div>
+<div class="form-group">
         <div class="row">
         	<div class="col-md-3 selectContainer">
                 <label class="control-label">Gender</label>
@@ -92,8 +88,8 @@
 <?php }?>
             </div>
         </div>
-    </div>
-    <div class="form-group">
+</div>
+<div class="form-group">
         <div class="row">
             <div class="col-md-6">
                 <label class="control-label">Profile Picture</label>
@@ -104,7 +100,7 @@
                 <div id="map-canvas" style="height: 200px;width: 100%;"/>
             </div>
         </div>
-    </div>
+</div>
     <button type="submit" class="btn btn-default">Register</button>
     <button type="reset" class="btn btn-default">Reset</button>
 </form>
