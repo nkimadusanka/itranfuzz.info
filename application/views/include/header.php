@@ -154,13 +154,13 @@ else
                                 <a href="#/add_cluster">Add Cluster</a>
                             </li>
                             <li>
-                                <a href="#">Update Cluster</a>
+                                <a href="#/update_cluster">Update Cluster</a>
                             </li>
                             <li>
-                                <a href="#">Remove Cluster</a>
+                                <a href="#/remove_cluster">Remove Cluster</a>
                             </li>
                             <li>
-                                <a href="#">View Cluster</a>
+                                <a href="#/view_cluster">View Cluster</a>
                             </li>
                         </ul>
                     </li>
