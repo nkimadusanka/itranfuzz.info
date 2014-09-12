@@ -58,6 +58,14 @@
 			</div>
 		</div>
 	</div>
+	<div class="form-group">
+		<div class="row">
+			<label class="col-md-2 control-label">Select Location</label>
+			<div class="col-md-10">
+                <div id="map-canvas" style="height: 200px;width: 100%;"/>
+            </div>
+		</div>
+	</div>
 	<button type="submit" class="btn btn-default">Register</button>
 	<button type="reset" class="btn btn-default">Reset</button>
 </form>
