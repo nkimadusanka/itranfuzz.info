@@ -2,7 +2,7 @@
 
 <!--registration form to be submitted to the website-->
 <form id="regForm" method="post"
-	action="donor_controller/do_donregister">
+	action="donor_controller/do_donregister" ng-controller="mapController" ng-init="initialize()">
 	<div class="form-group">
 		<div class="row">
 			<label class="col-md-2 control-label">Province</label>
