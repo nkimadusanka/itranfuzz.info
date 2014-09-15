@@ -7,7 +7,7 @@
 		<div ng-view></div>
 	</div>
 	<!--Right container area of the site-->
-	<div id="right_menu" class="col-md-3">
+	<div ruid="right_menu" class="col-md-3">
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
 				<div class="thumbnail">
