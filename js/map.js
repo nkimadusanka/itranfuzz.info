@@ -5,6 +5,10 @@ var clickedMarkerselect = false;
 
 
 $(document).ready(function(){
+	initialize();
+	google.maps.event.addDomListener(window, 'load', initialize);
+});
+
 /*initializing map div*/
 function initialize() {
     var mapOptions = {
@@ -25,5 +29,3 @@ function initialize() {
     	map.panTo(position);
     }
 }
-google.maps.event.addDomListener(window, 'load', initialize);
-});
