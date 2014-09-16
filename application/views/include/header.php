@@ -170,10 +170,16 @@ else
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgclusst"><i class="fa fa-fw fa-stethoscope"></i> Manage Cluster Staff<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgclusst" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#add_staff">Add Staff</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#update_staff">Update Staff</a>
+                            </li>
+                            <li>
+                                <a href="#remove_staff">Remove Staff</a>
+                            </li>
+                            <li>
+                                <a href="#view_staff">View Staff</a>
                             </li>
                         </ul>
                     </li>

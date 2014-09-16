@@ -46,8 +46,17 @@ main_app.config(['$routeProvider',
       when('/remove_cluster', {
           templateUrl: 'anjscontroller/removecluster_tile',
       }).
-      when('/view_cluster', {
-          templateUrl: 'anjscontroller/viewcluster_tile',
+      when('/add_staff', {
+          templateUrl: 'anjscontroller/addstaff_tile',
+      }).
+      when('/update_staff', {
+          templateUrl: 'anjscontroller/updatestaff_tile',
+      }).
+      when('/remove_staff', {
+          templateUrl: 'anjscontroller/removestaff_tile',
+      }).
+      when('/view_staff', {
+          templateUrl: 'anjscontroller/viewstaff_tile',
       }).
       otherwise({
         redirectTo: 'anjscontroller'
