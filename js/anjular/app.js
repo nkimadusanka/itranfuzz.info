@@ -1,4 +1,32 @@
-var main_app = angular.module('app',['ngRoute']);
+var main_app = angular.module('app',['ngRoute']).run(function($rootScope){
+	
+	/*anjs global variables of map*/
+	$rootScope.map;
+	$rootScope.marker = new google.maps.Marker(null);
+	
+	/*initializing google map function*/
+	$rootScope.initialize = function(){
+		var mapOptions = {
+		        center: new google.maps.LatLng(6.971445,79.922209),
+		            zoom: 15
+		 };
+		
+		$rootScope.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		google.maps.event.addListener($rootScope.map,'click',function(e){			
+			placeMarker(e.latLng, $rootScope.map);
+		 });
+		
+		placeMarker = function(position, map){
+				$rootScope.marker.setMap(null);
+				$rootScope.marker = new google.maps.Marker({
+		    		position: position,
+		    		map: map
+		    	});
+		    	map.panTo(position);
+		};
+	}
+	
+});
 
 main_app.config(['$routeProvider',
   function($routeProvider) {
