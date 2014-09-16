@@ -1,5 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 <h1>Hello this is home tile</h1>
+<h1>This from ashika</h1>
 <div>
 	<button>Test</button>
 </div>
