@@ -2,7 +2,7 @@
 
 <!--registration form to be submitted to the website-->
 <form id="regFormCluster" method="post"
-	action="privateapi/addCenter" ng-controller="mapController">
+	action="privateapi/addCenter" ng-controller="clusterController">
 	<div class="form-group">
 		<div class="row">
 			<label class="col-md-2 control-label">Province</label>

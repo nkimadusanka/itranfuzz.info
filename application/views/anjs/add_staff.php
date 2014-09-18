@@ -1,3 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
-<h1>add staff</h1>
+<div class="page-header">
+  <h1>Add Staff Member <small>Enter details about new staff member</small></h1>
+</div>
+<br/>
+<?php echo $addstaffForm?>
+
