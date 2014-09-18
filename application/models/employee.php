@@ -34,6 +34,22 @@ class Employee extends CI_model{
 		}
 	}
 	
+	/* get donor by id*/
+	public function getEmployee($id){
+		$this->db->where('eId', $id);
+		$rows = $this->db->get('employee');
+		if($rows->num_rows() > 0){
+			return new Employee($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+	/*add new employee to the system*/
+	public function addEmployee($employee){
+		return($this->db->insert('employee',$employee));
+	}
+	
+	/*get employee by email*/
 	public function getEmployeeByEmail($email){
 		
 		$this->db->where('email', $email);
