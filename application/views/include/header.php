@@ -234,3 +234,45 @@ else
 <?php }?>
         </nav>
 <!-- End of naviagtion bar-->
+        
+<!-- Large Message modal -->
+<div class="modal fade larg-msg-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+       				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 id="lTitle" class="modal-title"></h4>
+      			</div>
+      			<div id="lContent" class="modal-body">
+      				<!-- this is large model body -->
+      			</div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+		      </div>
+    		</div><!-- /.modal-content -->
+  		</div><!-- /.modal-dialog -->
+  </div>
+</div>
+
+<!-- Small Message modal -->
+<div class="modal fade small-msg-model" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+       				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 id = "sTitle" class="modal-title center-block"></h4>
+      			</div>
+      			<div id = "sContent" class="modal-body">
+      				<!-- this is small model body -->
+      			</div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+		      </div>
+    		</div><!-- /.modal-content -->
+  		</div><!-- /.modal-dialog -->
+  </div>
+</div>
+
+        

@@ -5,7 +5,7 @@ var main_app = angular.module('app',['ngRoute']).run(function($rootScope){
 		$rootScope.map;
 		$rootScope.marker = new google.maps.Marker(null);
 	}catch(e){
-		window.alert("No internet connection");
+		sMessage("Warning","Internet Connection is Lost");
 	}
 	
 	
@@ -51,6 +51,9 @@ main_app.config(['$routeProvider',
       when('/remove_cluster', {
           templateUrl: 'anjscontroller/removecluster_tile',
       }).
+      when('/view_cluster', {
+          templateUrl: 'anjscontroller/viewcluster_tile',
+      }).
       when('/add_staff', {
           templateUrl: 'anjscontroller/addstaff_tile',
       }).
@@ -68,3 +71,15 @@ main_app.config(['$routeProvider',
       });
   }]);
 
+/**this is large message displaying function**/
+function lMessage(title,message){
+	$("#lTitle").text(title);
+	$("#lContent").text(message);
+	$('.larg-msg-model').modal('toggle');
+}
+/**this is small message displaying function**/
+function sMessage(title,message){
+	$("#sTitle").text(title);
+	$("#sContent").text(message);
+	$('.small-msg-model').modal('toggle');
+}
