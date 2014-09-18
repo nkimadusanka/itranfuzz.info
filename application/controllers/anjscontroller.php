@@ -4,6 +4,7 @@ class Anjscontroller extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('center');
 	}
 	/* loading home page tile*/
 	public function index(){
@@ -30,7 +31,10 @@ class Anjscontroller extends CI_Controller{
 	}
 	/*tiles for staff management*/
 	public function addstaff_tile(){
-		$this->load->view('anjs/add_staff');
+		$data = null;
+		$data['centers'] = $this->center->getAllCenters();
+		$data['addstaffForm'] = $this->load->view('/form/addstaffForm',$data,TRUE);
+		$this->load->view('anjs/add_staff',$data);
 	}
 	public function updatestaff_tile(){
 		$this->load->view('anjs/update_staff');
