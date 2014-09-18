@@ -1,8 +1,13 @@
 var main_app = angular.module('app',['ngRoute']).run(function($rootScope){
 	
 	/*anjs global variables of map*/
-	$rootScope.map;
-	$rootScope.marker = new google.maps.Marker(null);
+	try{
+		$rootScope.map;
+		$rootScope.marker = new google.maps.Marker(null);
+	}catch(e){
+		window.alert("No internet connection");
+	}
+	
 	
 	/*initializing google map function*/
 	$rootScope.initialize = function(){

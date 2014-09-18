@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
 <!--registration form to be submitted to the website-->
-<form id="regForm" method="post"
-	action="donor_controller/do_donregister" ng-controller="mapController">
+<form id="regFormCluster" method="post"
+	action="privateapi/addCenter" ng-controller="mapController">
 	<div class="form-group">
 		<div class="row">
 			<label class="col-md-2 control-label">Province</label>
 			<div class="col-md-6 selectContainer">
-				<select class="form-control" name="bType">
+				<select class="form-control" name="province">
 					<option value="">Select Province</option>
 					<option value="a+">Central Province</option>
 					<option value="a+">Eastern Province</option>
@@ -34,7 +34,7 @@
 		<div class="row">
 			<label class="col-md-2 control-label">Address2 </label>
 			<div class="col-md-10">
-				<input type="text" class="form-control" name="address1" />
+				<input type="text" class="form-control" name="address2" />
 			</div>
 		</div>
 	</div>
@@ -50,10 +50,10 @@
 		<div class="row">
 			<label class="col-md-2 control-label">Type</label>
 			<div class="col-md-6 selectContainer">
-				<select class="form-control" name="bType">
+				<select class="form-control" name="ctype">
 					<option value="">Select type</option>
-					<option value="">Collecting</option>
-					<option value="a+">Storing</option>
+					<option value="c">Collecting</option>
+					<option value="s">Storing</option>
 				</select>
 			</div>
 		</div>
@@ -62,7 +62,7 @@
 		<div class="row">
 			<label class="col-md-2 control-label">Select Location</label>
 			<div class="col-md-10">
-                <div id="map-canvas" style="height: 200px;width: 100%;"/>
+                <div id="map-canvas" style="height: 300px;width: 100%;"/>
             </div>
 		</div>
 	</div>
@@ -70,7 +70,6 @@
 	<button type="reset" class="btn btn-default">Reset</button>
 </form>
 <!--End of the registration form-->
-
 <style type="text/css">
 #regForm .form-control-feedback {
 	top: 25px;

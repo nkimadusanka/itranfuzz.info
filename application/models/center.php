@@ -23,7 +23,12 @@ class Center extends CI_model{
 			$this->type = $row->type;
 		}
 	}
-
+	
+	#add new center to database
+	public  function addCenter($center){
+		return($this->db->insert('center',$center));
+	}
+	
 	#get all centers
 	public function getAllCenters(){
 		$query = $this->db->get('center');
