@@ -1,13 +1,8 @@
-<?php
-
-if (! defined ( 'BASEPATH' ))
-	exit ( 'No direct script access allowed' );
+<?php if (! defined ( 'BASEPATH' )) exit ( 'No direct script access allowed' );
 class Privateapi extends CI_Controller {
 	var $status;
 	public function __construct() {
 		parent::__construct ();
-		
-		// center content type to controller
 		header ( 'Content-type: application/json' );
 		
 		// loading models to control
@@ -15,13 +10,13 @@ class Privateapi extends CI_Controller {
 		$this->load->model ( 'donor', 'employee' );
 		
 		// check user login type
-		if (! $this->check_isvalidated ()) {
+		if ($this->check_isvalidated ()) {
 			$this->status = array (
-					"STATUS" => "2" 
+					"STATUS" => "1" 
 			);
 		} else {
 			$this->status = array (
-					"STATUS" => "1" 
+					"STATUS" => "2" 
 			);
 		}
 	}
@@ -43,7 +38,7 @@ class Privateapi extends CI_Controller {
 	
 	/* Check login is have session or not */
 	public function check_isvalidated() {
-		if (! $this->session->userdata ( 'validated' )) {
+		if ($this->session->userdata ( 'validated' )) {
 			return (true);
 		} else {
 			return (false);
