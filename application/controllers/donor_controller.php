@@ -32,7 +32,7 @@ class Donor_controller extends CI_Controller{
 				$this->input->post('lng'),
 				$this->input->post('bType'),
 				'p',
-				'1000');
+				$this->input->post('cId'));
 		//check the login
 		if($state){
 			$status = array("STATUS"=>"true");
