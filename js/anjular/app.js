@@ -10,13 +10,22 @@ var main_app = angular.module('app',['ngRoute']).run(function($rootScope){
 	
 	
 	/*initializing google map function*/
-	$rootScope.initialize = function(){
+	$rootScope.initialize = function(mId){
+		
+		if(typeof(mId)==='undefined') mId = 0;
 		var mapOptions = {
 		        center: new google.maps.LatLng(6.971445,79.922209),
 		            zoom: 15
 		 };
 		
-		$rootScope.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		$rootScope.map = new google.maps.Map($("div[id^=map-canvas]")[mId],mapOptions);
+		
+		google.maps.event.addListenerOnce($rootScope.map, 'idle', function() {
+			   google.maps.event.trigger($rootScope.map, 'resize');
+			   $rootScope.map.setCenter($rootScope.marker.getPosition());
+		});
+	}
+	$rootScope.mapClick = function(){
 		google.maps.event.addListener($rootScope.map,'click',function(e){			
 			placeMarker(e.latLng, $rootScope.map);
 		 });

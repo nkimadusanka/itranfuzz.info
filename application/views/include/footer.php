@@ -58,6 +58,7 @@
 		<script type="text/javascript" src="<?php echo base_url() ?>js/jquery/jquery.min.js"></script>
 		<!--Jquery validator-->
 		<script type="text/javascript" src="<?php echo base_url() ?>js/jquery/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>js/validators.js"></script>
 		<!--  boostrap js plugin -->
 		<script type="text/javascript" src="<?php echo base_url() ?>js/bootstrap/bootstrap.min.js"></script>
 		<!-- add angular plugins -->
