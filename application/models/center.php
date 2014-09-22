@@ -38,6 +38,12 @@ class Center extends CI_model{
 			return NULL;
 		}
 	}
+	
+	#remove center by id
+	public function removeCenterById($cId){
+		$this->db->where('cId', $cId);
+		return($this->db->delete('center'));
+	}
 
 	#setter methods
 	public function setCId($cId){
