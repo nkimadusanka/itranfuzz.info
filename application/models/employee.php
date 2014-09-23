@@ -34,6 +34,16 @@ class Employee extends CI_model{
 		}
 	}
 	
+	/*get all employees*/
+	public function getAllEmployees(){
+		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+	
 	/* get donor by id*/
 	public function getEmployee($id){
 		$this->db->where('eId', $id);

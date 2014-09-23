@@ -9,6 +9,7 @@ class Employee_controller extends CI_Controller {
 		$this->load->model ( 'employee' );
 	}
 	
+	/*Add Emmployee function*/
 	public function addEmployee() {
 		$status = null;
 		header ( 'Content-type: application/json' );
@@ -36,6 +37,13 @@ class Employee_controller extends CI_Controller {
 		}else{
 			$status = array("STATUS"=> 2);
 		}
+		echo json_encode($status);
+	}
+	/*Get all employee function*/
+	public function getallemployees(){
+		$status = null;
+		header ( 'Content-type: application/json' );
+		$status = $this->employee->getAllEmployees();
 		echo json_encode($status);
 	}
 }
