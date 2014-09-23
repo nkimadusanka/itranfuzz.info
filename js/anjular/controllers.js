@@ -1,6 +1,7 @@
 /**
  * this contain all details about angular js controllers
  */
+/*Cluster control methods*/
 main_app.controller('clusterController', [ '$scope', '$rootScope',
 		function($scope, $rootScope) {
 			try {
@@ -11,12 +12,6 @@ main_app.controller('clusterController', [ '$scope', '$rootScope',
 				window.alert("This is catch exception");
 			}
 		} ]);
-
-main_app.controller('staffController', [ '$scope', '$rootScope',
-		function($scope, $rootScope) {
-			staffFormValid();
-		} ]);
-
 main_app.controller('cluter_table', [
 		'$scope',
 		'$http',
@@ -106,3 +101,33 @@ main_app.controller('cluter_table', [
 				}
 			}
 		} ]);
+
+/*End of Cluster control methods*/
+/*Start of Staff Control methods*/
+main_app.controller('staffController', [ '$scope', '$rootScope',
+                                 		function($scope, $rootScope) {
+                                 			staffFormValid();
+                                 		} ]);
+main_app.controller('staff_table',['$scope', '$rootScope','$http',
+                                   function($scope,$rootScope,$http){
+	$http.get("employee_controller/getallemployees").success(
+			function(response) {
+				$scope.employees = response;
+			});
+	/*View Staff*/
+	$scope.viewstaff = (function(eId){
+		for (var i = 0; i < $scope.employees.length; i++)
+			if ($scope.employees[i]["eId"] == eId)
+				break;
+		$scope.fname = $scope.employees[i]["fname"];
+		$scope.lname = $scope.employees[i]["lname"];
+		$scope.address1 = $scope.employees[i]["address1"];
+		$scope.address2 = $scope.employees[i]["address2"];
+		$scope.gender = $scope.employees[i]["gender"];
+		$scope.phone = $scope.employees[i]["phone"];
+		$scope.type = $scope.employees[i]["type"];
+		$('.sfaffview-msg-model').modal('toggle');
+	});
+}]);
+/*End of Staff Control methods*/
+/*Start of donor manipulation methods*/

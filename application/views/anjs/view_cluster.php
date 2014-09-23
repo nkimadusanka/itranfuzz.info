@@ -217,6 +217,35 @@
 </div>
 </div>
 
+<!-- Large Message for update staff modal -->
+<div class="modal fade clustupdate-msg-model" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 id="lTitle" class="modal-title">Update Staff Details</h4>
+				</div>
+				<div id="lContent" class="modal-body">
+					<!--registration form to be submitted to the website-->
+					
+				</div>
+				<div class="modal-footer">
+						<button type="submit" class="btn btn-default" form="regFormCluster">Update</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+</div>
+<!--  end of update cluster model -->
+</div>
+</div>
+
 
 
 
