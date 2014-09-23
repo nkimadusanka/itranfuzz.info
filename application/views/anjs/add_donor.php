@@ -2,4 +2,4 @@
   <h1>Add New Donor to System <small>Enter details about donor</small></h1>
 </div>
 <br/>
-<?php echo $addstaffForm?>
+<?php echo $adddonor_form;?>
