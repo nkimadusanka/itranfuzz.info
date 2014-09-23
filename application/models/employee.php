@@ -34,6 +34,17 @@ class Employee extends CI_model{
 		}
 	}
 	
+	/*get employee by gender*/
+	public function getEmployeeByGender($gender){
+		$this->db->where('gender',$gender);
+		$rows = $this->db->get('employee');
+		if($rows->num_rows > 0){
+			return $rows->result();
+		}else{
+			return NULL;
+		}
+	}
+
 	/*get all employees*/
 	public function getAllEmployees(){
 		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
