@@ -44,7 +44,18 @@ class Center extends CI_model{
 		$this->db->where('cId', $cId);
 		return($this->db->delete('center'));
 	}
-
+	
+	#get center by Id
+	public function getCenterById($c_Id){
+		$this->db->where('cId',$c_Id);
+		$results = $this->db->get('center');
+		if($results->num_rows > 0){
+			return(new Center($results->first_row()));
+		}else{
+			return NULL;
+		}
+	}
+	
 	#setter methods
 	public function setCId($cId){
 		$this->cId = $cId;

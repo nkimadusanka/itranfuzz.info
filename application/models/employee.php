@@ -13,10 +13,14 @@ class Employee extends CI_model{
 	var $address2;
 	var $type;
 	var $photo;
-	var $center_cId;
+	var $center;
 
 	#constructor of employees
 	public function __construct($row = NULL){
+		//loading instance of models
+		$CI =& get_instance();
+		$CI->load->model('Center');
+		
 		if(!is_null($row)){
 			$this->eId = $row->eId;
 			$this->fname = $row->fname;
@@ -30,7 +34,7 @@ class Employee extends CI_model{
 			$this->address2 = $row->address2;
 			$this->type = $row->type;
 			$this->photo = $row->photo;
-			$this->center_cId = $row->center_cId;
+			$this->center = $CI->Center->getCenterById($row->center_cId);
 		}
 	}
 	
@@ -50,6 +54,16 @@ class Employee extends CI_model{
 		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
 		if($query->num_rows > 0){
 			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+	
+	/*get all employees as a Employee list*/
+	public function getAllEmployeesList(){
+		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
+		if($query->num_rows > 0){
+			return $this->getList($query->result());
 		}else{
 			return NULL;
 		}
@@ -83,7 +97,16 @@ class Employee extends CI_model{
 		}
 	}
 	
-	#add getter methods
+	#convert to ArraList
+	private function getList($list){
+		$employees = array();
+		foreach ($list as $l){
+			array_push($employees, new Employee($l));
+		}
+		return $employees;
+	}
+	
+	#********************************************add getter methods********************************************************
 	public function getEId(){
 		return($this->eId);
 	}
@@ -124,7 +147,7 @@ class Employee extends CI_model{
 		return($this->nic);
 	}
 	#end of getter methods
-	#start of setter methods
+	#********************************************start of setter methods****************************************************
 	public function setEId($eId){
 		$this->eId = $eId;
 	}
