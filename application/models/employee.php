@@ -13,10 +13,14 @@ class Employee extends CI_model{
 	var $address2;
 	var $type;
 	var $photo;
-	var $center_cId;
+	var $center;
 
 	#constructor of employees
 	public function __construct($row = NULL){
+		//loading instance of models
+		$CI =& get_instance();
+		$CI->load->model('Center');
+		
 		if(!is_null($row)){
 			$this->eId = $row->eId;
 			$this->fname = $row->fname;
@@ -30,7 +34,38 @@ class Employee extends CI_model{
 			$this->address2 = $row->address2;
 			$this->type = $row->type;
 			$this->photo = $row->photo;
-			$this->center_cId = $row->center_cId;
+			$this->center = $CI->Center->getCenterById($row->center_cId);
+		}
+	}
+	
+	/*get employee by gender*/
+	public function getEmployeeByGender($gender){
+		$this->db->where('gender',$gender);
+		$rows = $this->db->get('employee');
+		if($rows->num_rows > 0){
+			return $rows->result();
+		}else{
+			return NULL;
+		}
+	}
+
+	/*get all employees*/
+	public function getAllEmployees(){
+		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+	
+	/*get all employees as a Employee list*/
+	public function getAllEmployeesList(){
+		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
+		if($query->num_rows > 0){
+			return $this->getList($query->result());
+		}else{
+			return NULL;
 		}
 	}
 	
@@ -107,9 +142,23 @@ $this->db->update('employee', $data);
 		}
 	}
 	
+<<<<<<< HEAD
 	#add getter methods
 	public function getEId($EId){
 		
+=======
+	#convert to ArraList
+	private function getList($list){
+		$employees = array();
+		foreach ($list as $l){
+			array_push($employees, new Employee($l));
+		}
+		return $employees;
+	}
+	
+	#********************************************add getter methods********************************************************
+	public function getEId(){
+>>>>>>> d279d5f20f2683ac1fbbe333cb3ef96693a6e24d
 		return($this->eId);
 	}
 	public function getFname(){
@@ -149,7 +198,7 @@ $this->db->update('employee', $data);
 		return($this->nic);
 	}
 	#end of getter methods
-	#start of setter methods
+	#********************************************start of setter methods****************************************************
 	public function setEId($eId){
 		$this->eId = $eId;
 	}
