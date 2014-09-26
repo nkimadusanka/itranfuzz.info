@@ -11,8 +11,14 @@ class Anjscontroller extends CI_Controller{
 		$this->load->view('anjs/home_tile');
 	}
 	/* tiles for donor manage management*/
-	public function donor_tile(){
-		$this->load->view('anjs/donor_tile');
+	public function adddonor_tile(){
+		$data = null;
+		$data['centers'] = $this->center->getAllCenters();
+		$data['adddonor_form'] = $this->load->view('/form/register_form',$data,TRUE);
+		$this->load->view('anjs/add_donor',$data);
+	}
+	public function viewdonor_tile(){
+		$this->load->view('anjs/view_donor');
 	}
 	/* tiles for cluster manage management*/
 	public function addcluster_tile(){

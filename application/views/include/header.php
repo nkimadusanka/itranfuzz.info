@@ -154,12 +154,6 @@ else
                                 <a href="#/add_cluster">Add Cluster</a>
                             </li>
                             <li>
-                                <a href="#/update_cluster">Update Cluster</a>
-                            </li>
-                            <li>
-                                <a href="#/remove_cluster">Remove Cluster</a>
-                            </li>
-                            <li>
                                 <a href="#/view_cluster">View Cluster</a>
                             </li>
                         </ul>
@@ -171,12 +165,6 @@ else
                         <ul id="mgclusst" class="collapse">
                             <li>
                                 <a href="#add_staff">Add Staff</a>
-                            </li>
-                            <li>
-                                <a href="#update_staff">Update Staff</a>
-                            </li>
-                            <li>
-                                <a href="#remove_staff">Remove Staff</a>
                             </li>
                             <li>
                                 <a href="#view_staff">View Staff</a>
@@ -199,10 +187,10 @@ else
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgdonor"><i class="fa fa-fw fa-wheelchair"></i> Manage Donor<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgdonor" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#add_donor">Add Donor</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#view_donor">View Donor</a>
                             </li>
                         </ul>
                     </li>

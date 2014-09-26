@@ -10,13 +10,22 @@ var main_app = angular.module('app',['ngRoute']).run(function($rootScope){
 	
 	
 	/*initializing google map function*/
-	$rootScope.initialize = function(){
+	$rootScope.initialize = function(mId){
+		
+		if(typeof(mId)==='undefined') mId = 0;
 		var mapOptions = {
 		        center: new google.maps.LatLng(6.971445,79.922209),
 		            zoom: 15
 		 };
 		
-		$rootScope.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		$rootScope.map = new google.maps.Map($("div[id^=map-canvas]")[mId],mapOptions);
+		
+		google.maps.event.addListenerOnce($rootScope.map, 'idle', function() {
+			   google.maps.event.trigger($rootScope.map, 'resize');
+			   $rootScope.map.setCenter($rootScope.marker.getPosition());
+		});
+	}
+	$rootScope.mapClick = function(){
 		google.maps.event.addListener($rootScope.map,'click',function(e){			
 			placeMarker(e.latLng, $rootScope.map);
 		 });
@@ -39,17 +48,8 @@ main_app.config(['$routeProvider',
       when('/', {
         templateUrl: 'anjscontroller',
       }).
-      when('/donor_tile', {
-        templateUrl: 'anjscontroller/donor_tile',
-      }).
       when('/add_cluster', {
         templateUrl: 'anjscontroller/addcluster_tile',
-      }).
-      when('/update_cluster', {
-          templateUrl: 'anjscontroller/updatecluster_tile',
-      }).
-      when('/remove_cluster', {
-          templateUrl: 'anjscontroller/removecluster_tile',
       }).
       when('/view_cluster', {
           templateUrl: 'anjscontroller/viewcluster_tile',
@@ -57,14 +57,17 @@ main_app.config(['$routeProvider',
       when('/add_staff', {
           templateUrl: 'anjscontroller/addstaff_tile',
       }).
-      when('/update_staff', {
-          templateUrl: 'anjscontroller/updatestaff_tile',
-      }).
-      when('/remove_staff', {
-          templateUrl: 'anjscontroller/removestaff_tile',
+      when('/view_staff', {
+          templateUrl: 'anjscontroller/viewstaff_tile',
       }).
       when('/view_staff', {
           templateUrl: 'anjscontroller/viewstaff_tile',
+      }).
+      when('/add_donor', {
+          templateUrl: 'anjscontroller/adddonor_tile',
+      }).
+      when('/view_donor', {
+          templateUrl: 'anjscontroller/viewdonor_tile',
       }).
       otherwise({
         redirectTo: 'anjscontroller'

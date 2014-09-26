@@ -9,15 +9,15 @@
 			<div class="col-md-6 selectContainer">
 				<select class="form-control" name="province">
 					<option value="">Select Province</option>
-					<option value="a+">Central Province</option>
-					<option value="a+">Eastern Province</option>
-					<option value="a+">North Central Province</option>
-					<option value="a+">Northern Province</option>
-					<option value="a+">North Western Province</option>
-					<option value="a+">Sabaragamuwa Province</option>
-					<option value="a+">Southern Province</option>
-					<option value="a+">Uva Province</option>
-					<option value="a+">Western Province</option>
+					<option value="cp">Central Province</option>
+					<option value="ep">Eastern Province</option>
+					<option value="ncp">North Central Province</option>
+					<option value="np">Northern Province</option>
+					<option value="nwp">North Western Province</option>
+					<option value="sabp">Sabaragamuwa Province</option>
+					<option value="sp">Southern Province</option>
+					<option value="up">Uva Province</option>
+					<option value="wp">Western Province</option>
 				</select>
 			</div>
 		</div>
