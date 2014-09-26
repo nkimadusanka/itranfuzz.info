@@ -23,12 +23,15 @@ class Center extends CI_model{
 			$this->type = $row->type;
 		}
 	}
-	
-	#add new center to database
-	public  function addCenter($center){
-		return($this->db->insert('center',$center));
-	}
-	
+
+	public function addcenter($cId,$province,$address1,$address2, $phone,$lLongitude,$lLatitude){}
+	public function deletecenter(){}
+
+	public function updatecenter(){}
+
+
+
+
 	#get all centers
 	public function getAllCenters(){
 		$query = $this->db->get('center');
@@ -37,8 +40,8 @@ class Center extends CI_model{
 		}else{
 			return NULL;
 		}
-	}
-
+	} 
+	
 	#setter methods
 	public function setCId($cId){
 		$this->cId = $cId;

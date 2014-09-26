@@ -46,8 +46,53 @@ class Employee extends CI_model{
 	}
 	/*add new employee to the system*/
 	public function addEmployee($employee){
-		return($this->db->insert('employee',$employee));
+		$data = array(
+   'id' => '$id' ,
+   'email' => '$email',
+   'pwd'=> '$pwd',
+   'fname'=>'$fname',
+   'lname'=> '$lname',
+   'nic'=>'$nic',
+   'gender'=>'$gender',
+   'phone'=>'$phone',
+   'address1'=>'$address1',
+   'address2'=>'$address2',
+   'type'='$type',
+
+   'photo'=>'$photo',
+   'center_cId'=> '$center_cId'
+);
+		return($this->db->insert('employee',$data));
 	}
+
+	public function deleteEmployee($employee){
+		$this->db->where('eId', $eId);
+$this->db->delete('employee'); 
+	}
+
+
+public function updateEmployee($employee){
+	
+		$data = array(
+   'id' => '$id' ,
+   'email' => '$email',
+   'pwd'=> '$pwd',
+   'fname'=>'$fname',
+   'lname'=> '$lname',
+   'nic'=>'$nic',
+   'gender'=>'$gender',
+   'phone'=>'$phone',
+   'address1'=>'$address1',
+   'address2'=>'$address2',
+   'type'='$type',
+   'photo'=>'$photo',
+   'center_cId'=> '$center_cId'
+
+$this->db->update('employee', $data); 
+
+	}
+
+
 	
 	/*get employee by email*/
 	public function getEmployeeByEmail($email){
@@ -63,7 +108,8 @@ class Employee extends CI_model{
 	}
 	
 	#add getter methods
-	public function getEId(){
+	public function getEId($EId){
+		
 		return($this->eId);
 	}
 	public function getFname(){
