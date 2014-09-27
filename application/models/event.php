@@ -49,7 +49,7 @@ public function set_evId($evId){
 }
 
 
-public function set_description($Description)
+public function set_description($description)
 {$this -> Description=$description;
 }
 
