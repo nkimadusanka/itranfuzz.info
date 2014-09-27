@@ -45,6 +45,18 @@ class Employee extends CI_model{
 		}
 	}
 
+	/*get employee by center_id*/
+	public function getEmployeeByCenter($center_cId){
+		$this->db->where('center_cId',$center_cId);
+		$rows=$this->db->get('employee');
+		if($rows->num_rows>0){
+			return $rows->result();
+		}
+		else{
+			return NULL;
+		}
+	}
+
 	/*get all employees*/
 	public function getAllEmployees(){
 		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
@@ -54,17 +66,82 @@ class Employee extends CI_model{
 			return NULL;
 		}
 	}
+
+	/*get employee by first name*/
+	public function getEmployeeByfname($fname){
+		$this->db->where('fname',$fname);
+		$rows=$this->db->get('employee');
+		if($rows->num_rows>0){
+			return $rows->result();
+		}
+		else{
+			return NULL;
+		}
+	}
+
+	/*get employee by last name*/
+	public function getEmployeeBylname($lname){
+		$this->db->where('lname',$lname);
+		$rows=$this->db->get('employee');
+		if($rows->num_rows>0){
+			return $rows->result();
+		}
+		else{
+			return NULL;
+		}
+	}
+
+	/*get employee by NIC number*/
+	public function getEmployeeBynic($nic){
+		$this->db->where('nic',$nic);
+		$rows=$this->db->get('employee');
+		if($rows->num_rows>0){
+			return $rows->result();
+		}
+		else{
+			return NULL;
+		}
+	}
+
+	/*get employee by address1*/
+
+	public function getEmployeeByaddress1($address1){
+		$this->db->where('address1',$address1);
+		$rows=$this->db->get('employee');
+		if($rows->num_rows>0){
+			return $rows->result();
+		}
+		else{
+			return NULL;
+		}
+	}
+
+	/*get employee by address2*/
+
+	public function getEmployeeByaddress2($address2){
+		$this->db->where('address2',$address2);
+		$rows=$this->db->get('employee');
+		if($rows->num_rows>0){
+			return $rows->result();
+		}
+		else{
+			return NULL;
+		}
+	}
+	
 	
 	/* get donor by id*/
+	
 	public function getEmployee($id){
 		$this->db->where('eId', $id);
 		$rows = $this->db->get('employee');
 		if($rows->num_rows() > 0){
 			return new Employee($rows->first_row());
-		}else{
+			}else{
 			return null;
 		}
-	}
+	}	
+		
 	/*add new employee to the system*/
 	public function addEmployee($employee){
 		return($this->db->insert('employee',$employee));
