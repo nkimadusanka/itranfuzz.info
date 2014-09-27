@@ -33,7 +33,7 @@ $data = array(
 	'address1'=>$address1,
 	'address2'=> $address2,
 	'phone'=> $phone,
-	'lLongitude'=$lLongitude;
+	'lLongitude'=$lLongitude,
 	'lLatitude'=> $lLatitude,
 	'type'=>$type
 
