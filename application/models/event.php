@@ -32,11 +32,11 @@ $this->db->delete('event');
 public function viewEvent(){}
 
 public function updateEvent($evId, $description, $evType,$center_cId,$employee_eId){
-	$data = array('evId' => $evId,
-'description'=> $description,
-'evType'=> $evType,
-'center_cId'=> $center_cId,
-'employee_eId'=> $employee_eId);
+	$data = array('evId' -> $evId,
+'description'-> $description,
+'evType'-> $evType,
+'center_cId'-> $center_cId,
+'employee_eId'-> $employee_eId);
 
 
 return($this->db->update('event',$data));
