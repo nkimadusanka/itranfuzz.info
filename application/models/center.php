@@ -54,7 +54,12 @@ return($this-> 'db'->insert('center',$data));
 		$this->db->delete('center',array('cId'=> $cId));
 	}
 
-	public function updatecenter(){}
+	public function updatecenter($cId){
+
+
+
+		$this->db->update('center', $data, array('cid' => $cid));
+	}
 
 
 
