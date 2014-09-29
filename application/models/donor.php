@@ -20,10 +20,15 @@ class Donor extends CI_model {
 	var $lLatitude;
 	var $bType;
 	var $dState;
-	var $center_cId;
+	var $center;
 	
 	// constructor of donor model
 	public function __construct($row = NULL) {
+		//loading instance of models
+		$CI =& get_instance();
+		$CI->load->model('Center');
+		
+		$this->load->model('center');
 		if (! is_null ( $row )) {
 			$this->dId = $row->dId;
 			$this->email = $row->email;
@@ -42,11 +47,11 @@ class Donor extends CI_model {
 			$this->lLongitude = $row->lLongitude;
 			$this->bType = $row->bType;
 			$this->dState = $row->dState;
-			$this->center_cId = $row->center_cId;
+			$this->center = $CI->Center->getCenterById($row->center_cId);
 		}
 	}
 	
-	// add donor to database
+	// add donor to database by array input
 	public function addDonor(
 			$email,
 			$nic,
@@ -85,32 +90,28 @@ class Donor extends CI_model {
 				'dState' => str_split($dState)[0],
 				'center_cId' => (int)$center_cId
 		);
-		/*$this->setNic ( $nic );
-		$this->setPassword ( $password );
-		$this->setFname ( $fname );
-		$this->setLname ( $lname );
-		// $this->setPhone(null);
-		$this->setPhoto ( $photo );
-		$this->setAddress1 ( $address1 );
-		$this->setAddress2 ( $address2 );
-		$this->setGender ( $gender );
-		$this->setDob ( $dob );
-		$this->setIllnessTest ( $illnessTest );
-		$this->setLLatitude ( $lLatitude );
-		$this->setLLongitude ( $lLongitude );
-		$this->setBType ( $bType );
-		$this->setDState ( $dState );
-		$this->setCenter ( $center_cId );*/
 		
 		$this->db->insert ( 'donor', $data );
 		return $this->db->affected_rows () ? true : false;
 	}
 	
+	//get Donor by email method
 	public function getDonorByEmail($email){
 		
 		$this->db->where('email', $email);
 		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+	//get Donor by nic number method
+	public function getDonorNic($nic){
 		
+		$this->db->where('nic', $nic);
+		$rows = $this->db->get('donor');
 		if($rows->num_rows() > 0){
 			return new Donor($rows->first_row());
 		}else{
@@ -118,7 +119,92 @@ class Donor extends CI_model {
 		}
 	}
 	
-	// getter function here
+	//get Donor by first name method
+	public function getDonorByFname($fname){
+		
+		$this->db->where('fname', $fname);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+	//get Donor by Last name method
+	public function getDonorByLname($lname){
+		
+		$this->db->where('lname', $lname);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+
+
+	//get Donor by address1 method
+	public function getDonorByAddress1($address1){
+		
+		$this->db->where('address1', $address1);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+	//get Donor by address2 method
+	public function getDonorByAddress2($address2){
+		
+		$this->db->where('address2', $address2);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+	//get Donor by gender method
+	public function getDonorByGender($gender){
+		
+		$this->db->where('gender', $gender);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+	//get Donor by blood type method
+	public function getDonorByBtype($btype){
+		
+		$this->db->where('btype', $btype);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+
+	//get Donor by center method
+	public function getDonorByCenter($center){
+		
+		$this->db->where('center', $center);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return new Donor($rows->first_row());
+		}else{
+			return null;
+		}
+	}
+	// **************************************** getter function here******************************************************
 	public function getDId() {
 		return ($this->dId);
 	}
@@ -165,7 +251,7 @@ class Donor extends CI_model {
 		return ($this->dState);
 	}
 	public function getCenter() {
-		return ($this->center_cId);
+		return ($this->center);
 	}
 	public function getNic() {
 		return ($this->nic);
@@ -174,7 +260,7 @@ class Donor extends CI_model {
 		return ($this->photo);
 	}
 	// end of getter functions
-	// setter functions
+	// *************************************************** setter functions*****************************************************
 	public function setDId($dId) {
 		$this->dId = $dId;
 	}
@@ -220,8 +306,8 @@ class Donor extends CI_model {
 	public function setDState($dState) {
 		$this->dState = $dState;
 	}
-	public function setCenter($center_cId) {
-		$this->center_cId = $center_cId;
+	public function setCenter($center) {
+		$this->center = $center;
 	}
 	public function setNic($nic) {
 		$this->nic = $nic;

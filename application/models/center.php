@@ -23,12 +23,47 @@ class Center extends CI_model{
 			$this->type = $row->type;
 		}
 	}
-	
-	#add new center to database
-	public  function addCenter($center){
-		return($this->db->insert('center',$center));
+
+	public function addcenter($cId,$province,$address1,$address2, $phone,$lLongitude,$lLatitude){
+
+
+$data = array(
+	'cId' =>$cId ,
+	'province'=> $province ,
+	'address1'=>$address1,
+	'address2'=> $address2,
+	'phone'=> $phone,
+	'lLongitude'=$lLongitude,
+	'lLatitude'=> $lLatitude,
+	'type'=>$type
+
+	);
+
+return($this-> 'db'->insert('center',$data));
+
+
+
+
+
+
+
 	}
-	
+	public function deletecenter($cId){
+
+		//$this-> db->where('cId',$cId);
+		$this->db->delete('center',array('cId'=> $cId));
+	}
+
+	public function updatecenter($cId){
+
+
+
+		$this->db->update('center', $data, array('cid' => $cid));
+	}
+
+
+
+
 	#get all centers
 	public function getAllCenters(){
 		$query = $this->db->get('center');
@@ -37,6 +72,7 @@ class Center extends CI_model{
 		}else{
 			return NULL;
 		}
+	} 
 	}
 	
 	#remove center by id
@@ -44,7 +80,19 @@ class Center extends CI_model{
 		$this->db->where('cId', $cId);
 		return($this->db->delete('center'));
 	}
+	
+	#get center by Id
+	public function getCenterById($c_Id){
+		$this->db->where('cId',$c_Id);
+		$results = $this->db->get('center');
+		if($results->num_rows > 0){
+			return(new Center($results->first_row()));
+		}else{
+			return NULL;
+		}
+	}
 
+	
 	#setter methods
 	public function setCId($cId){
 		$this->cId = $cId;
