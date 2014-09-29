@@ -72,7 +72,7 @@ class Employee extends CI_model{
 	}
 
 	/*get employee by first name*/
-	public function getEmployeeByfname($fname){
+	public function getEmployeeByFname($fname){
 		$this->db->where('fname',$fname);
 		$rows=$this->db->get('employee');
 		if($rows->num_rows>0){
@@ -84,7 +84,7 @@ class Employee extends CI_model{
 	}
 
 	/*get employee by last name*/
-	public function getEmployeeBylname($lname){
+	public function getEmployeeByLname($lname){
 		$this->db->where('lname',$lname);
 		$rows=$this->db->get('employee');
 		if($rows->num_rows>0){
@@ -96,7 +96,7 @@ class Employee extends CI_model{
 	}
 
 	/*get employee by NIC number*/
-	public function getEmployeeBynic($nic){
+	public function getEmployeeByNic($nic){
 		$this->db->where('nic',$nic);
 		$rows=$this->db->get('employee');
 		if($rows->num_rows>0){
@@ -109,7 +109,7 @@ class Employee extends CI_model{
 
 	/*get employee by address1*/
 
-	public function getEmployeeByaddress1($address1){
+	public function getEmployeeByAddress1($address1){
 		$this->db->where('address1',$address1);
 		$rows=$this->db->get('employee');
 		if($rows->num_rows>0){
@@ -122,7 +122,7 @@ class Employee extends CI_model{
 
 	/*get employee by address2*/
 
-	public function getEmployeeByaddress2($address2){
+	public function getEmployeeByAddress2($address2){
 		$this->db->where('address2',$address2);
 		$rows=$this->db->get('employee');
 		if($rows->num_rows>0){
@@ -169,8 +169,7 @@ class Employee extends CI_model{
    'phone'=>'$phone',
    'address1'=>'$address1',
    'address2'=>'$address2',
-   'type'='$type',
-
+   'type'=>'$type',
    'photo'=>'$photo',
    'center_cId'=> '$center_cId'
 );
@@ -196,9 +195,10 @@ public function updateEmployee($employee){
    'phone'=>'$phone',
    'address1'=>'$address1',
    'address2'=>'$address2',
-   'type'='$type',
+   'type'=>'$type',
    'photo'=>'$photo',
    'center_cId'=> '$center_cId'
+   );
 
 $this->db->update('employee', $data); 
 
@@ -219,7 +219,7 @@ $this->db->update('employee', $data);
 		}
 	}
 	
-<<<<<<< HEAD
+<<<<<< <<<HEAD
 	#add getter methods
 	public function getEId($EId){
 		
