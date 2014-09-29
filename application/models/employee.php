@@ -219,23 +219,9 @@ $this->db->update('employee', $data);
 		}
 	}
 	
-<<<<<< <<<HEAD
 	#add getter methods
-	public function getEId($EId){
-		
-=======
-	#convert to ArraList
-	private function getList($list){
-		$employees = array();
-		foreach ($list as $l){
-			array_push($employees, new Employee($l));
-		}
-		return $employees;
-	}
 	
-	#********************************************add getter methods********************************************************
-	public function getEId(){
->>>>>>> d279d5f20f2683ac1fbbe333cb3ef96693a6e24d
+	public function getEId($EId){
 		return($this->eId);
 	}
 	public function getFname(){
