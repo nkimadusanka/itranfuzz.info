@@ -33,13 +33,13 @@ $data = array(
 	'address1'=>$address1,
 	'address2'=> $address2,
 	'phone'=> $phone,
-	'lLongitude'=$lLongitude,
+	'lLongitude'=>$lLongitude,
 	'lLatitude'=> $lLatitude,
 	'type'=>$type
 
 	);
 
-return($this-> 'db'->insert('center',$data));
+return($this->db->insert('center',$data));
 
 
 
@@ -73,12 +73,12 @@ return($this-> 'db'->insert('center',$data));
 			return NULL;
 		}
 	} 
-	}
+	
 	
 	#remove center by id
-	public function removeCenterById($cId){
+	public function removeCenterById($center){
 		$this->db->where('cId', $cId);
-		return($this->db->delete('center'));
+	return($this->db->delete('center'));
 	}
 	
 	#get center by Id
