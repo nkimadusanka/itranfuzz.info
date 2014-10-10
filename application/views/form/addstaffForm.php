@@ -6,9 +6,13 @@
 	ng-controller="staffController">
 	<div class="form-group">
 		<div class="row">
-			<div class="col-md-6">
-				<label class="control-label">Profile Picture</label> <input
-					type="file" name="photo">
+			<div class="col-md-offset-5">
+				<label class="control-label">Profile Picture</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4">
+				<img style="height:200px;margin-left:30px;" src = "<?php echo base_url()?>icons/defualt/photo_select.png"/>
 			</div>
 		</div>
 	</div>
@@ -100,8 +104,8 @@
 				</div>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-default">Register</button>
-		<button type="reset" class="btn btn-default">Reset</button>
-
 </form>
 <!--End of the registration form-->
+<hr/>
+<button type="submit" class="btn btn-default" form="staffRegForm">Register</button>
+<button type="reset" class="btn btn-default" form="staffRegForm">Reset</button>

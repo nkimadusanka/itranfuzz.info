@@ -43,7 +43,7 @@ class Employee_controller extends CI_Controller {
 	public function getallemployees(){
 		$status = null;
 		header ( 'Content-type: application/json' );
-		$status = $this->employee->getAllEmployees();
+		$status = $this->employee->getAllEmployeesList();
 		echo json_encode($status);
 	}
 }
