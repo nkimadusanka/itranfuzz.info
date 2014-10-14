@@ -25,9 +25,9 @@
 			<a class="list-group-item" ng-repeat="employee in employees">
 				<div class = "row"> 
 					<div class = "col-md-9">
-						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/defualt_staff.png">
+						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/{{employee.type = 'a' ? 'defualt_admin.png' : 'defualt_staff.png'}}">
 						<h4 class="list-group-item-heading"> Name:{{employee.fname}} {{employee.lname}} Phone:{{employee.phone}}</h4>
-						<p class="list-group-item-text">Gender: {{employee.gender == "m" ? "Male" : "Female"}} Type: {{employee.type == "a" ? "Administrator" : "Staff" }}</p>
+						<p class="list-group-item-text">Gender: {{employee.gender == "m" ? "Male" : "Female"}} Type: {{employee.type == 'a' ? "Administrator" : "Staff" }}</p>
 					</div>
 					<div class = "col-md-3">
 						<div class = "row">

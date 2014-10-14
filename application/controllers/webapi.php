@@ -14,6 +14,7 @@ class Webapi extends CI_Controller {
 		//set content type to json
 		header('Access-Control-Allow-Origin: *');
 		header('Content-type: application/json');
+		header('Access-Control-Allow-Origin: *');
 		//loading login model
 		$this->load->model('login_model');
 		//responding json array
@@ -25,6 +26,7 @@ class Webapi extends CI_Controller {
 		}
 		echo json_encode($status);
 	}
+	//json email checking
 	public function jemailcheck(){
 		
 		header('Content-type: application/json');
