@@ -220,8 +220,8 @@ $this->db->update('employee', $data);
 	}
 	
 	#add getter methods
-
-	public function getEId(){
+	
+	public function getEId($EId){
 		return($this->eId);
 	}
 	public function getFname(){

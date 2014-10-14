@@ -39,5 +39,24 @@ class Donor_controller extends CI_Controller{
 		}
 		echo json_encode($status);
 	}
+	
+	public function updatelocation(){
+		//set content type to json
+		header('Content-type: application/json');
+		
+		$email = $this->input->post("email");
+		$lat = $this->input->post('lat');
+		$lng = $this->input->post('lng');
+		
+		
+		$post = print_r($_POST,true);
+		
+		$status = array("STATUS"=>"false");
+		if($this->donor->updateLocationByEmail($email,$lat,$lng)){
+			$status = array("STATUS"=>"true");
+		}
+		array_push($status, array("email"=>$email,"lat"=>$lat,"lng"=>$lng,"content"=>$post));
+		echo json_encode($status);
+	}
 
 }

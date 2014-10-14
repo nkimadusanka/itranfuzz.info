@@ -204,6 +204,13 @@ class Donor extends CI_model {
 			return null;
 		}
 	}
+	
+	//update donor location
+	public function updateLocationByEmail($email,$lat,$lng){
+		$this->db->where('email', $email);
+		return($this->db->update('donor', array("lLatitude"=>$lat,"lLongitude"=>$lng)));
+	}
+	
 	// **************************************** getter function here******************************************************
 	public function getDId() {
 		return ($this->dId);

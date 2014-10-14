@@ -12,6 +12,7 @@ class Webapi extends CI_Controller {
 	public function jlogin(){
 
 		//set content type to json
+		header('Access-Control-Allow-Origin: *');
 		header('Content-type: application/json');
 		//loading login model
 		$this->load->model('login_model');
