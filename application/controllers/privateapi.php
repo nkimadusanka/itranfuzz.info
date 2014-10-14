@@ -24,7 +24,7 @@ class Privateapi extends CI_Controller {
 		// set content type to json
 		header ( 'Content-type: application/json' );
 		// loading login model
-		$this->center->addCenter ( array (
+		$this->center->addcenter( array (
 				"province" => $this->input->post ( "province" ),
 				"address1" => $this->input->post ( "address1" ),
 				"address2" => $this->input->post ( "address2" ),

@@ -24,40 +24,15 @@ class Center extends CI_model{
 		}
 	}
 
-	public function addcenter($cId,$province,$address1,$address2, $phone,$lLongitude,$lLatitude){
-
-
-$data = array(
-	'cId' =>$cId ,
-	'province'=> $province ,
-	'address1'=>$address1,
-	'address2'=> $address2,
-	'phone'=> $phone,
-	'lLongitude'=>$lLongitude,
-	'lLatitude'=> $lLatitude,
-	'type'=>$type
-
-	);
-
-return($this->db->insert('center',$data));
-
-
-
-
-
-
-
+	public function addcenter($data){
+		return($this->db->insert('center',$data));
 	}
 	public function deletecenter($cId){
-
 		//$this-> db->where('cId',$cId);
 		$this->db->delete('center',array('cId'=> $cId));
 	}
 
 	public function updatecenter($cId){
-
-
-
 		$this->db->update('center', $data, array('cid' => $cid));
 	}
 

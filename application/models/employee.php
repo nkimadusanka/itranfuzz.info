@@ -158,22 +158,7 @@ class Employee extends CI_model{
 		
 	/*add new employee to the system*/
 	public function addEmployee($employee){
-		$data = array(
-   'id' => '$id' ,
-   'email' => '$email',
-   'pwd'=> '$pwd',
-   'fname'=>'$fname',
-   'lname'=> '$lname',
-   'nic'=>'$nic',
-   'gender'=>'$gender',
-   'phone'=>'$phone',
-   'address1'=>'$address1',
-   'address2'=>'$address2',
-   'type'=>'$type',
-   'photo'=>'$photo',
-   'center_cId'=> '$center_cId'
-);
-		return($this->db->insert('employee',$data));
+		return($this->db->insert('employee',$employee));
 	}
 
 	public function deleteEmployee($employee){
