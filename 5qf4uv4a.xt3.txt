@@ -1,0 +1,36 @@
+﻿Merge branch 'master' of https://github.com/nkimadusanka/itranfuzz.info
+
+Conflicts:
+	application/controllers/testcontroller.php
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 20 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   application/controllers/employee_controller.php
+#	modified:   application/controllers/testcontroller.php
+#	modified:   application/controllers/webapi.php
+#	modified:   application/models/center.php
+#	modified:   application/models/employee.php
+#	modified:   application/views/anjs/view_cluster.php
+#	modified:   application/views/anjs/view_staff.php
+#	modified:   application/views/form/addstaffForm.php
+#	new file:   database/itranfuzz_1.0V.sql
+#	new file:   database/itranfuzzv2.1.sql
+#	new file:   database/itranfuzzv2.2.sql
+#	renamed:    icons/defualt/ed85b9d.png -> icons/defualt/photo_select.png
+#	modified:   js/anjular/controllers.js
+#
+

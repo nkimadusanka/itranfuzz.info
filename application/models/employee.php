@@ -136,7 +136,7 @@ class Employee extends CI_model{
 	
 	/*get all employees as a Employee list*/
 	public function getAllEmployeesList(){
-		$query = $this->db->query("SELECT * FROM employee e JOIN center c ON  e.center_cId = c.cId");
+		$query = $this->db->get("employee");
 		if($query->num_rows > 0){
 			return $this->getList($query->result());
 		}else{

@@ -7,8 +7,8 @@ class Testcontroller extends CI_Controller {
 	}
 	//testing method database
 	public function testmysql(){
-		$this->load->model('employee');
-		$q = $this->employee->getEmployeeByfname("Chamara");
-		print_r($q);
+
+		header ( 'Content-type: application/json' );
+		$this->load->model('center');
 	}
 }
