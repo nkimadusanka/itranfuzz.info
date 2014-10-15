@@ -129,4 +129,4 @@ public function setDParticipating($dParticipating) {
 	}
 public function setMaxAmount($maxAmount) {
 		$this->maxAmount = $maxAmount;
-	}																
+	}
