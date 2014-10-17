@@ -69,6 +69,15 @@ main_app.config(['$routeProvider',
       when('/view_donor', {
           templateUrl: 'anjscontroller/viewdonor_tile',
       }).
+      when('/blood_request', {
+          templateUrl: 'anjscontroller/addbloodrequest',
+      }).
+      when('/method_registration', {
+          templateUrl: 'anjscontroller/method_registration',
+      }).
+      when('/add_event', {
+          templateUrl: 'anjscontroller/addevent',
+      }).
       otherwise({
         redirectTo: 'anjscontroller'
       });

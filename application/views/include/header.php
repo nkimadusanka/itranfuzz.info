@@ -176,10 +176,13 @@ else
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgevent"><i class="fa fa-fw fa-calendar"></i> Manage Event<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgevent" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#add_event">Add Event</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#blood_request">Blood Request</a>
+                            </li>
+                            <li>
+                                <a href="#method_registration">Donation Methods</a>
                             </li>
                         </ul>
                     </li>

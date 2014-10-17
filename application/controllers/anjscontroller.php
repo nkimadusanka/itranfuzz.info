@@ -51,5 +51,14 @@ class Anjscontroller extends CI_Controller{
 	public function viewstaff_tile(){
 		$this->load->view('anjs/view_staff');
 	}
+	public function addbloodrequest(){
+		$this->load->view('anjs/blood_request');
+	}
+	public function method_registration(){
+		$this->load->view('anjs/method_registration');
+	}
+	public function addevent(){
+		$this->load->view('anjs/add_event');
+	}
 }
 
