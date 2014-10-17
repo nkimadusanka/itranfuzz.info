@@ -135,3 +135,13 @@ main_app.controller('staff_table', [
 		} ]);
 /* End of Staff Control methods */
 /* Start of donor manipulation methods */
+main_app.controller('donorControl',['$scope','$rootScope',
+	function($scope,$rootScope){
+		try {
+				$rootScope.initialize();
+				$rootScope.mapClick();
+				donorRegValid();
+			} catch (e) {
+				window.alert("This is catch exception");
+			}
+	}]);
