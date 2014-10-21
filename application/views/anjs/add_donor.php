@@ -5,6 +5,18 @@
 <!--registration form to be submitted to the website-->
 <form id="regForm" method="post" action="donor_controller/do_donregister" ng-controller="donorControl">
 <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-5">
+                <label class="control-label">Profile Picture</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-4">
+                <img style="height:200px;margin-left:30px;" src = "<?php echo base_url()?>icons/defualt/photo_select.png"/>
+            </div>
+        </div>
+</div>
+<div class="form-group">
      <div class="row">
         <div class="col-md-6">
             <label class="control-label">Email</label>
