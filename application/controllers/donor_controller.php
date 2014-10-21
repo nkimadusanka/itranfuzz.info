@@ -59,4 +59,11 @@ class Donor_controller extends CI_Controller{
 		echo json_encode($status);
 	}
 
+	public function getAllDonors(){
+		header('Content-type: application/json');
+
+		$donors = $this->donor->getAllDonors();
+		echo json_encode($donors);	
+	}
+
 }
