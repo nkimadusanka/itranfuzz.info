@@ -3,7 +3,7 @@
 </div>
 <br/>
 
-<form id="addEvemt" method="post"
+<form id="addEvent" method="post"
 	action="" ng-controller="addEventController">
 	<div class="form-group">
      	<div class="row">
