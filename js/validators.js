@@ -235,3 +235,64 @@ function donorRegValid() {
 		});
 }
 /* End of jquery validators */
+
+//add event form validator
+function eventAddValidator() {
+	$('#addEvemt').validate({
+		rules : {
+			email : {
+				required : true,
+				email : true
+			},
+			description: {
+				required : true
+			},
+			fname : {
+				required : true
+			},
+			lname : {
+				required : true
+			},
+			address1 : {
+				required : true
+			},
+			address2 : {
+				required : true
+			},
+			password : {
+				required : true
+			},
+			rpassword : {
+				required : true
+			},
+			sex : {
+				required : true
+			},
+			cId : {
+				required : true
+			}
+		},
+		submitHandler : function(form) {
+
+		},
+		highlight : function(element) {
+					$(element).closest('.form-group').addClass('has-error');
+				},
+		unhighlight : function(element) {
+			$(element).closest('.form-group').removeClass('has-error');
+		},
+		errorElement : 'span',
+		errorClass : 'help-block',
+		errorPlacement : function(error, element) {
+				if (element.parent('.input-group').length) {
+					error.insertAfter(element.parent());
+				} else {
+				error.insertAfter(element);
+			}
+		}
+		});
+}
+
+
+
+//end of add event form validator

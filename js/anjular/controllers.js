@@ -241,3 +241,13 @@ main_app.controller('donor_table', [
 			}
 		} ]);
 //end of donor manipulation controllers
+
+// add event controller
+main_app.controller('addEventController',[
+	'$scope',
+	'$http',
+	function($scope,$http){
+		eventAddValidator();
+	}
+]);
+// end of add event controller
