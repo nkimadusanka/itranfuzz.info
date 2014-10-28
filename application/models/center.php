@@ -51,9 +51,15 @@ class Center extends CI_model{
 	
 	
 	#remove center by id
-	public function removeCenterById($center){
-		$this->db->where('cId', $cId);
-	return($this->db->delete('center'));
+	public function removeCenterById($cId){
+		$states = true;
+		try{
+			$this->db->where('cId', $cId);
+			$states = $this->db->delete('center');
+		}catch (Exception $e){
+			return false;
+		}
+		return true;
 	}
 	
 	#get center by Id
