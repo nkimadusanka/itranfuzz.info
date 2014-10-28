@@ -49,7 +49,10 @@ class Anjscontroller extends CI_Controller{
 		$this->load->view('anjs/remove_staff');
 	}
 	public function viewstaff_tile(){
-		$this->load->view('anjs/view_staff');
+		$data = null;
+		$data['centers'] = $this->center->getAllCenters();
+		$data['addstaffForm'] = $this->load->view('/form/addstaffForm',$data,TRUE);
+		$this->load->view('anjs/view_staff',$data);
 	}
 	public function addbloodrequest(){
 		$this->load->view('anjs/blood_request');
