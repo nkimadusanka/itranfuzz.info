@@ -10,9 +10,9 @@
      		<div class= "col-md-3">
   				<label class="control-label">Description</label>
     		</div>
-     		<div class= "col-md-9">						
-				<textarea class="form-control" placeholder="Type your description here" rows="5" cols="60" name="description">
-				</textarea>
+     		<div class= "col-md-9">
+	     		<textarea class="form-control" placeholder="Type your description here" rows="5" cols="60" name="description">
+	     		</textarea>
 			</div>
 		</div>
 	</div>
@@ -81,7 +81,7 @@
 	    	<div class="col-md-3">
 				<label class"control-label">Broadcast Message</label>
 			</div>
-			<div class="col-md-9">   
+			<div class="col-md-9">
 				<textarea name="Broadcast_Message" class="form-control" placeholder="Type your broadcast massage here" rows="5" cols="60">
 				</textarea>
 			</div>
