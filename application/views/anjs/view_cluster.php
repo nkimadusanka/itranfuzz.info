@@ -215,7 +215,6 @@
 </div>
 <!--  end of update cluster model -->
 </div>
-</div>
 
 
 

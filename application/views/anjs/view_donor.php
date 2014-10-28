@@ -22,29 +22,29 @@
 	<br />
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="center in centers | filter:province">
+			<a class="list-group-item" ng-repeat="donor in donors">
 				<div class = "row"> 
 					<div class = "col-md-9">
-						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/center_64.png">
-						<h4 class="list-group-item-heading">{{ center.address1 }} {{center.address2 }}</h4>
-						<p class="list-group-item-text">Province: {{center.province}} Phone:{{center.phone}}</p>
+						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/donor_64.png">
+						<h4 class="list-group-item-heading">{{ donor.fname }} {{donor.lname}} {{donor.bType}}</h4>
+						<p class="list-group-item-text">Province: {{donor.center.province}}   Phone:{{donor.phone}}</p>
 					</div>
 					<div class = "col-md-3">
 						<div class = "row">
 							<div class = "col-md-6">
-								<button type="button" class="btn btn-sm" ng-click="viewcenter(center.cId)">
+								<button type="button" class="btn btn-sm" ng-click="viewdonor(donor.dId)">
 									View <i class="fa fa-info"></i>
 								</button>
 							</div>
 							<div class = "col-md-6">
-								<button type="button" class="btn btn-sm" ng-click="updatecenter(center.cId)">
+								<button type="button" class="btn btn-sm" ng-click="updatedonor(donor.dId)">
 									Update <i class="fa fa-undo"></i>
 								</button>
 							</div>
 						</div>
 						<div class = "row">
 							<div class = "col-md-offset-7" style="margin-top: 5px;">
-								<button type="button" class="btn btn-sm" ng-click="removecenter(center.cId)">
+								<button type="button" class="btn btn-sm" ng-click="removedonor(donor.dId)">
 									Remove <i class="fa fa-times-circle"></i>
 								</button>
 							</div>
@@ -56,7 +56,7 @@
 	</div>
 
 <!-- Large Message for view modal -->
-<div class="modal fade clustview-msg-model" tabindex="-1" role="dialog"
+<div class="modal fade donorview-msg-model" tabindex="-1" role="dialog"
 	aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-dialog">
@@ -65,47 +65,55 @@
 					<button type="button" class="close" data-dismiss="modal">
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
-					<h4 id="lTitle" class="modal-title">View Custer Details</h4>
+					<h4 id="lTitle" class="modal-title">View Donor Details</h4>
 				</div>
 				<div id="lContent" class="modal-body">
 					<div class="row">
 						<div class = "col-offset-md-1 col-md-4">
-							<h5>Province</h5>
+							<h5>Email</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{province}}</h5>
+							<h5>{{email}}</h5>
 						</div>
 					</div>
 					<div class="row">
 						<div class = "col-offset-md-1 col-md-4">
-							<h5>Address1</h5>
+							<h5>nic</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{address1}}</h5>
+							<h5>{{nic}}</h5>
 						</div>
 					</div>
 					<div class="row">
 						<div class = "col-offset-md-1 col-md-4">
-							<h5>Address2</h5>
+							<h5>Name</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{address2}}</h5>
+							<h5>{{fname}} {{lname}}</h5>
 						</div>
 					</div>
 					<div class="row">
 						<div class = "col-offset-md-1 col-md-4">
-							<h5>Phone</h5>
+							<h5>Gender</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{phone}}</h5>
+							<h5>{{gender}}</h5>
 						</div>
 					</div>
 					<div class="row">
 						<div class = "col-offset-md-1 col-md-4">
-							<h5>Type</h5>
+							<h5>DOB</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{type}}</h5>
+							<h5>{{dob}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class = "col-offset-md-1 col-md-4">
+							<h5>Blood Type</h5>
+						</div>
+						<div class = "col-md-8">
+							<h5>{{bType}}</h5>
 						</div>
 					</div>
 					<div class="row">
