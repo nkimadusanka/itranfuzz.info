@@ -65,5 +65,13 @@ class Donor_controller extends CI_Controller{
 		$donors = $this->donor->getAllDonors();
 		echo json_encode($donors);	
 	}
+	public function remove_donor(){
+		$status = null;
+		header ('Content-type: application/json');
+		$jData = json_decode(file_get_contents('php://input'),true);
+		// there will be foreing key error with employees
+		$status = array('STATUS'=>($this->donor->removedonorbyid($jData["dId"])));
+		echo json_encode($status);
+	}
 
 }

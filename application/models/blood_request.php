@@ -6,7 +6,6 @@ class Bood_request extends CI_model{
 	var $eDate;
 	var $eTime;
 	var $amount;
-}
 
 //get Donation_method by brId
 	public function getBrId($brId){
@@ -100,6 +99,7 @@ public function setETime($eTime) {
 	}
 public function setAmount($amount) {
 		$this->amount = $amount;
-	}			
-
+	}
+			
+}
 

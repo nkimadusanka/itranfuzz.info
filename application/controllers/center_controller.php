@@ -9,7 +9,7 @@ class Center_controller extends CI_Controller {
 	//get all centers as a json
 	public function getallcenters(){
 		$status = null;
-		header ( 'Content-type: application/json' );
+		header ( 'Content-type: application/json');
 		$status = $this->center->getAllCenters();
 		echo json_encode($status);
 	}
