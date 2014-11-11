@@ -210,6 +210,25 @@ class Donor extends CI_model {
 		$this->db->where('email', $email);
 		return($this->db->update('donor', array("lLatitude"=>$lat,"lLongitude"=>$lng)));
 	}
+
+	//get All donors list
+	public function getAllDonors(){
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			$donors = array();
+			foreach($rows->first_row() as $r) {
+				array_push($donors,new Donor($rows->first_row()));
+			}
+			return $donors;
+		}else{
+			return null;
+		}	
+	}
+	//remove donor by id
+	public function removedonorbyid($dId){
+		$this->db->where('dId', $dId);
+		return($this->db->delete('donor'));
+	}
 	
 	// **************************************** getter function here******************************************************
 	public function getDId() {

@@ -163,29 +163,29 @@ class Employee extends CI_model{
 
 	public function deleteEmployee($employee){
 		$this->db->where('eId', $eId);
-$this->db->delete('employee'); 
+		$this->db->delete('employee'); 
 	}
 
 
-public function updateEmployee($employee){
+	public function updateEmployee($employee){
 	
 		$data = array(
-   'id' => '$id' ,
-   'email' => '$email',
-   'pwd'=> '$pwd',
-   'fname'=>'$fname',
-   'lname'=> '$lname',
-   'nic'=>'$nic',
-   'gender'=>'$gender',
-   'phone'=>'$phone',
-   'address1'=>'$address1',
-   'address2'=>'$address2',
-   'type'=>'$type',
-   'photo'=>'$photo',
-   'center_cId'=> '$center_cId'
-   );
+		   'id' => '$id' ,
+		   'email' => '$email',
+		   'pwd'=> '$pwd',
+		   'fname'=>'$fname',
+		   'lname'=> '$lname',
+		   'nic'=>'$nic',
+		   'gender'=>'$gender',
+		   'phone'=>'$phone',
+		   'address1'=>'$address1',
+		   'address2'=>'$address2',
+		   'type'=>'$type',
+		   'photo'=>'$photo',
+		   'center_cId'=> '$center_cId'
+		   );
 
-$this->db->update('employee', $data); 
+		$this->db->update('employee', $data); 
 
 	}
 
@@ -204,6 +204,16 @@ $this->db->update('employee', $data);
 		}
 	}
 	
+	#employee get List method
+	public function getList($rList){
+		$employees = array();
+		for($i = 0;$i < count($rList);$i++){
+			$employees[$i] = new Employee($rList[$i]);
+		}
+		return($employees);
+	}
+
+
 	#add getter methods
 
 	public function getEId(){

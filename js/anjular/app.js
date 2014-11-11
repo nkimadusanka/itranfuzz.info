@@ -15,7 +15,7 @@ var main_app = angular.module('app',['ngRoute']).run(function($rootScope){
 		if(typeof(mId)==='undefined') mId = 0;
 		var mapOptions = {
 		        center: new google.maps.LatLng(6.971445,79.922209),
-		            zoom: 15
+		            zoom: 10
 		 };
 		
 		$rootScope.map = new google.maps.Map($("div[id^=map-canvas]")[mId],mapOptions);
@@ -68,6 +68,15 @@ main_app.config(['$routeProvider',
       }).
       when('/view_donor', {
           templateUrl: 'anjscontroller/viewdonor_tile',
+      }).
+      when('/blood_request', {
+          templateUrl: 'anjscontroller/addbloodrequest',
+      }).
+      when('/method_registration', {
+          templateUrl: 'anjscontroller/method_registration',
+      }).
+      when('/add_event', {
+          templateUrl: 'anjscontroller/addevent',
       }).
       otherwise({
         redirectTo: 'anjscontroller'

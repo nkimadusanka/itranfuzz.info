@@ -31,14 +31,6 @@ class Center extends CI_model{
 		//$this-> db->where('cId',$cId);
 		$this->db->delete('center',array('cId'=> $cId));
 	}
-
-	public function updatecenter($cId){
-		$this->db->update('center', $data, array('cid' => $cid));
-	}
-
-
-
-
 	#get all centers
 	public function getAllCenters(){
 		$query = $this->db->get('center');
@@ -51,9 +43,15 @@ class Center extends CI_model{
 	
 	
 	#remove center by id
-	public function removeCenterById($center){
-		$this->db->where('cId', $cId);
-	return($this->db->delete('center'));
+	public function removeCenterById($cId){
+		$states = true;
+		try{
+			$this->db->where('cId', $cId);
+			$states = $this->db->delete('center');
+		}catch (Exception $e){
+			return false;
+		}
+		return true;
 	}
 	
 	#get center by Id
@@ -66,6 +64,13 @@ class Center extends CI_model{
 			return NULL;
 		}
 	}
+
+	#update center by id
+	public function updatecenter($new_center){
+		$this->db->where('cId',$new_center.cId);
+		return($this->db->update('center',$new_center));
+	}
+
 	
 	#setter methods
 	public function setCId($cId){
