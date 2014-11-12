@@ -67,7 +67,7 @@ class Center extends CI_model{
 
 	#update center by id
 	public function updatecenter($new_center){
-		$this->db->where('cId',$new_center.cId);
+		$this->db->where('cId',$new_center['cId']);
 		return($this->db->update('center',$new_center));
 	}
 

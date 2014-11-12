@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/itransfusion.lk';
+$config['base_url']	= 'http://localhost/itranfuzz.info';
 
 /*
 |--------------------------------------------------------------------------

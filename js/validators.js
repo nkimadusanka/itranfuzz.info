@@ -77,6 +77,82 @@ function clusterFormValid() {
 
 }
 
+function clusterFormUpdateValid() {
+	$('#updateFormCluster').validate(
+			{
+				rules : {
+					province : {
+						required : true
+					},
+					address1 : {
+						required : true
+					},
+					address1 : {
+						required : true
+					},
+					address2 : {
+						required : true
+					},
+					phone : {
+						required : true
+					},
+					ctype : {
+						required : true
+					}
+				},
+				submitHandler : function(form) {
+					var rootScope = angular.element('#wrapper').scope();
+					if (rootScope.marker.getMap() != null) {
+						$('<input />').attr('type', 'hidden').attr('name',
+								"lat").attr('value',
+								rootScope.marker.getPosition().lat()).appendTo(
+								form);
+						$('<input />').attr('type', 'hidden').attr('name',
+								"lng").attr('value',
+								rootScope.marker.getPosition().lng()).appendTo(
+								form);
+						$.ajax({
+							type : $(form).attr('method'),
+							url : $(form).attr('action'),
+							data : $(form).serialize(),
+							dataType : 'json'
+						}).done(
+								function(response) {
+									if (response.STATUS == 1) {
+										sMessage("Infromation",
+												'Center Updated successfully');
+									} else {
+										sMessage("Error",
+												'Center Update fail');
+									}
+								});
+					} else {
+						sMessage("Warning",
+								"Please select position in google map");
+					}
+					return false;
+				},
+				highlight : function(element) {
+					$(element).closest('.form-group').addClass('has-error');
+				},
+				unhighlight : function(element) {
+					$(element).closest('.form-group').removeClass('has-error');
+				},
+				errorElement : 'span',
+				errorClass : 'help-block',
+				errorPlacement : function(error, element) {
+					if (element.parent('.input-group').length) {
+						error.insertAfter(element.parent());
+					} else {
+						error.insertAfter(element);
+					}
+				}
+			});
+
+}
+
+
+/*cluster form validation in here*/
 function staffFormValid() {
 	$('#staffRegForm').validate({
 		rules : {

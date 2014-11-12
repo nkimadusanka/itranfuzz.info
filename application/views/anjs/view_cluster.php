@@ -138,7 +138,7 @@
 				<div id="lContent" class="modal-body">
 					<!--registration form to be submitted to the website-->
 					<form id="updateFormCluster" method="post"
-						action="privateapi/addCenter" ng-controller="clusterController">
+						action="center_controller/updatecenter" ng-controller="clusterController">
 						<div class="form-group">
 							<div class="row">
 								<label class="col-md-2 control-label">Province</label>
@@ -200,6 +200,12 @@
 								<div class="col-md-10">
 					                <div id="map-canvas" style="height: 200px; width: 100%;"/>
 					            </div>
+							</div>
+						</div>
+						<!-- sending cid to server-->
+						<div class="form-group">
+							<div class="row">
+								<input style="display:none;" type="text" ng-model="cId" name="cId" />
 							</div>
 						</div>
 					</form>

@@ -99,16 +99,17 @@ main_app.controller('cluter_table', [
 				for (var i = 0; i < $scope.centers.length; i++)
 					if ($scope.centers[i]["cId"] == cId)
 						break;
-
+				$scope.cId = $scope.centers[i]["cId"];
 				$scope.province = $scope.centers[i]["province"];
 				$scope.address1 = $scope.centers[i]["address1"];
 				$scope.address2 = $scope.centers[i]["address2"];
 				$scope.phone = $scope.centers[i]["phone"];
 				$scope.type = $scope.centers[i]["type"];
 
+				clusterFormUpdateValid();
+
 				try {
 					$rootScope.initialize(1);
-					clusterFormValid();
 					$rootScope.marker.setMap(null);
 					$rootScope.marker = new google.maps.Marker({
 						position : {
@@ -253,7 +254,7 @@ main_app.controller('donor_table', [
 				}
 				$('.donorview-msg-model').modal('toggle');
 			}
-			/*$scope.updatecenter = function(cId) {
+			/*]$scope.updatecenter = function(cId) {
 
 				$('.clustupdate-msg-model').modal('toggle');
 
