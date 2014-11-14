@@ -314,19 +314,12 @@ function donorRegValid() {
 
 //add event form validator
 function eventAddValidator() {
-	$('#addEvemt').validate({
+	$('#addEvent').validate({
 		rules : {
-			email : {
-				required : true,
-				email : true
-			},
 			description: {
 				required : true
 			},
-			fname : {
-				required : true
-			},
-			lname : {
+			orgName : {
 				required : true
 			},
 			address1 : {
@@ -335,21 +328,55 @@ function eventAddValidator() {
 			address2 : {
 				required : true
 			},
-			password : {
+			eParticipation : {
 				required : true
 			},
-			rpassword : {
+			phone : {
+				required : true,
+				number   : true
+			},
+			date : {
+				required : true,
+				date: true
+			},
+			stime : {
 				required : true
 			},
-			sex : {
-				required : true
-			},
-			cId : {
+			etime : {
 				required : true
 			}
 		},
 		submitHandler : function(form) {
-
+			var rootScope = angular.element('#wrapper').scope();
+					if (rootScope.marker.getMap() != null) {
+						$('<input />').attr('type', 'hidden').attr('name',
+								"lat").attr('value',
+								rootScope.marker.getPosition().lat()).appendTo(
+								form);
+						$('<input />').attr('type', 'hidden').attr('name',
+								"lng").attr('value',
+								rootScope.marker.getPosition().lng()).appendTo(
+								form);
+						$.ajax({
+							type : $(form).attr('method'),
+							url : $(form).attr('action'),
+							data : $(form).serialize(),
+							dataType : 'json'
+						}).done(
+								function(response) {
+									if (response.STATUS == 1) {
+										sMessage("Infromation",
+												'Event add successfully');
+									} else {
+										sMessage("Error",
+												'Event add fail');
+									}
+								});
+					} else {
+						sMessage("Warning",
+								"Please select position in google map");
+					}
+					return false;
 		},
 		highlight : function(element) {
 					$(element).closest('.form-group').addClass('has-error');

@@ -2,9 +2,8 @@
 	<h1>Add Event <small>Enter details about event</small></h1>
 </div>
 <br/>
-
 <form id="addEvent" method="post"
-	action="" ng-controller="addEventController">
+	action="event_controller/addEvent" ng-controller="addEventController">
 	<div class="form-group">
      	<div class="row">
      		<div class= "col-md-3">
@@ -22,19 +21,17 @@
      	        <label class"control-label">Organization Name</label>
      	    </div>
      	    <div class="col-md-9">			
-				<input type="text" class="form-control" name="oganization_name"/>
+				<input type="text" class="form-control" name="orgName"/>
 			</div>
 		</div>
 	</div>		
 	<div class="form-group">
-        <div class="row">	
-           	<div class="col-md-6">
-				<label class="control-label">Location</label>
-				<input type="text" class="form-control" name="location"/>
-			</div>
-			<div class="col-md-6">
-				<label class="control-label">Expect Participation</label><br/>
-				<input type="text" class="form-control" name="expect_participation"/>
+        <div class="row">
+        	<div class="col-md-3">
+     	        <label class="control-label">Expect Participation</label>
+     	    </div>
+			<div class="col-md-9">
+				<input type="text" class="form-control" name="eParticipation"/>
 	        </div>
         </div>
     </div>
@@ -58,21 +55,29 @@
 			</div>
             <div class="col-md-6">
 				<label class="control-label">Date</label>
-			</div> 
-			<div class="col-md-6">   
 				<input type="date" class="form-control" name="date"/>
-			</div>
+			</div> 
 		</div>
 	</div>
 	<div class="form-group">
     	<div class="row">
 			<div class="col-md-6">
 				<label class="control-label">Start Time</label>
-				<input type="time" class="form-control" name="start_time"/>
+				<input type="time" class="form-control" name="stime"/>
 			</div>
 			<div class="col-md-6">
 				<label class="control-label">End time</label>
-				<input type="time" class="form-control" name="end_time"/>
+				<input type="time" class="form-control" name="etime"/>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+    	<div class="row">
+			<div class="col-md-3">
+				<label class="control-label">Location</label>
+			</div>
+			<div class="col-md-9">
+				<div id="map-canvas" style="height: 300px;width: 100%;"/>
 			</div>
 		</div>
 	</div>
@@ -87,13 +92,14 @@
 			</div>
         </div>
     </div>
+    <hr/>
     <div class="form-group">
         <div class="row">
-    		<div class="col-md-6">
+    		<div class="col-md-9">
     	    </div>
-    		<div class="col-md-6">
-				<input type="submit" class="btn btn-primary" text="Add Broadcast Message"/>
-				<button class="btn">Clear</button> 
+    		<div class="col-md-3">
+				<input type="submit" class="btn btn-primary" value`="Add event"/>
+				<input type="rset" class="btn" value="Reset"/>
             </div>     
 		</div>
 	</div>

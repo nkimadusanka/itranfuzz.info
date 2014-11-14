@@ -9,17 +9,9 @@ class Event extends CI_model{
 
 
 
-public function addEvent($evId, $description, $evType,$center_cId,$employee_eId){
-	$data = array('evId' => $evId,
-'description'=> $description,
-'evType'=> $evType,
-'center_cId'=> $center_cId,
-'employee_eId'=> $employee_eId);
-
-
-return($this->db->insert('event',$data));
-
-
+public function addEvent( $description, $evType,$center_cId,$employee_eId){
+	$data = array('description'=> $description,'evType'=> $evType,'center_cId'=> $center_cId,'employee_eId'=> $employee_eId);
+	return($this->db->insert('event',$data));
 }
 
 public function deleteEvent(){

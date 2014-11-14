@@ -290,8 +290,15 @@ main_app.controller('donor_table', [
 main_app.controller('addEventController',[
 	'$scope',
 	'$http',
-	function($scope,$http){
-		eventAddValidator();
+	'$rootScope',
+	function($scope,$http,$rootScope){
+		try {
+				$rootScope.initialize();
+				$rootScope.mapClick();
+				eventAddValidator();
+			} catch (e) {
+				window.alert("This is catch exception");
+			}
 	}
 ]);
 // end of add event controller
