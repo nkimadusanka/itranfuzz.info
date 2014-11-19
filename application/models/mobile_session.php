@@ -18,7 +18,13 @@ class Mobile_session extends MY_Model{
 	}
 
 	public function addSession($event){
-		$sid = parent::addEvent($event['description'], 'ms',$event['cId'],$event['eId']);
+		$event['mseId'] = parent::addEvent($event['description'], 'ms',$event['cId'],$event['eId']);
+
+		unset($event['description']);
+		unset($event['cId']);
+		unset($event['eId']);
+
+		$this->db->insert('mobile_session',$event);
 	}
 
 }

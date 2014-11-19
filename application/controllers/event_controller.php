@@ -20,8 +20,8 @@ class Event_controller extends CI_Controller{
 		$event["date"] = $this->input->post("date");
 		$event["stime"] = $this->input->post("stime");
 		$event["etime"] = $this->input->post("etime");
-		$event["lat"] = $this->input->post("lat");
-		$event["lng"] = $this->input->post("lng");
+		$event["lLongitude"] = $this->input->post("lat");
+		$event["lLatitude"] = $this->input->post("lng");
 		$event["eId"] = $this->session->userdata("eId");
 
 		$employee = $this->employee->getEmployee($event["eId"]);
