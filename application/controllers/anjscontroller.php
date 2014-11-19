@@ -61,7 +61,8 @@ class Anjscontroller extends CI_Controller{
 		$this->load->view('anjs/method_registration');
 	}
 	public function addevent(){
-		$this->load->view('anjs/add_event');
+		$data['centers'] = $this->center->getAllCenters();
+		$this->load->view('/anjs/add_event',$data);
 	}
 }
 

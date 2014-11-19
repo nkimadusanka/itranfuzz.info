@@ -213,7 +213,6 @@ class Employee extends CI_model{
 		return($employees);
 	}
 
-
 	#add getter methods
 
 	public function getEId(){
@@ -250,7 +249,7 @@ class Employee extends CI_model{
 		return($this->photo);
 	}
 	public function getCenter(){
-		return($this->center_cId);
+		return($this->center);
 	}
 	public function getNic(){
 		return($this->nic);

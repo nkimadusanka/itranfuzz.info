@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Event extends CI_model{
+class MY_Model extends CI_Model{
 	var $evId;
 	var $description;
 	var $evType;
@@ -9,9 +9,12 @@ class Event extends CI_model{
 
 
 
-public function addEvent( $description, $evType,$center_cId,$employee_eId){
-	$data = array('description'=> $description,'evType'=> $evType,'center_cId'=> $center_cId,'employee_eId'=> $employee_eId);
-	return($this->db->insert('event',$data));
+public function addEvent($description, $evType,$center_cId,$employee_eId){
+	$eventData = array('description'=> $description,'evType'=> $evType,'center_cId'=> $center_cId,'employee_eId'=> $employee_eId);
+	$this->db->insert('event',$eventData);
+	$insert_id = $this->db->insert_id();
+   	$this->db->trans_complete();
+   	return $insert_id;
 }
 
 public function deleteEvent(){
@@ -24,7 +27,7 @@ $this->db->delete('event');
 public function viewEvent(){}
 
 public function updateEvent($evId, $description, $evType,$center_cId,$employee_eId){
-	$data = array('evId' -> $evId,'description'-> $description,'evType'-> $evType,'center_cId'-> $center_cId,'employee_eId'-> $employee_eId);
+	$data = array('evId' => $evId,'description'=> $description,'evType'=> $evType,'center_cId'=> $center_cId,'employee_eId'=> $employee_eId);
 	return($this->db->update('event',$data));
 }
 
@@ -65,6 +68,7 @@ $this -> employee_eId=$employee_eId;
 
  public function getdescription (){
  	return ($this-> description);
+ }
 public function getevType(){
  return ($this -> evType);
 
@@ -85,19 +89,5 @@ public function getemployee_eId(){
 return ($this-> employee_eId);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
- }
 
 }

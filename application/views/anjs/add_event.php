@@ -81,6 +81,26 @@
 			</div>
 		</div>
 	</div>
+
+<?php if($this->session->userdata('user_Mode') == 'a'){?>
+	<div class="form-group">
+    	<div class="row">
+			<div class="col-md-3">
+				<label class="control-label">Blood Center</label>
+			</div>
+			<div class="col-md-9">
+<?php if($centers != null){?>
+                 <select class="form-control" name="cId">
+					<option value="">Select</option>
+<?php foreach ($centers as $center) { ?>
+                    <option value="<?= $center->cId?>"><?php echo $center->address1.' '.$center->address2."(".$center->province.")";?></option>
+<?php }?>
+                </select>
+<?php }?>
+<?php }?>
+			</div>
+		</div>
+	</div>
 	<div class="form-group">
     	<div class="row">
 	    	<div class="col-md-3">
@@ -95,10 +115,10 @@
     <hr/>
     <div class="form-group">
         <div class="row">
-    		<div class="col-md-9">
+    		<div class="col-offset-md-6">
     	    </div>
-    		<div class="col-md-3">
-				<input type="submit" class="btn btn-primary" value`="Add event"/>
+    		<div class="col-md-8">
+    			<input type="submit" class="btn btn-primary" value`="Add event"/>
 				<input type="rset" class="btn" value="Reset"/>
             </div>     
 		</div>

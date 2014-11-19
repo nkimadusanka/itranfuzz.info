@@ -3,24 +3,31 @@
 
 class Event_controller extends CI_Controller{
 
-	public function __contructor(){
-		parent::__contructor();
-		$this->load->model('event');
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('mobile_session');
+		$this->load->model('employee');
 	}
 
 	public function addEvent(){
 
-		$this->event->addEvent();
+		$event["description"] = $this->input->post("description");
+		$event["orgName"] = $this->input->post("orgName");
+		$event["eParticipation"] = $this->input->post("eParticipation");
+		$event["address1"] = $this->input->post("address1");
+		$event["address2"] = $this->input->post("address2");
+		$event["phone"] = $this->input->post("phone");
+		$event["date"] = $this->input->post("date");
+		$event["stime"] = $this->input->post("stime");
+		$event["etime"] = $this->input->post("etime");
+		$event["lat"] = $this->input->post("lat");
+		$event["lng"] = $this->input->post("lng");
+		$event["eId"] = $this->session->userdata("eId");
 
-		echo $this->input->post("description");
-		echo $this->input->post("orgName");
-		echo $this->input->post("eParticipation");
-		echo $this->input->post("address1");
-		echo $this->input->post("address2");
-		echo $this->input->post("phone");
-		echo $this->input->post("date");
-		echo $this->input->post("stime");
-		echo $this->input->post("lat");
+		$employee = $this->employee->getEmployee($event["eId"]);
+		$event["cId"] = $employee->getCenter()->getCId();
+
+		$this->mobile_session->addSession($event);
+		
 	}
-
 }
