@@ -305,6 +305,23 @@ main_app.controller('addEventController',[
 //add blood request controller
 main_app.controller('addBloodRequest',['$scope','$rootScope',
 	function($scope,$rootScope){
-		addBloodRequestValidator();
+		try{
+			addBloodRequestValidator();	
+		}catch(e){
+			window.alert("This is a exception");
+		}
+		
 	}
-	]);
+]);
+//end of blood request
+//add blood donation methods
+main_app.controller('addBloodMethod',['$scope','$rootScope',
+	function($scope,$rootScope){
+		try{
+			addBloodMethodValidator();
+		}catch(e){
+			window.alert("This is a exception");
+		}
+	}
+]);
+//end of blood donation methods

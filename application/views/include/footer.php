@@ -66,11 +66,11 @@
 		<script type="text/javascript" src="<?php echo base_url() ?>js/anjular/angular-route.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/anjular/app.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/anjular/controllers.js"></script>
-<? if($this->session->userdata('validated') == false){ ?>
+<?php if($this->session->userdata('validated') == false){ ?>
 		<!--smooth  scolling methods-->
 		<script type="text/javascript" src="<?php echo base_url() ?>js/smooth_scrolling.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/map.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/bootstrap/bootstrapValidator.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url() ?>js/script.js"></script>
-<? }?>
+<?php }?>
 </html>

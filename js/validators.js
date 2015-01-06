@@ -453,4 +453,69 @@ function addBloodRequestValidator(){
 		});
 
 }
+//end add blood request validator
+
+// add blood method validator
+function addBloodMethodValidator(){
+	$('#blood_method').validate({
+		rules : {
+			description: {
+				required : true
+			},
+			minAge:{
+				required : true,
+				number : true
+			},
+			maxAge : {
+				required : true,
+				number : true
+			},
+			weigth : {
+				required : true
+			},
+			dParticipating : {
+				required : true,
+				number : true
+			},
+			maxAmaount : {
+				required : true,
+				number : true
+			}
+		},
+		submitHandler : function(form) {
+			$.ajax({
+				type : $(form).attr('method'),
+				url : $(form).attr('action'),
+				data : $(form).serialize(),
+				dataType : 'json'
+				}).done(
+					function(response) {
+						if (response.STATUS == true) {
+							sMessage("Infromation",'Blood Donation Method is add successfully');
+						} else {
+							sMessage("Error",'Blood Donation Method adding fail');
+						}
+				});
+			return false;
+		},
+		highlight : function(element) {
+					$(element).closest('.form-group').addClass('has-error');
+				},
+		unhighlight : function(element) {
+			$(element).closest('.form-group').removeClass('has-error');
+		},
+		errorElement : 'span',
+		errorClass : 'help-block',
+		errorPlacement : function(error, element) {
+				if (element.parent('.input-group').length) {
+					error.insertAfter(element.parent());
+				} else {
+				error.insertAfter(element);
+			}
+		}
+		});
+
+}
+//end of blood method validator
+
 

@@ -7,6 +7,7 @@ class Event_controller extends CI_Controller{
 		parent::__construct();
 		$this->load->model('mobile_session');
 		$this->load->model('employee');
+		$this->load->model('donation_method');
 	}
 
 	public function addEvent(){
@@ -43,5 +44,19 @@ class Event_controller extends CI_Controller{
 
 
 		echo json_encode(array("STATUS"=>$this->mobile_session->addBloodRequest($req)));
+	}
+
+	public function addBloodMethod(){
+
+		$method["description"] = $this->input->post("description");
+		$method["minAge"] = $this->input->post("minAge");
+		$method["maxAge"] = $this->input->post("maxAge");
+		$method["weight"] = $this->input->post("weigth");
+		$method["dParticipating"] = $this->input->post("dParticipating");
+		$method["maxAmount"] = $this->input->post("maxAmount");
+
+
+		echo json_encode(array ("STATUS"=>($this->donation_method->addBloodMethod($method))));
+
 	}
 }

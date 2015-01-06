@@ -1,7 +1,4 @@
-<?php
-
-if (! defined ( 'BASEPATH' ))
-	exit ( 'No direct script access allowed' );
+<?php if (! defined ( 'BASEPATH' )) exit ( 'No direct script access allowed' );
 class Donation_method extends CI_model {
 	
 	var $dmId;
@@ -11,7 +8,15 @@ class Donation_method extends CI_model {
 	var $weight;
 	var $dParticipating;
 	var $maxAmount;
-	
+
+	#add blood donation method
+	public function addBloodMethod($method){
+		echo 'testing';
+		return($this->db->insert('donation_method',$method));
+	}
+
+	/* have problem with this methods
+
 	# get Donation_method by dmId
 	public function getDmId($dmId) {
 		$this->db->where ( 'dmId', $dmId );
@@ -77,6 +82,7 @@ class Donation_method extends CI_model {
 			return null;
 		}
 	}
+	*/
 	
 	// get methods for donation_method model
 	public function getDmId() {
