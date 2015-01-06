@@ -302,3 +302,9 @@ main_app.controller('addEventController',[
 	}
 ]);
 // end of add event controller
+//add blood request controller
+main_app.controller('addBloodRequest',['$scope','$rootScope',
+	function($scope,$rootScope){
+		addBloodRequestValidator();
+	}
+	]);

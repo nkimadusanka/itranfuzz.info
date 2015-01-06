@@ -395,7 +395,62 @@ function eventAddValidator() {
 		}
 		});
 }
-
-
-
 //end of add event form validator
+
+//add blood request validator
+function addBloodRequestValidator(){
+	$('#blood_request').validate({
+		rules : {
+			description: {
+				required : true
+			},
+			bType:{
+				required : true
+			},
+			amount : {
+				required : true
+			},
+			edate : {
+				required : true,
+				date: true
+			},
+			etime : {
+				required : true,
+				time : true
+			}
+		},
+		submitHandler : function(form) {
+			$.ajax({
+				type : $(form).attr('method'),
+				url : $(form).attr('action'),
+				data : $(form).serialize(),
+				dataType : 'json'
+				}).done(
+					function(response) {
+						if (response.STATUS == 1) {
+							sMessage("Infromation",'Blood Request add successfully');
+						} else {
+							sMessage("Error",'Blood Request adding fail');
+						}
+				});
+			return false;
+		},
+		highlight : function(element) {
+					$(element).closest('.form-group').addClass('has-error');
+				},
+		unhighlight : function(element) {
+			$(element).closest('.form-group').removeClass('has-error');
+		},
+		errorElement : 'span',
+		errorClass : 'help-block',
+		errorPlacement : function(error, element) {
+				if (element.parent('.input-group').length) {
+					error.insertAfter(element.parent());
+				} else {
+				error.insertAfter(element);
+			}
+		}
+		});
+
+}
+

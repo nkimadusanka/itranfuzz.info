@@ -27,4 +27,16 @@ class Mobile_session extends MY_Model{
 		$this->db->insert('mobile_session',$event);
 	}
 
+	public function addBloodRequest($request){
+
+		$request['brId'] = parent::addEvent($request['description'], 'br',$request['cId'],$request['eId']);
+
+		unset($request['description']);
+		unset($request['cId']);
+		unset($request['eId']);
+
+		return($this->db->insert('blood_request',$request));
+
+	}
+
 }

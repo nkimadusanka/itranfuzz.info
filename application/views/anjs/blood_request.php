@@ -3,15 +3,15 @@
 </div>
 <br/>
 <form id="blood_request" method="post"
-	action="" ng-controller="blood_requestController">
+	action="event_controller/addBloodReq" ng-controller="addBloodRequest">
 	<div class="form-group">
      	<div class="row">
-     		<div class= "col-md-3">		
-                <label>Description</label>
+     		<div class= "col-md-3">
+     			<label>Description</label>
             </div>
-     		<div class= "col-md-9">								
-                <textarea class="form-control" name="Description" placeholder="Type your description here" rows="5" cols="60">
-                </textarea><br><br>
+     		<div class= "col-md-9">
+     			<textarea class="form-control" name="description" placeholder="Type your description here" rows="5" cols="60">
+     			</textarea><br><br>
 			</div>
 		</div>
 	</div>
@@ -21,15 +21,15 @@
 				<label>Blood Type</label>
 			</div>
 			<div class="col-md-2">						
-				<select name ="blood_type ">                 
-					<option>A+</option>                  
-					<option>A-</option>                          
-				    <option>B+</option>                  
-					<option>B-</option> 
-					<option>AB+</option>                  
-					<option>AB-</option>                  
-					<option>O+</option>
-					<option>O-</option>
+				<select name ="bType">                 
+					<option value='a+'>A+</option>                  
+					<option value='a-'>A-</option>                          
+				    <option value='b+'>B+</option>                  
+					<option value='b-'>B-</option> 
+					<option value='ab+'>AB+</option>                  
+					<option value='ab-'>AB-</option>                  
+					<option value='o+'>O+</option>
+					<option value='o-'>O-</option>
 				</select><br><br>
 				</div>
 			</div>
@@ -38,11 +38,11 @@
         <div class="row">
            	<div class="col-md-6">	
 				<label>Date</label>
-				<input type="date" id="datepicker" name='date' size='10' value="" class="form-control" />
+				<input type="date" name='eDate' size='10' value="" class="form-control" />
 			</div>
 			<div class="col-md-6">
 				<label>End Time</label>
-				<input type="time" name="end_time" class="form-control"/>
+				<input type="time" name="eTime" class="form-control"/>
 			</div>
 		</div>
 	</div>
@@ -52,7 +52,7 @@
 				<label>Expect Participation</label>
 			</div>
 				<div class="col-md-6">
-				<input type="text" name="expect_participation" class="form-control">
+				<input type="text" name="amount" class="form-control">
 			</div>
 		</div>
 	</div>
@@ -77,13 +77,14 @@
 			</div>
 		</div>
 	</div>
+	<hr/>
     <div class="form-group">
         <div class="row">
-    		<div class="col-md-6">
+    		<div class="col-md-8">
     	    </div>
-    		<div class="col-md-6">
-				<button class="btn btn-primary">Add Broadcast Message</button>
-				<button class="btn">Clear</button>
+    		<div class="col-md-4">
+				<input type="submit" class="btn btn-primary" value="Add Blood Request"/>
+				<input type="reset" class="btn" value="Clear"/>
 			</div>
 		</div>
 	</div>

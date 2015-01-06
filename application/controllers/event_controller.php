@@ -30,4 +30,18 @@ class Event_controller extends CI_Controller{
 		$this->mobile_session->addSession($event);
 		
 	}
+	public function addBloodReq(){
+		$req['description'] = $this->input->post("description");
+		$req['bType'] = $this->input->post("bType");
+		$req['eDate'] = $this->input->post("eDate");
+		$req['eTime'] = $this->input->post("eTime");
+		$req['amount'] = $this->input->post("amount");
+
+		$req["eId"] = $this->session->userdata("eId");
+		$employee = $this->employee->getEmployee($req["eId"]);
+		$req["cId"] = $employee->getCenter()->getCId();
+
+
+		echo json_encode(array("STATUS"=>$this->mobile_session->addBloodRequest($req)));
+	}
 }
