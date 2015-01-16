@@ -187,6 +187,17 @@ else
                         </ul>
                     </li>
                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#part"><i class="fa fa-fw fa-users"></i>Participation<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="part" class="collapse">
+                            <li>
+                                <a href="#mang_part">Manage Participate</a>
+                            </li>
+                            <li>
+                                <a href="#view_part">View Participate</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgdonor"><i class="fa fa-fw fa-wheelchair"></i> Manage Donor<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgdonor" class="collapse">
                             <li>
@@ -201,10 +212,10 @@ else
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgns"><i class="fa fa-fw fa-fw fa-cogs"></i> Notification Settings<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgns" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#mang_part">Manage Particiate</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#view_part">View Participate</a>
                             </li>
                         </ul>
                     </li>

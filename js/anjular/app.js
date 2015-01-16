@@ -78,6 +78,12 @@ main_app.config(['$routeProvider',
       when('/add_event', {
           templateUrl: 'anjscontroller/addevent',
       }).
+      when('/mang_part', {
+          templateUrl: 'anjscontroller/mangpart',
+      }).
+      when('/view_part', {
+          templateUrl: 'anjscontroller/viewpart',
+      }).
       otherwise({
         redirectTo: 'anjscontroller'
       });

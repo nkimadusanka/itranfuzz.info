@@ -64,5 +64,11 @@ class Anjscontroller extends CI_Controller{
 		$data['centers'] = $this->center->getAllCenters();
 		$this->load->view('/anjs/add_event',$data);
 	}
+	public function mangpart(){
+		$this->load->view('anjs/manage_part');
+	}
+	public function viewpart(){
+		$this->load->view('anjs/view_part');
+	}
 }
 
