@@ -2,23 +2,20 @@
 <br />
 <div ng-controller="cluter_table">
 	<div class = "row">
+		<div class="col-md-12">
+			<h1>Manage Blood Centers<small>Manage Blood donating centers</small></h1>
+		</div>
+	</div>
+	<hr/>
+	<div class = "row">
 		<div class = "col-md-3">
-			Search
+			Search By Address
 		</div>
 		<div class = "col-md-9">
 			<input type="text" class="form-control" ng-model = "province"/>
 		</div>
 	</div>
-	<br />
-	<div class = "row">
-		<div class = "col-md-3">
-			Search By
-		</div class = "col-md-9">
-		
-		<div>
-		</div>
-	</div>
-	<br />
+	<br/>
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
 			<a class="list-group-item" ng-repeat="center in centers | filter:province">

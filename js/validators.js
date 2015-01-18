@@ -118,6 +118,7 @@ function clusterFormUpdateValid() {
 							dataType : 'json'
 						}).done(
 								function(response) {
+									$('.clustupdate-msg-model').modal('toggle');
 									if (response.STATUS == 1) {
 										sMessage("Infromation",
 												'Center Updated successfully');
