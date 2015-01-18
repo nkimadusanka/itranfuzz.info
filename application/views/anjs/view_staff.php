@@ -2,6 +2,12 @@
 
 <br />
 <div ng-controller="staff_table">
+	<div class = "row">
+		<div class="col-md-12">
+			<h1>Manage Center Staff<small> Manage blood center staff</small></h1>
+		</div>
+	</div>
+	<hr/>
 	<div class="row">
 		<div class="col-md-3">Search</div>
 		<div class="col-md-9">
@@ -10,9 +16,12 @@
 	</div>
 	<br />
 	<div class="row">
-		<div class="col-md-3">Search By</div class = "col-md-9">
+		<div class="col-md-3">
+			Search By
+			</div class = "col-md-9">
 
-		<div></div>
+			<div>
+		</div>
 	</div>
 	<br />
 	<div class="row">
@@ -33,19 +42,19 @@
 							<div class="col-md-6">
 								<button type="button" class="btn btn-sm"
 									ng-click="viewstaff(employee.eId)">
-									View <i class="fa fa-info"></i>
+									<span> View </span><i class="fa fa-info"></i>
 								</button>
 							</div>
 							<div class="col-md-6">
-								<button type="button" class="btn btn-sm"
+								<button style="width:80px;" type="button" class="btn btn-sm"
 									ng-click="updatestaff(employee.eId)">
-									Update <i class="fa fa-undo"></i>
+									<span> Update </span><i class="fa fa-undo"></i>
 								</button>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-offset-7" style="margin-top: 5px;">
-								<button type="button" class="btn btn-sm"
+								<button style="width:80px;" type="button" class="btn btn-sm"
 									ng-click="removestaff(employee.eId)">
 									Remove <i class="fa fa-times-circle"></i>
 								</button>
@@ -70,48 +79,48 @@
 					</div>
 					<div id="lContent" class="modal-body">
 						<div class="row">
-							<div class="col-offset-md-1 col-md-4">
-								<h5>Name</h5>
-							</div>
-							<div class="col-md-8">
-								<h5>{{fname}} {{lname}}</h5>
+							<div class="col-md-offset-3">
+								<img style="height: 200px; margin-left: 30px;" src="<?php echo base_url()?>icons/defualt/photo_select.png" />
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-offset-md-1 col-md-4">
-								<h5>Address</h5>
+								<h5><b>Name</b></h5>
 							</div>
 							<div class="col-md-8">
-								<h5>{{address1}} {{address2}}</h5>
+								<h5>: {{fname}} {{lname}}</h5>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-offset-md-1 col-md-4">
-								<h5>Gender</h5>
+								<h5><b>Address</b></h5>
 							</div>
 							<div class="col-md-8">
-								<h5>{{employee.gender == "m" ? "Male" : "Female"}}</h5>
+								<h5>: {{address1}} {{address2}}</h5>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-offset-md-1 col-md-4">
-								<h5>Phone</h5>
+								<h5><b>Gender</b></h5>
 							</div>
 							<div class="col-md-8">
-								<h5>{{phone}}</h5>
+								<h5>: {{employee.gender == "m" ? "Male" : "Female"}}</h5>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-offset-md-1 col-md-4">
-								<h5>Type</h5>
+								<h5><b>Phone</b></h5>
 							</div>
 							<div class="col-md-8">
-								<h5>{{type}}</h5>
+								<h5>: {{phone}}</h5>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
-								<div id="map-canvas" style="height: 200px; width: 100%;" />
+							<div class="col-offset-md-1 col-md-4">
+								<h5><b>Type</b></h5>
+							</div>
+							<div class="col-md-8">
+								<h5>: {{type}}</h5>
 							</div>
 						</div>
 					</div>
@@ -144,11 +153,11 @@
 							<div class="form-group">
 								<div class="row">
 									<div class="col-md-offset-5">
-										<label class="control-label">Profile Picture</label>
+										<label class="control-label"><span>Profile Picture</span></label>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-offset-4">
+									<div class="col-md-offset-3">
 										<img style="height: 200px; margin-left: 30px;"
 											src="<?php echo base_url()?>icons/defualt/photo_select.png" />
 									</div>
