@@ -25,6 +25,8 @@ class Mobile_session extends MY_Model{
 		unset($event['eId']);
 
 		$this->db->insert('mobile_session',$event);
+
+		return $this->db->affected_rows () ? true : false;
 	}
 
 	public function addBloodRequest($request){

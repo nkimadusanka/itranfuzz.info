@@ -11,6 +11,7 @@ class Event_controller extends CI_Controller{
 	}
 
 	public function addEvent(){
+		header ( 'Content-type: application/json');
 
 		$event["description"] = $this->input->post("description");
 		$event["orgName"] = $this->input->post("orgName");
@@ -28,7 +29,9 @@ class Event_controller extends CI_Controller{
 		$employee = $this->employee->getEmployee($event["eId"]);
 		$event["cId"] = $employee->getCenter()->getCId();
 
-		$this->mobile_session->addSession($event);
+		$flag = $this->mobile_session->addSession($event);
+
+		echo json_encode(array("STATUS"=>$flag));
 		
 	}
 	public function addBloodReq(){
