@@ -39,4 +39,17 @@ class Mobile_session extends MY_Model{
 
 	}
 
+	public function getTodayEventsByCId($cId){
+
+		$date = date("Y-m-d");
+		$this->db->where('date',$date);
+		$query = $this->db->get('mobile_session');
+
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+
 }

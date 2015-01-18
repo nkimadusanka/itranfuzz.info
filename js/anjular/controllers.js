@@ -325,3 +325,69 @@ main_app.controller('addBloodMethod',['$scope','$rootScope',
 	}
 ]);
 //end of blood donation methods
+
+//add particiaption controller
+main_app.controller('magPartation',['$http','$scope','$rootScope',
+	function($http,$scope,$rootScope){
+
+		try{
+			//adding vlidation
+			addParticipageValid();
+
+			$scope.selectEvent = function(){
+				var ssevent = $('#selectEvent').val();
+				for (var i = 0; i < $scope.events.length; i++){
+					if ($scope.events[i]["mseId"] == ssevent){
+						$rootScope.event_evId = ssevent;
+						document.getElementById('orgName').innerHTML = $scope.events[i]["orgName"];
+						document.getElementById('address1').innerHTML = $scope.events[i]["address1"];
+						document.getElementById('address2').innerHTML = $scope.events[i]["address2"];
+						document.getElementById('date').innerHTML = $scope.events[i]["date"];
+						document.getElementById('stime').innerHTML = $scope.events[i]["stime"];
+						break;
+					}
+				}
+				$rootScope.updatePart();
+			};
+			$scope.addPart = function(){
+				$('.addpart-msg-model').modal('toggle');
+			};
+
+			$rootScope.updatePart = function(){
+				$http.post('part_controller/getParticipationList').success(function(respone){
+					$scope.parts = respone;
+				});
+			};
+
+			$scope.partDelete = function(adonor_dId,aevent_evId){
+				$http.post('part_controller/deletePart', {
+						donor_dId : adonor_dId,
+						event_evId :aevent_evId
+				}).success(function(respone) {
+					if (respone.STATUS = true) {
+						window.alert("Delete successfully");
+					}else{
+						window.alert("Delete fail");
+					}
+					$rootScope.updatePart();
+				});
+			};
+
+			$http.post('part_controller/gettodayeventsbycid').success(function(respone) {
+				$scope.events = respone;
+				$('.eventselect-msg-model').modal('toggle');
+			});
+
+			$http.post('part_controller/getdonationmethods').success(function(respone) {
+				$scope.methods = respone;
+			});
+
+		}catch(e){
+			window.alert("This is a exception");
+		}
+	}
+]);
+//end of end particiaption controller
+
+
+

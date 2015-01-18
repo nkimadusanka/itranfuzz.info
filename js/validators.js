@@ -519,3 +519,72 @@ function addBloodMethodValidator(){
 //end of blood method validator
 
 
+//add particient validator
+function addParticipageValid(){
+	$('#addPartForm').validate({
+		rules : {
+			email: {
+				required : true,
+				email: true,
+				remote: {
+			        url: "part_controller/checkusercan",
+			        type: "post",
+			        data: {
+				        	email:function(){
+				        		return $("#email").val();
+				        	},
+				        	donation_method_dmId: function() {
+				        		return $( "#donation_method_dmId" ).val();
+				        	}
+			        	}
+		      	},
+		      	messages: {
+				    required: "Required input",
+				    remote: "Donor not exist in the system please check the email again"
+				 }
+			},
+			donation_method_dmId:{
+				required : true
+			},
+		},
+		submitHandler : function(form) {
+			var rootScope = angular.element('#wrapper').scope();
+			$('<input />').attr('type', 'hidden').attr('name',"event_evId").attr('value',rootScope.event_evId).appendTo(form);
+
+			$.ajax({
+				type : $(form).attr('method'),
+				url : $(form).attr('action'),
+				data : $(form).serialize(),
+				dataType : 'json'
+				}).done(
+					function(response) {
+						$('.addpart-msg-model').modal('toggle');
+						if (response.STATUS == true) {
+							sMessage('Blood participation add successfully');
+						} else {
+							sMessage("Error","Blood participate can\'t make donate may be she or he in 3 moths of participating and not eligible to make a blood reqeust");
+						}
+						rootScope.updatePart();
+				});
+			return false;
+		},
+		highlight : function(element) {
+					$(element).closest('.form-group').addClass('has-error');
+				},
+		unhighlight : function(element) {
+			$(element).closest('.form-group').removeClass('has-error');
+		},
+		errorElement : 'span',
+		errorClass : 'help-block',
+		errorPlacement : function(error, element) {
+				if (element.parent('.input-group').length) {
+					error.insertAfter(element.parent());
+				} else {
+				error.insertAfter(element);
+			}
+		}
+		});
+
+}
+//end of add participation validator
+

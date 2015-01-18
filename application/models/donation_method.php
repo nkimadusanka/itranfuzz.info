@@ -11,8 +11,16 @@ class Donation_method extends CI_model {
 
 	#add blood donation method
 	public function addBloodMethod($method){
-		echo 'testing';
 		return($this->db->insert('donation_method',$method));
+	}
+
+	public function getAllMethods(){
+		$rows = $this->db->get('donation_method');
+		if ($rows->num_rows () > 0) {
+			return $rows->result();
+		} else {
+			return null;
+		}
 	}
 
 	/* have problem with this methods

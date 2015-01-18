@@ -118,7 +118,7 @@
     		<div class="col-offset-md-6">
     	    </div>
     		<div class="col-md-8">
-    			<input type="submit" class="btn btn-primary" value`="Add event"/>
+    			<input type="submit" class="btn btn-primary" value="Add event"/>
 				<input type="rset" class="btn" value="Reset"/>
             </div>     
 		</div>
