@@ -2,6 +2,13 @@
 
 <br />
 <div ng-controller="donor_table">
+
+	<div class = "row">
+		<div class="col-md-12">
+			<h1>Manage Donor<small> Manage donor details</small></h1>
+		</div>
+	</div>
+	<hr/>
 	<div class = "row">
 		<div class = "col-md-3">
 			Search Donor
