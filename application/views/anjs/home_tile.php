@@ -8,18 +8,39 @@
 			<div class="panel-body">
 				<div class="panel panel-default">
 					<div class="panel-body">
+<?php
+if(count($events) == 0){
+?>
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>No events Today</h5>
+							</div>
+						</div>
+<?php
+}else{
+	foreach ($events as $event) {
+?>
 						<div class="row">
 							<div class="col-sm-2">
 								<img src="<?php echo base_url()?>icons/event.png"
 									style="height: 60px; width: 60px;">
 							</div>
 							<div class="col-sm-8 col-sm-offset-1">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
+								<h5>Date <?php echo $event->date;?>Time <?php echo $event->stime;?></h5>
+								<h6 style="text-align: justify;">
+									Address: <?php echo $event->address1." ".$event->address2?>
+									<br/>
+									Organization Name : <?php echo $event->orgName;?>
+									<br/>
+									<a>Read more</a>
+								</h6>
 							</div>
 						</div>
+<?php
+	}
+}
+?>
+
 					</div>
 				</div>
 			</div>
@@ -31,42 +52,39 @@
 			<div class="panel-body">
 				<div class="panel panel-default">
 					<div class="panel-body">
+
+<?php
+if(count($uevents) == 0){
+?>
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>No events in upcomming</h5>
+							</div>
+						</div>
+<?php
+}else{
+	foreach ($uevents as $event) {
+?>
 						<div class="row">
 							<div class="col-sm-2">
 								<img src="<?php echo base_url()?>icons/event.png"
 									style="height: 60px; width: 60px;">
 							</div>
 							<div class="col-sm-8 col-sm-offset-1">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
+								<h5>Date <?php echo $event->date;?>Time <?php echo $event->stime;?></h5>
+								<h6 style="text-align: justify;">
+									Address: <?php echo $event->address1." ".$event->address2?>
+									<br/>
+									Organization Name : <?php echo $event->orgName;?>
+									<br/>
+									<a>Read more</a>
+								</h6>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8 col-sm-offset-1">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8 col-sm-offset-1">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
+<?php
+	}
+}
+?>
 					</div>
 				</div>
 			</div>
@@ -92,78 +110,40 @@
 			<div class="panel-body">
 				<div class="panel panel-default">
 					<div class="panel-body">
+
+<?php
+if(count($pevents) == 0){
+?>
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>No events in upcomming</h5>
+							</div>
+						</div>
+<?php
+}else{
+	foreach ($pevents as $event) {
+?>
+
 						<div class="row">
 							<div class="col-sm-2">
 								<img src="<?php echo base_url()?>icons/event.png"
 									style="height: 60px; width: 60px;">
 							</div>
-							<div class="col-sm-8">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
+							<div class="col-sm-10">
+								<h5>Date <?php echo $event->date;?>Time <?php echo $event->stime;?></h5>
+								<h6 style="text-align: justify;">
+									Address: <?php echo $event->address1." ".$event->address2?>
+									<br/>
+									Organization Name : <?php echo $event->orgName;?>
+									<br/>
+									<a>Read more</a>
+								</h6>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2">
-								<img src="<?php echo base_url()?>icons/event.png"
-									style="height: 60px; width: 60px;">
-							</div>
-							<div class="col-sm-8">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a></h6>
-							</div>
-						</div>
+<?php
+	}
+}
+?>
 					</div>
 				</div>
 			</div>

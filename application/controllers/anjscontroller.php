@@ -4,11 +4,16 @@ class Anjscontroller extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('mobile_session');
+		$this->load->model('blood_request');
 		$this->load->model('center');
 	}
 	/* loading home page tile*/
 	public function index(){
-		$this->load->view('anjs/home_tile');
+		$data["events"] = $this->mobile_session->getTodayEvents();
+		$data["uevents"] = $this->mobile_session->getUpcomming();
+		$data["pevents"] = $this->mobile_session->getpast();
+		$this->load->view('anjs/home_tile',$data,FALSE);
 	}
 	/* tiles for donor manage management*/
 	public function adddonor_tile(){

@@ -42,10 +42,46 @@ class Mobile_session extends MY_Model{
 	}
 
 	public function getTodayEventsByCId($cId){
-
 		$date = date("Y-m-d");
 		$this->db->where('date',$date);
 		$query = $this->db->get('mobile_session');
+
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function getTodayEvents(){
+		$date = date("Y-m-d");
+		$this->db->where('date',$date);
+		$query = $this->db->get('mobile_session');
+
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function getUpcomming(){
+
+		$comd = "SELECT * FROM mobile_session ms WHERE ms.date = DATE";
+
+		$query = $this->db->query($comd);
+
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function getpast(){
+		$comd = "SELECT * FROM mobile_session ms WHERE ms.date = DATE";
+
+		$query = $this->db->query($comd);
 
 		if($query->num_rows > 0){
 			return $query->result();

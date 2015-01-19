@@ -1,11 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Bood_request extends CI_model{
+class Blood_request extends MY_Model{
 	var $brId;
 	var $bType;
 	var $eDate;
 	var $eTime;
 	var $amount;
+
+	public function __construct(){
+		parent::__construct();
+	}
+/*
 
 //get Donation_method by brId
 	public function getBrId($brId){
@@ -100,6 +105,6 @@ public function setETime($eTime) {
 public function setAmount($amount) {
 		$this->amount = $amount;
 	}
-			
+*/
 }
 

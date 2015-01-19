@@ -15,36 +15,37 @@
 			<div class="panel-body">
 				<div class="panel panel-default">
 					<div class="panel-body">
+
+<?php
+if(count($events) == 0){
+?>
 						<div class="row">
 							<div class="col-sm-12">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
+								<h5>No events Today</h5>
+							</div>
+						</div>
+<?php
+
+}else{
+	foreach ($events as $event) {
+?>
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>Date <?php echo $event->date;?>Time <?php echo $event->stime;?></h5>
 								<h6 style="text-align: justify;">
-									Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a>
+									Address: <?php echo $event->address1." ".$event->address2?>
+									<br/>
+									Organization Name : <?php echo $event->orgName;?>
+									<br/>
+									<a>Read more</a>
 								</h6>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">
-									Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a>
-								</h6>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<h5>Date 2014/10/24 Time 8:00 AM</h5>
-								<h6 style="text-align: justify;">
-									Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-									scelerisque ante sollicitudin commodo. Cras purus odio,
-									vestibulum in.<a>Read more</a>
-								</h6>
-							</div>
-						</div>
+<?php
+	}
+}
+?>
+
 					</div>
 				</div>
 			</div>

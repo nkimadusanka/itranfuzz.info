@@ -8,6 +8,7 @@ class Event_controller extends CI_Controller{
 		$this->load->model('mobile_session');
 		$this->load->model('employee');
 		$this->load->model('donation_method');
+		$this->load->model('donor');
 	}
 
 	public function addEvent(){
@@ -30,6 +31,8 @@ class Event_controller extends CI_Controller{
 		$event["cId"] = $employee->getCenter()->getCId();
 
 		$flag = $this->mobile_session->addSession($event);
+
+		//$list = $this->donor->getdonorslistarea( $this->input->post("lng"),$this->input->post("lat"));
 
 		echo json_encode(array("STATUS"=>$flag));
 		

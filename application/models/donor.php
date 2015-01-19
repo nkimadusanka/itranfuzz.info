@@ -229,6 +229,43 @@ class Donor extends CI_model {
 		$this->db->where('dId', $dId);
 		return($this->db->delete('donor'));
 	}
+
+	//get donor in area
+	/*public function getdonorslistarea($lLongitude,$lLatitude){
+		$Pi = 22/7;
+
+		//Earth’s radius, sphere
+		$R=6378137;
+
+		//offsets in meters
+		$dn = 10000;
+		$de = 10000;
+
+		//Coordinate offsets in radians
+		$dLat = $dn/$R;
+		$dLon = $de/($R);
+
+		 //OffsetPosition, decimal degrees
+		 latO = $lLatitude + $dLat * 180/$Pi;
+		 lonO = $lLongitude + $dLon * 180/$Pi;
+
+		$min_lLongitude = $lLongitude + $dLon * 180/$Pi;
+		$max_lLongitude = $lLongitude - $dLon * 180/$Pi;
+
+		$min_lLatitude =  $lLatitude + $dLat * 180/$Pi;
+		$max_lLatitude =  $lLatitude - $dLat * 180/$Pi;
+
+		$comd = "SELECT * FROM donor WHERE (lLongitude BETWEEN ".$min_lLongitude." AND".$max_lLongitude.") AND (lLatitude BETWEEN ".$min_lLatitude." AND ".$max_lLatitude.")";
+
+		$query = $this->db->query($comd);
+
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+
+	}*/
 	
 	// **************************************** getter function here******************************************************
 	public function getDId() {

@@ -19,6 +19,8 @@ class Welcome extends MY_GenController {
 	 */
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('mobile_session');
+		$this->load->model('blood_request');
 		$this->load->model('center');
 	}
 
@@ -31,7 +33,8 @@ class Welcome extends MY_GenController {
 			$this->load->view('welcome',$data);
 			$this->load->view('/form/loginmodel');
 		}else{
-			$this->load->view('main');
+			$data["events"] = $this->mobile_session->getTodayEvents();
+			$this->load->view('main',$data,FALSE);
 		}
 		$this->loadFooter();
 	}
