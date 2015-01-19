@@ -180,28 +180,6 @@ else
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#mgns"><i class="fa fa-fw fa-fw fa-cogs"></i> Notification Settings<i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="mgns" class="collapse">
-                            <li>
-                                <a href="#mang_part">Manage Particiate</a>
-                            </li>
-                            <li>
-                                <a href="#view_part">View Participate</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#mgstat"><i class="fa fa-fw fa-bar-chart-o"></i> Statics<i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="mgstat" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             <!-- /.navbar-collapse -->
             </div>
