@@ -44,14 +44,14 @@
 								</button>
 							</div>
 							<div class = "col-md-6">
-								<button type="button" class="btn btn-sm" ng-click="updatedonor(donor.dId)">
+								<button style="width:80px;" type="button" class="btn btn-sm" ng-click="updatedonor(donor.dId)">
 									Update <i class="fa fa-undo"></i>
 								</button>
 							</div>
 						</div>
 						<div class = "row">
 							<div class = "col-md-offset-7" style="margin-top: 5px;">
-								<button type="button" class="btn btn-sm" ng-click="removedonor(donor.dId)">
+								<button style="width:80px;" type="button" class="btn btn-sm" ng-click="removedonor(donor.dId)">
 									Remove <i class="fa fa-times-circle"></i>
 								</button>
 							</div>
