@@ -43,17 +43,21 @@
 									View <i class="fa fa-info"></i>
 								</button>
 							</div>
+<?php if($this->session->userdata('user_Mode') == 'a' || $this->session->userdata('user_Mode') == 'as' || $this->session->userdata('user_Mode') == 's'){?> 							
 							<div class = "col-md-6">
 								<button style="width:80px;" type="button" class="btn btn-sm" ng-click="updatedonor(donor.dId)">
 									Update <i class="fa fa-undo"></i>
 								</button>
 							</div>
+<?php }?>							
 						</div>
 						<div class = "row">
 							<div class = "col-md-offset-7" style="margin-top: 5px;">
+<?php if($this->session->userdata('user_Mode') == 'a' || $this->session->userdata('user_Mode') == 'as' || $this->session->userdata('user_Mode') == 's'){?> 														
 								<button style="width:80px;" type="button" class="btn btn-sm" ng-click="removedonor(donor.dId)">
 									Remove <i class="fa fa-times-circle"></i>
 								</button>
+<?php }?>								
 							</div>
 						</div>
 					</div>

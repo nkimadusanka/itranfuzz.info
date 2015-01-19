@@ -144,6 +144,8 @@ else
                         </ul>
                     </li>
 <?php }?>
+
+<?php if($this->session->userdata('user_Mode') == 'a' || $this->session->userdata('user_Mode') == 'as'){?>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgevent"><i class="fa fa-fw fa-calendar"></i> Manage Event<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgevent" class="collapse">
@@ -158,6 +160,10 @@ else
                             </li>
                         </ul>
                     </li>
+
+<?php }?>
+
+<?php if($this->session->userdata('user_Mode') == 'a' || $this->session->userdata('user_Mode') == 'as' || $this->session->userdata('user_Mode') == 's'){?>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#part"><i class="fa fa-fw fa-users"></i>Participation<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="part" class="collapse">
@@ -169,12 +175,16 @@ else
                             </li>
                         </ul>
                     </li>
+<?php }?>
+
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mgdonor"><i class="fa fa-fw fa-wheelchair"></i> Manage Donor<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mgdonor" class="collapse">
+<?php if($this->session->userdata('user_Mode') == 'a' || $this->session->userdata('user_Mode') == 'as' || $this->session->userdata('user_Mode') == 's'){?>                        
                             <li>
                                 <a href="#add_donor">Add Donor</a>
                             </li>
+<?php }?>                            
                             <li>
                                 <a href="#view_donor">View Donor</a>
                             </li>
