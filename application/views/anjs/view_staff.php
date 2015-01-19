@@ -9,20 +9,12 @@
 	</div>
 	<hr/>
 	<div class="row">
-		<div class="col-md-3">Search</div>
+		<div class="col-md-3">Search By Name </div>
 		<div class="col-md-9">
 			<input type="text" class="form-control" ng-model="fname" />
 		</div>
 	</div>
 	<br />
-	<div class="row">
-		<div class="col-md-3">
-			Search By
-			</div class = "col-md-9">
-
-			<div>
-		</div>
-	</div>
 	<br />
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
