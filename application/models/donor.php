@@ -214,7 +214,7 @@ class Donor extends CI_model {
 	//get All donors list
 	public function getAllDonors(){
 		$rows = $this->db->get('donor');
-		if($rows->num_rows() > 0){
+		/*if($rows->num_rows() > 0){
 			$donors = array();
 			foreach($rows->first_row() as $r) {
 				array_push($donors,new Donor($rows->first_row()));
@@ -222,7 +222,12 @@ class Donor extends CI_model {
 			return $donors;
 		}else{
 			return null;
-		}	
+		}*/
+		if($rows->num_rows() > 0){
+			return $rows->result();
+		}else{
+			return null;
+		}
 	}
 	//remove donor by id
 	public function removedonorbyid($dId){
