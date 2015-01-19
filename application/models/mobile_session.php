@@ -67,7 +67,7 @@ class Mobile_session extends MY_Model{
 
 	public function getUpcomming(){
 
-		$comd = "SELECT * FROM mobile_session ms WHERE ms.date = DATE";
+		$comd = "SELECT * FROM mobile_session ms WHERE ms.date > CURRENT_DATE()";
 
 		$query = $this->db->query($comd);
 
@@ -79,7 +79,7 @@ class Mobile_session extends MY_Model{
 	}
 
 	public function getpast(){
-		$comd = "SELECT * FROM mobile_session ms WHERE ms.date = DATE";
+		$comd = "SELECT * FROM mobile_session ms WHERE ms.date < CURRENT_DATE()";
 
 		$query = $this->db->query($comd);
 
