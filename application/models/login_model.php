@@ -10,20 +10,38 @@ class Login_model extends CI_Model{
     }
 
     public function validate($emailInput,$passwordInput){
-        
+
+        $dFlag = false;
+        $eFlag = false;
+
+        $key = 'UyTHkbxiGCt2W4HzmtL0TRKMynDGEqYX';
+
         $email = $this->security->xss_clean($emailInput);
         $password = $this->security->xss_clean($passwordInput);
         
+
         #set where methods
         $this->db->where('email', $email);
-        $this->db->where('password', $password);
         $query1 = $this->db->get('donor');
 
+        if($query1->num_rows == 1){
+            $depass = $query1->result()[0]->password;
+            if($password == $this->encrypt->decode($depass,$key)){
+                $dFlag = true;
+            }
+        }
+
         $this->db->where('email', $email);
-        $this->db->where('password', $password);
         $query2 = $this->db->get('employee');
+
+        if($query2->num_rows == 1){
+            $depass = $query2->result()[0]->password;
+            if($password == $this->encrypt->decode($depass,$key)){
+                $eFlag = true;
+            }
+        }
         
-        if($query1->num_rows == 1)
+        if($dFlag)
         {
             $row = $query1->row();
             $donor = new Donor($row);
@@ -36,7 +54,7 @@ class Login_model extends CI_Model{
                     );
             $this->session->set_userdata($data);
             return true;
-        }else if($query2->num_rows == 1)
+        }else if($eFlag)
         {
             $row = $query2->row();
             $employee = new Employee($row);
