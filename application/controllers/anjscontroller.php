@@ -75,5 +75,8 @@ class Anjscontroller extends CI_Controller{
 	public function viewpart(){
 		$this->load->view('anjs/view_part');
 	}
+	public function viewhist(){
+		$this->load->view('anjs/view_histry');
+	}
 }
 
