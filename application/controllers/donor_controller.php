@@ -5,6 +5,7 @@ class Donor_controller extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('donor');
+		$this->load->model('participate');
 	}
 	
 	//donor registration json response
@@ -72,6 +73,12 @@ class Donor_controller extends CI_Controller{
 		// there will be foreing key error with employees
 		$status = array('STATUS'=>($this->donor->removedonorbyid($jData["dId"])));
 		echo json_encode($status);
+	}
+	public function gethistory(){
+		header('Content-type: application/json');
+		$dId = $this->session->userdata("dId");
+		$pList = $this->participate->getPartsByDonorID($dId);
+		echo json_encode($pList);
 	}
 
 }

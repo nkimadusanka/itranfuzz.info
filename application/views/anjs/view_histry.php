@@ -8,12 +8,20 @@
 		</div>
 	</div>
 	<hr/>
-	<table class="table table-bordered">
-		<td>
-			<th>testing</th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</td>
+	<table class="table table-striped">
+		<tr>
+			<th>Location</th>
+			<th>Date</th>
+			<th>stime</th>
+			<th>Donate Method</th>
+		</tr>
+<?php foreach ($pList as $key) {?>
+		<tr>
+			<td><?php echo $key->address1;?></td>
+			<td><?php echo $key->date;?></td>
+			<td><?php echo $key->stime;?></td>
+			<td><?php echo $key->description;?></td>
+		</tr>
+<?php }?>
 	</table>
 </div>

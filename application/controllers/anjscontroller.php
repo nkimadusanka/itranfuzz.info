@@ -7,6 +7,7 @@ class Anjscontroller extends CI_Controller{
 		$this->load->model('mobile_session');
 		$this->load->model('blood_request');
 		$this->load->model('center');
+		$this->load->model('participate');
 	}
 	/* loading home page tile*/
 	public function index(){
@@ -76,7 +77,10 @@ class Anjscontroller extends CI_Controller{
 		$this->load->view('anjs/view_part');
 	}
 	public function viewhist(){
-		$this->load->view('anjs/view_histry');
+		header('Content-type: application/json');
+		$dId = $this->session->userdata("dId");
+		$data['pList'] = $this->participate->getPartsByDonorID($dId);
+		$this->load->view('anjs/view_histry',$data);
 	}
 }
 

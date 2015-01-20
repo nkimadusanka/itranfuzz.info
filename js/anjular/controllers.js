@@ -397,3 +397,15 @@ main_app.controller('magPartation',['$http','$scope','$rootScope',
 
 
 
+//view donor history details
+
+main_app.controller('donor_hist',['$scope','$rootScope','$http',
+	function($scope,$rootScope,$http){
+		$http.post('donor_controller/gethistory',{ 'event_evId' : $rootScope.event_evId }).success(function(respone){
+					$scope.parts = respone;
+		});
+	}
+]);
+
+//end of donor histry view
+

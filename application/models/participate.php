@@ -52,4 +52,16 @@ class Participate extends CI_model{
 		return $this->db->affected_rows () ? true : false;
 	}
 
+	public function getPartsByDonorID($dId){
+
+		$comd = "SELECT * FROM participate p, mobile_session ms, donation_method dm WHERE p.event_evId = ms.mseId AND p.donation_method_dmId = dm.dmId AND p.donor_dId = ".$dId;
+
+		$query = $this->db->query($comd);
+
+		if($query->num_rows > 0)
+			return $query->result();
+		else
+			return null;
+	}
+
 }
