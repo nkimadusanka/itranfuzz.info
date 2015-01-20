@@ -1,6 +1,14 @@
 /**
  * This file contain validator files for forms
 */
+//jquery validator new method
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Letters only please"); 
+
+//end of new validator methods
+
 // jquery validators in here
 function clusterFormValid() {
 	$('#regFormCluster').validate(
@@ -12,13 +20,11 @@ function clusterFormValid() {
 					address1 : {
 						required : true
 					},
-					address1 : {
-						required : true
-					},
 					address2 : {
 						required : true
 					},
 					phone : {
+						digits: true,
 						required : true
 					},
 					ctype : {
@@ -87,13 +93,11 @@ function clusterFormUpdateValid() {
 					address1 : {
 						required : true
 					},
-					address1 : {
-						required : true
-					},
 					address2 : {
 						required : true
 					},
 					phone : {
+						digits: true,
 						required : true
 					},
 					ctype : {
@@ -165,9 +169,11 @@ function staffFormValid() {
 				required : true
 			},
 			fname : {
+				lettersonly: true,
 				required : true
 			},
 			lname : {
+				lettersonly: true,
 				required : true
 			},
 			address1 : {
@@ -236,9 +242,11 @@ function donorRegValid() {
 				required : true
 			},
 			fname : {
+				lettersonly: true,
 				required : true
 			},
 			lname : {
+				lettersonly: true,
 				required : true
 			},
 			address1 : {
@@ -321,6 +329,7 @@ function eventAddValidator() {
 				required : true
 			},
 			orgName : {
+				lettersonly: true,
 				required : true
 			},
 			address1 : {
@@ -333,8 +342,8 @@ function eventAddValidator() {
 				required : true
 			},
 			phone : {
-				required : true,
-				number   : true
+				digits: true,
+				required : true
 			},
 			date : {
 				required : true,
@@ -409,6 +418,7 @@ function addBloodRequestValidator(){
 				required : true
 			},
 			amount : {
+				digits: true,
 				required : true
 			},
 			edate : {
@@ -464,23 +474,24 @@ function addBloodMethodValidator(){
 				required : true
 			},
 			minAge:{
-				required : true,
-				number : true
+				digits: true,
+				required : true
 			},
 			maxAge : {
 				required : true,
 				number : true
 			},
 			weigth : {
+				digits: true,
 				required : true
 			},
 			dParticipating : {
-				required : true,
-				number : true
+				digits: true,
+				required : true
 			},
 			maxAmaount : {
-				required : true,
-				number : true
+				digits: true,
+				required : true
 			}
 		},
 		submitHandler : function(form) {
