@@ -40,7 +40,8 @@
 	</div>
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="part in parts">
+			<a class="list-group-item" ng-repeat="part in parts"
+			bn-log-dom-creation>
 				<div class = "row"> 
 					<div class = "col-sm-8">
 						<img class="pull-left" style="width:60px;height:60px;" src="<?php echo base_url()?>icons/defualt/part.png">
@@ -147,105 +148,6 @@
 	</div>
 </div>
 <!-- End of add part model-->
-
-
-<!-- Large Message for update cluster modal -->
-<div class="modal fade event-msg-model" tabindex="-1" role="dialog"
-	aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-					</button>
-					<h4 id="lTitle" class="modal-title">Update Cluster Details</h4>
-				</div>
-				<div id="lContent" class="modal-body">
-					<!--registration form to be submitted to the website-->
-					<form id="updateFormCluster" method="post"
-						action="center_controller/updatecenter" ng-controller="clusterController">
-						<div class="form-group">
-							<div class="row">
-								<label class="col-md-2 control-label">Province</label>
-								<div class="col-md-6 selectContainer">
-									<select class="form-control" ng-model="province" name="province">
-										<option value="">Select Province</option>
-										<option value="cp">Central Province</option>
-										<option value="ep">Eastern Province</option>
-										<option value="ncp">North Central Province</option>
-										<option value="np">Northern Province</option>
-										<option value="nwp">North Western Province</option>
-										<option value="sabp">Sabaragamuwa Province</option>
-										<option value="sp">Southern Province</option>
-										<option value="up">Uva Province</option>
-										<option value="wp">Western Province</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<label class="col-md-2 control-label">Address1 </label>
-								<div class="col-md-10">
-									<input type="text" ng-model="address1" class="form-control" name="address1" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<label class="col-md-2 control-label">Address2 </label>
-								<div class="col-md-10">
-									<input type="text" ng-model="address2" class="form-control" name="address2" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<label class="col-md-2 control-label">Phone </label>
-								<div class="col-md-6">
-									<input type="text" ng-model="phone" class="form-control" name="phone" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<label class="col-md-2 control-label">Type</label>
-								<div class="col-md-6 selectContainer">
-									<select class="form-control" name="ctype" ng-model="type">
-										<option value="">Select type</option>
-										<option value="c">Collecting</option>
-										<option value="s">Storing</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<label class="col-md-2 control-label">Select Location</label>
-								<div class="col-md-10">
-					                <div id="map-canvas" style="height: 200px; width: 100%;"/>
-					            </div>
-							</div>
-						</div>
-						<!-- sending cid to server-->
-						<div class="form-group">
-							<div class="row">
-								<input style="display:none;" type="text" ng-model="cId" name="cId" />
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-						<button type="submit" class="btn btn-default" form="updateFormCluster">Update</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-</div>
-<!--  end of update cluster model -->
 </div>
 
 

@@ -331,6 +331,18 @@ main_app.controller('magPartation',['$http','$scope','$rootScope',
 	function($http,$scope,$rootScope){
 
 		try{
+
+			$rootScope.updatePart = function(){
+				$.post('part_controller/getParticipationList', { 'event_evId' : $rootScope.event_evId }, 
+					function(respone){
+						$scope.parts = respone;
+					}
+				);
+				/*$http.post('part_controller/getParticipationList',{ 'event_evId' : $rootScope.event_evId }).success(function(respone){
+					$scope.parts = respone;
+				});*/
+			};
+
 			//adding vlidation
 			addParticipageValid();
 
@@ -350,13 +362,7 @@ main_app.controller('magPartation',['$http','$scope','$rootScope',
 				$rootScope.updatePart();
 			};
 			$scope.addPart = function(){
-				$('.addpart-msg-model').modal('toggle');
-			};
-
-			$rootScope.updatePart = function(){
-				$http.post('part_controller/getParticipationList').success(function(respone){
-					$scope.parts = respone;
-				});
+				$('.addpart-msg-model').modal('toggle');		
 			};
 
 			$scope.partDelete = function(adonor_dId,aevent_evId){

@@ -70,9 +70,7 @@ class Part_controller extends CI_Controller {
 
 	public function getParticipationList(){
 		header('Content-type: application/json');
-
-		$this->input->post('event_evId');
-		$pList = $this->participate->getParticipate(26);
+		$pList = $this->participate->getParticipate($this->input->post('event_evId'));
 
 		echo json_encode($pList);
 	}
