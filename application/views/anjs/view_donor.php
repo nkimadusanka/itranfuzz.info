@@ -14,27 +14,27 @@
 			Search Donor
 		</div>
 		<div class = "col-md-9">
-			<input type="text" class="form-control" ng-model = "province"/>
+			<input type="text" class="form-control" ng-model = "email"/>
 		</div>
 	</div>
 	<br />
 	<div class = "row">
 		<div class = "col-md-3">
-			Search By
-		</div class = "col-md-9">
-		
-		<div>
+			Blood Type
+		</div>
+		<div class = "col-md-9">
+				<input type="text" class="form-control" ng-model = "bType"/>
 		</div>
 	</div>
 	<br />
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="donor in donors">
+			<a class="list-group-item" ng-repeat="donor in donors | filter: bType |filter: email">
 				<div class = "row"> 
 					<div class = "col-md-9">
 						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/donor_64.png">
-						<h4 class="list-group-item-heading">{{ donor.fname }} {{donor.lname}} {{donor.bType}}</h4>
-						<p class="list-group-item-text">Province: {{donor.center.province}}   Phone:{{donor.phone}}</p>
+						<h4 class="list-group-item-heading"><b>Name </b>{{ donor.fname }} {{donor.lname}}<b> Email: </b>{{donor.email}}</h4>
+						<p class="list-group-item-text"><b>Address :</b> {{donor.address1}} {{donor.address2}} <b> Phone:</b>{{donor.phone}}</p>
 					</div>
 					<div class = "col-md-3">
 						<div class = "row">
