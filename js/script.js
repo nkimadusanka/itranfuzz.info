@@ -94,6 +94,10 @@ $('#regForm').bootstrapValidator({
         validators:{
           notEmpty:{
             message: 'Please enter your First Name'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z]+$/,
+            message: 'The can only consist of alphabetical'
           }
         }
       },
@@ -102,6 +106,10 @@ $('#regForm').bootstrapValidator({
         validators:{
           notEmpty:{
             message: 'Please enter your Last Name'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z]+$/,
+            message: 'The can only consist of alphabetical'
           }
         }
       },
