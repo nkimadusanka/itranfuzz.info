@@ -23,8 +23,8 @@
 					<div class="col-md-9">
 						<img class="pull-left"
 							src="<?php echo base_url()?>icons/defualt/{{employee.type = 'a' ? 'defualt_admin.png' : 'defualt_staff.png'}}">
-						<h4 class="list-group-item-heading">Name:{{employee.fname}}
-							{{employee.lname}} Phone:{{employee.phone}}</h4>
+						<h4 class="list-group-item-heading"><b>Name:</b>{{ employee.fname }}
+							{{ employee.lname }}<b> Phone:<b/>{{ employee.phone }}</h4>
 						<p class="list-group-item-text">Gender: {{employee.gender == "m" ?
 							"Male" : "Female"}} Type: {{employee.type == 'a' ?
 							"Administrator" : "Staff" }}</p>

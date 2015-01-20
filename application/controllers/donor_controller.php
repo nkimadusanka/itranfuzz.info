@@ -63,7 +63,7 @@ class Donor_controller extends CI_Controller{
 		header('Content-type: application/json');
 
 		$donors = $this->donor->getAllDonors();
-		echo json_encode($donors);	
+		echo json_encode($donors);
 	}
 	public function remove_donor(){
 		$status = null;
