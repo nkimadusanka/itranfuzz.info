@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> This is my first Html5 Application </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		    @-webkit-viewport { width: device-width; }
+		    @-moz-viewport { width: device-width; }
+		    @-ms-viewport { width: device-width; }
+		    @-o-viewport { width: device-width; }
+		    @viewport { width: device-width; }
+		</style>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery.mobile-1.4.0.min.js"></script>
+		<script src="js/validator.js"></script>
+	</head>
+	<body data-theme="c">
+		<div data-role="page" id="login">
+			<div data-role="header" data-position="fixed">
+			<h1>Login</h1>
+			</div>
+			<div data-role="content" style="">
+				<div class="login">
+					<form id="loginform" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
+						<fieldset data-role="fieldcontain"> 
+							<label for="text-basic">Email:</label>
+							<input type="text" name="email" id="email" value="">
+						</fieldset>
+						<fieldset data-role="fieldcontain">
+							<label for="text-basic">Password:</label>
+							<input type="password" name="password" id="password" value="">
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<input class="ui-btn ui-icon-check ui-btn-icon-left" type="button" name="submit" id="submit" value="Submit" form="loginform" />
+				<div style="float:right;">
+					<input class="ui-btn ui-icon-delete ui-btn-icon-left" type="button" name="reset" value="Cancel" form="loginform" />
+				</div>
+			</div>
+		</div>
+		
+		<div id="basic" data-role="dialog">
+			<div data-role="header">
+				<h3 id="mgHead" class="ui-icon-arrow-r"></h3>
+			</div>
+			<div  data-role="content" >
+			<p id="mgCont">I am a default popup</p>
+			<br/>
+			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back" data-transition="flow">Ok</a>
+			</div>
+		</div>
+		
+	</body>
+</htm>
