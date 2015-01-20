@@ -107,6 +107,17 @@ class Donor extends CI_model {
 		}
 	}
 
+	//get array of donor details
+	public function getDonorByEmailFrom($email){
+		$this->db->where('email', $email);
+		$rows = $this->db->get('donor');
+		if($rows->num_rows() > 0){
+			return $rows->result();
+		}else{
+			return null;
+		}
+	}
+
 	//get Donor by nic number method
 	public function getDonorNic($nic){
 		
