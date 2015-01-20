@@ -90,4 +90,16 @@ class Mobile_session extends MY_Model{
 		}
 	}
 
+	public function getpastBycId($cId){
+		$comd = "SELECT * FROM mobile_session ms, event e WHERE ms.date < CURRENT_DATE() AND e.evId = ms.mseId AND e.center_cId = ".$cId;
+
+		$query = $this->db->query($comd);
+
+		if($query->num_rows > 0){
+			return $query->result();
+		}else{
+			return NULL;
+		}
+	}
+
 }

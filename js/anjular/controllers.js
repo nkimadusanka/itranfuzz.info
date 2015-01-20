@@ -396,6 +396,53 @@ main_app.controller('magPartation',['$http','$scope','$rootScope',
 //end of end particiaption controller
 
 
+//view particiaption controller
+main_app.controller('viewPartation',['$http','$scope','$rootScope',
+	function($http,$scope,$rootScope){
+
+		try{
+
+			$rootScope.updatePart = function(){
+				$.post('part_controller/getParticipationList', { 'event_evId' : $rootScope.event_evId }, 
+					function(respone){
+						$scope.parts = respone;
+					}
+				);
+				/*$http.post('part_controller/getParticipationList',{ 'event_evId' : $rootScope.event_evId }).success(function(respone){
+					$scope.parts = respone;
+				});*/
+			};
+
+
+			$scope.selectEvent = function(){
+				$rootScope.event_evId = $('#selectEvent').val();
+				var  ssevent = $rootScope.event_evId
+				for (var i = 0; i < $scope.events.length; i++){
+					if ($scope.events[i]["mseId"] == ssevent){
+						document.getElementById('orgName').innerHTML = $scope.events[i]["orgName"];
+						document.getElementById('address1').innerHTML = $scope.events[i]["address1"];
+						document.getElementById('address2').innerHTML = $scope.events[i]["address2"];
+						document.getElementById('date').innerHTML = $scope.events[i]["date"];
+						document.getElementById('stime').innerHTML = $scope.events[i]["stime"];
+						break;
+					}
+				}
+				$rootScope.updatePart();
+			};
+			
+			$http.post('part_controller/getPreviousEvents').success(function(respone) {
+				$scope.events = respone;
+				$('.eventselect-msg-model').modal('toggle');
+			});
+
+		}catch(e){
+			window.alert("This is a exception");
+		}
+	}
+]);
+//end of view particiaption controller
+
+
 
 //view donor history details
 

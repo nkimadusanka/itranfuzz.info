@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
-<div ng-controller="magPartation" style="margin:5px;">
+<div ng-controller="viewPartation" style="margin:5px;">
 	<div class = "row">
 		<div class="col-md-12">
 			<h1>Review of event<small> show participate donors in past events</small></h1>
@@ -44,15 +44,6 @@
 						<p class="list-group-item-text"><span><b>  Address :</b>{{part.address1}} {{part.address2}}</span></p>
 						<p class="list-group-item-text"><span><b>  Email :</b><span>{{part.email}} </span></p>
 					</div>
-					<div class = "col-sm-4">
-						<div class = "row">
-							<div class = "col-md-offset-8">
-								<button type="button" class="btn btn-sm" ng-click="partDelete(part.donor_dId,part.event_evId)">
-									Delete <i class="fa fa-undo"></i>
-								</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</a>
 		</div>
@@ -68,7 +59,7 @@
 					<button type="button" class="close" data-dismiss="modal">
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
-					<h4 id="lTitle" class="modal-title">Select Event</h4>
+					<h4 id="lTitle" class="modal-title">Select past event to view</h4>
 				</div>
 				<div id="lContent" class="modal-body">
 				<div class="row">

@@ -85,4 +85,11 @@ class Part_controller extends CI_Controller {
 		echo json_encode(array("STATUS"=>$pList));
 	}
 
+	public function getPreviousEvents(){
+		header ( 'Content-type: application/json');
+		$employee = $this->employee->getEmployee($this->session->userdata("eId"));
+		$cId = $employee->getCenter()->getCId();
+		echo json_encode($this->mobile_session->getpastBycId($cId));
+	}
+
 }
