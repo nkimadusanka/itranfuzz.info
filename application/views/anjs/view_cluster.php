@@ -12,18 +12,18 @@
 			Search By Address
 		</div>
 		<div class = "col-md-9">
-			<input type="text" class="form-control" ng-model = "province"/>
+			<input type="text" class="form-control" ng-model = "address2"/>
 		</div>
 	</div>
 	<br/>
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="center in centers | filter:province">
+			<a class="list-group-item" ng-repeat="center in centers | filter:address2">
 				<div class = "row"> 
 					<div class = "col-md-9">
 						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/center_64.png">
 						<h4 class="list-group-item-heading"><b>Address:</b>{{ center.address1 }} {{center.address2 }}</h4>
-						<p class="list-group-item-text">Province: {{center.province}} Phone:{{center.phone}}</p>
+						<p class="list-group-item-text"><b>Province: </b>{{ center.province }} <b>Phone: </b>{{ center.phone }}<b> Type: </b>{{ center.type }}</p>
 					</div>
 					<div class = "col-md-3">
 						<div class = "row">
