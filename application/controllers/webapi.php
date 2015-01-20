@@ -42,10 +42,24 @@ class Webapi extends CI_Controller {
 		
 		echo json_encode(
 				array(
-						'valid' => $isAvailable,
+						'valid' => $isAvailable
 				)
 		);
-		
+	}
+	//get details about donor
+	public function getDonorDetails($email){
+
+		//set content type to json
+		header('Access-Control-Allow-Origin: *');
+		//header('Content-type: application/json');
+		header('Access-Control-Allow-Origin: *');
+
+		$list = $this->donor->getDonorByEmailFrom($email);
+
+		echo json_encode(
+				$list
+		);
+
 	}
 }
 
