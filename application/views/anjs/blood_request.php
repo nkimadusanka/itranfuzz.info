@@ -22,14 +22,14 @@
 			</div>
 			<div class="col-md-2">						
 				<select name ="bType"  class="form-control">                 
-					<option value='a+'>A+</option>                  
-					<option value='a-'>A-</option>                          
-				    <option value='b+'>B+</option>                  
-					<option value='b-'>B-</option> 
-					<option value='ab+'>AB+</option>                  
-					<option value='ab-'>AB-</option>                  
-					<option value='o+'>O+</option>
-					<option value='o-'>O-</option>
+					<option value='ap'>A+</option>                  
+                    <option value='am'>A-</option>                          
+                    <option value='bp'>B+</option>                  
+                    <option value='bm'>B-</option> 
+                    <option value='abp'>AB+</option>                  
+                    <option value='abm'>AB-</option>                  
+                    <option value='op'>O+</option>
+                    <option value='om'>O-</option>
 				</select><br><br>
 				</div>
 			</div>
