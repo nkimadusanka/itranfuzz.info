@@ -21,7 +21,7 @@
 				<label>Blood Type</label>
 			</div>
 			<div class="col-md-2">						
-				<select name ="bType">                 
+				<select name ="bType"  class="form-control">                 
 					<option value='a+'>A+</option>                  
 					<option value='a-'>A-</option>                          
 				    <option value='b+'>B+</option>                  
@@ -64,16 +64,6 @@
 			<div class="col-md-6">
 		        <textarea name="broadcast_message" rows="5" cols="60" class="form-control" placeholder="Type your broadcast massage here">
 				</textarea>
-			</div>
-		</div>
-	</div>	
-	<div class="form-group">
-        <div class="row">
-           	<div class="col-md-6">
-				<label>Broadcast Message Type</label>	
-				<INPUT TYPE="CHECKBOX" NAME="email"> E-Mail
-				<INPUT TYPE="CHECKBOX" NAME="mobileApplication"> Mobile Application 
-				<INPUT TYPE="CHECKBOX" NAME="SMS"> SMS
 			</div>
 		</div>
 	</div>

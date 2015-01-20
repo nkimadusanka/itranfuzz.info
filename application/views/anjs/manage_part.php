@@ -63,43 +63,6 @@
 		</div>
 	</div>
 
-<!--
-	<div class="row">
-		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="center in centers | filter:province">
-				<div class = "row"> 
-					<div class = "col-md-9">
-						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/center_64.png">
-						<h4 class="list-group-item-heading">{{ center.address1 }} {{center.address2 }}</h4>
-						<p class="list-group-item-text">Province: {{center.province}} Phone:{{center.phone}}</p>
-					</div>
-					<div class = "col-md-3">
-						<div class = "row">
-							<div class = "col-md-6">
-								<button type="button" class="btn btn-sm" ng-click="viewcenter(center.cId)">
-									View <i class="fa fa-info"></i>
-								</button>
-							</div>
-							<div class = "col-md-6">
-								<button type="button" class="btn btn-sm" ng-click="updatecenter(center.cId)">
-									Update <i class="fa fa-undo"></i>
-								</button>
-							</div>
-						</div>
-						<div class = "row">
-							<div class = "col-md-offset-7" style="margin-top: 5px;">
-								<button type="button" class="btn btn-sm" ng-click="removecenter(center.cId)">
-									Remove <i class="fa fa-times-circle"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
--->
-
 <!--select event model-->
 <div class="modal fade eventselect-msg-model" tabindex="-1" role="dialog"
 	aria-hidden="true">
