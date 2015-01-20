@@ -20,7 +20,7 @@ class Employee_controller extends CI_Controller {
 		}
 		$employee = array (
 				"email" => $this->input->post ("email"),
-				"password" => $this->input->post ("password"),
+				"password" => $this->encrypt->encode($this->input->post ("password")),
 				"fname" => $this->input->post ("fname"),
 				"lname" => $this->input->post ("lname"),
 				"nic" => $this->input->post ("nic"),

@@ -18,7 +18,7 @@ class Donor_controller extends CI_Controller{
 		$state = $this->donor->addDonor(
 				$this->input->post('email'),
 				$this->input->post('nic'),
-				$this->input->post('password'),
+				$this->encrypt->encode($this->input->post('password')),
 				$this->input->post('fname'),
 				$this->input->post('lname'),
 				"+9477094124",
