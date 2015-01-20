@@ -47,6 +47,27 @@ class Webapi extends CI_Controller {
 		);
 	}
 	//get details about donor
+
+	//json email checking
+	public function mailcheck(){
+		
+		header('Content-type: application/json');
+		
+		$email = $_POST['email'];
+		$isAvailable = true;
+		
+		if(($this->donor->getDonorByEmail($email)) || ($this->employee->getEmployeeByEmail($email))){
+			$isAvailable = false;
+		}else{
+			$isAvailable = true;
+		}
+		
+		echo json_encode(
+			$isAvailable
+		);
+	}
+	//get details about donor
+
 	public function getDonorDetails($email){
 
 		//set content type to json
