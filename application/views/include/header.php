@@ -188,6 +188,11 @@ else
                             <li>
                                 <a href="#view_donor">View Donor</a>
                             </li>
+<?php if($this->session->userdata('user_Mode') == 'd'){?>
+                            <li>
+                                 <a href="#view_hist">History</a>
+                            </li>
+<?php }?>
                         </ul>
                     </li>
                 </ul>
