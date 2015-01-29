@@ -572,7 +572,7 @@ function addParticipageValid(){
 					function(response) {
 						$('.addpart-msg-model').modal('toggle');
 						if (response.STATUS == true) {
-							sMessage('Blood participation add successfully');
+							sMessage('Blood participation add successfully',"Donor add to the system he cant make blood donation till 3 months");
 						} else {
 							sMessage("Error","Blood participate can\'t make donate may be she or he in 3 moths of participating and not eligible to make a blood reqeust");
 						}
