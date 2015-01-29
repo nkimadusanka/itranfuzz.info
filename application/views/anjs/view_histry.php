@@ -15,13 +15,30 @@
 			<th>stime</th>
 			<th>Donate Method</th>
 		</tr>
-<?php foreach ($pList as $key) {?>
+
+<?php
+if(count($pList) == 0){
+?>
+		<tr>
+			<td>none</td>
+			<td>none</td>
+			<td>none</td>
+			<td>none</td>
+		</tr>
+<?php
+
+}else{ 
+foreach ($pList as $key) {?>
 		<tr>
 			<td><?php echo $key->address1;?></td>
 			<td><?php echo $key->date;?></td>
 			<td><?php echo $key->stime;?></td>
 			<td><?php echo $key->description;?></td>
 		</tr>
-<?php }?>
+<?php 
+	}
+}
+?>
+
 	</table>
 </div>
