@@ -8,7 +8,7 @@
 	</div>
 	<!--Right container area of the site-->
 	<div ruid="right_menu" class="col-md-3" style="padding: 10px;position: relative;">
-		<div class="panel panel-default" style="position: fixed;">
+		<div id="rpanel" class="panel panel-default col-sm-12" style="position: fixed;">
 			<div class="panel-heading">
 				<h3 class="panel-title">Today Events</h3>
 			</div>
