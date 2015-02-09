@@ -71,11 +71,11 @@ main_app.controller('cluter_table', [
 				for (var i = 0; i < $scope.centers.length; i++)
 					if ($scope.centers[i]["cId"] == cId)
 						break;
-				$scope.province = $scope.centers[i]["province"];
-				$scope.address1 = $scope.centers[i]["address1"];
-				$scope.address2 = $scope.centers[i]["address2"];
-				$scope.phone = $scope.centers[i]["phone"];
-				$scope.type = $scope.centers[i]["type"];
+				$scope.province_view = $scope.centers[i]["province"];
+				$scope.address1_view = $scope.centers[i]["address1"];
+				$scope.address2_view = $scope.centers[i]["address2"];
+				$scope.phone_view = $scope.centers[i]["phone"];
+				$scope.type_view = $scope.centers[i]["type"];
 
 				try {
 					$rootScope.initialize();

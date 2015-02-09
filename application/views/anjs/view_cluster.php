@@ -8,17 +8,34 @@
 	</div>
 	<hr/>
 	<div class = "row">
-		<div class = "col-md-3">
+		<div class = "col-md-2">
 			Search By Address
 		</div>
-		<div class = "col-md-9">
+		<div class = "col-md-4">
 			<input type="text" class="form-control" ng-model = "address2"/>
+		</div>
+		<div class = "col-md-2">
+			Search By Province
+		</div>
+		<div class = "col-md-4">
+			 <select class="form-control" ng-model = "province">
+					<option value="">Select Province</option>
+					<option value="cp">Central Province</option>
+					<option value="ep">Eastern Province</option>
+					<option value="ncp">North Central Province</option>
+					<option value="np">Northern Province</option>
+					<option value="nwp">North Western Province</option>
+					<option value="sabp">Sabaragamuwa Province</option>
+					<option value="sp">Southern Province</option>
+					<option value="up">Uva Province</option>
+					<option value="wp">Western Province</option>
+			</select>
 		</div>
 	</div>
 	<br/>
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="center in centers | filter:address2">
+			<a class="list-group-item" ng-repeat="center in centers | filter:address2|filter:province">
 				<div class = "row"> 
 					<div class = "col-md-9">
 						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/center_64.png">
@@ -69,7 +86,7 @@
 							<h5>Province</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{province}}</h5>
+							<h5>{{province_view}}</h5>
 						</div>
 					</div>
 					<div class="row">
@@ -77,7 +94,7 @@
 							<h5>Address1</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{address1}}</h5>
+							<h5>{{address1_view}}</h5>
 						</div>
 					</div>
 					<div class="row">
@@ -85,7 +102,7 @@
 							<h5>Address2</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{address2}}</h5>
+							<h5>{{address2_view}}</h5>
 						</div>
 					</div>
 					<div class="row">
@@ -93,7 +110,7 @@
 							<h5>Phone</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{phone}}</h5>
+							<h5>{{phone_view}}</h5>
 						</div>
 					</div>
 					<div class="row">
@@ -101,7 +118,7 @@
 							<h5>Type</h5>
 						</div>
 						<div class = "col-md-8">
-							<h5>{{type}}</h5>
+							<h5>{{type_view}}</h5>
 						</div>
 					</div>
 					<div class="row">
