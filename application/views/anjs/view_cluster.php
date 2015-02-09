@@ -39,8 +39,8 @@
 				<div class = "row"> 
 					<div class = "col-md-9">
 						<img class="pull-left" src="<?php echo base_url()?>icons/defualt/center_64.png">
-						<h4 class="list-group-item-heading"><b>Address:</b>{{ center.address1 }} {{center.address2 }}</h4>
-						<p class="list-group-item-text"><b>Province: </b>{{ center.province }} <b>Phone: </b>{{ center.phone }}<b> Type: </b>{{ center.type }}</p>
+						<h4 class="list-group-item-heading"><b>&nbsp;Address:</b>{{ center.address1 }} {{center.address2 }}</h4>
+						<p class="list-group-item-text"><b>&nbsp;&nbsp;Province: </b>{{ center.province }} <b>Phone: </b>{{ center.phone }}<b> Type: </b>{{ center.type }}</p>
 					</div>
 					<div class = "col-md-3">
 						<div class = "row">
