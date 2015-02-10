@@ -84,10 +84,14 @@
                 <label class="control-label">Blood Type</label>
                 <select class="form-control" name="bType">
                     <option value="">Blood type</option>
-                    <option value="a+">A+</option>
-                    <option value="b+">B+</option>
-                    <option value="a-">A-</option>
-                    <option value="b-">B-</option>
+                    <option value='ap'>A+</option>                  
+                    <option value='am'>A-</option>                          
+                    <option value='bp'>B+</option>                  
+                    <option value='bm'>B-</option> 
+                    <option value='abp'>AB+</option>                  
+                    <option value='abm'>AB-</option>                  
+                    <option value='op'>O+</option>
+                    <option value='om'>O-</option>
                 </select>
             </div>
             <div class="col-md-3 selectContainer">
