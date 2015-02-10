@@ -10,20 +10,27 @@
 	</div>
 	<hr/>
 	<div class = "row">
-		<div class = "col-md-3">
+		<div class = "col-md-2">
 			Search Donor
 		</div>
-		<div class = "col-md-9">
+		<div class = "col-md-4">
 			<input type="text" class="form-control" ng-model = "email"/>
 		</div>
-	</div>
-	<br />
-	<div class = "row">
-		<div class = "col-md-3">
+		<div class = "col-md-2">
 			Blood Type
 		</div>
-		<div class = "col-md-9">
-				<input type="text" class="form-control" ng-model = "bType"/>
+		<div class = "col-md-4">
+			<select class="form-control" ng-model = "bType">
+				<option value="">Blood type</option>
+				<option value='ap'>A+</option>
+				<option value='am'>A-</option>
+				<option value='bp'>B+</option>
+				<option value='bm'>B-</option>
+				<option value='abp'>AB+</option>
+				<option value='abm'>AB-</option>
+				<option value='op'>O+</option>
+				<option value='om'>O-</option>
+			</select>
 		</div>
 	</div>
 	<br />
