@@ -9,16 +9,44 @@
 	</div>
 	<hr/>
 	<div class="row">
-		<div class="col-md-3">Search By Name </div>
-		<div class="col-md-9">
+		<div class="col-md-2">Search By Name </div>
+		<div class="col-md-4">
 			<input type="text" class="form-control" ng-model="fname" />
+		</div>
+		<div class = "col-md-1">
+			Province
+		</div>
+		<div class = "col-md-2">
+			 <select class="form-control" ng-model = "center.province">
+					<option value="">Province</option>
+					<option value="cp">Central Province</option>
+					<option value="ep">Eastern Province</option>
+					<option value="ncp">North Central Province</option>
+					<option value="np">Northern Province</option>
+					<option value="nwp">North Western Province</option>
+					<option value="sabp">Sabaragamuwa Province</option>
+					<option value="sp">Southern Province</option>
+					<option value="up">Uva Province</option>
+					<option value="wp">Western Province</option>
+			</select>
+		</div>
+		<div class = "col-md-1">
+			Type
+		</div>
+		<div class = "col-md-2">
+			 <select class="form-control" ng-model = "type">
+					<option value="">Type</option>
+					<option value="a">Admin</option>
+					<option value="as">Staff Admin</option>
+					<option value="s">Staff</option>
+			</select>
 		</div>
 	</div>
 	<br />
 	<br />
 	<div class="row">
 		<div class="div_scroll list-group col-md-12">
-			<a class="list-group-item" ng-repeat="employee in employees">
+			<a class="list-group-item" ng-repeat="employee in employees|filter:fname|filter:center.province|filter:type">
 				<div class="row">
 					<div class="col-md-9">
 						<img class="pull-left"
