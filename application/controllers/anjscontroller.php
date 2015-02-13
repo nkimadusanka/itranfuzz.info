@@ -82,5 +82,8 @@ class Anjscontroller extends CI_Controller{
 		$data['pList'] = $this->participate->getPartsByDonorID($dId);
 		$this->load->view('anjs/view_histry',$data);
 	}
+	public function view_events(){
+		$this->load->view('anjs/view_events');
+	}
 }
 

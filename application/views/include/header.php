@@ -158,6 +158,9 @@ else
                             <li>
                                 <a href="#method_registration">Donation Methods</a>
                             </li>
+                            <li>
+                                <a href="#view_events">View Events</a>
+                            </li>
                         </ul>
                     </li>
 
